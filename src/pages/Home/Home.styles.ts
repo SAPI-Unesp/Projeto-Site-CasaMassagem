@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const HeroContainer = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: rgba(135, 142, 116, 0.85);
+  background-color: #97A767;
+  opacity: 0.77;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +20,8 @@ export const TextContainer = styled.div`
 `;
 
 export const HeroLogo = styled.img`
-  width: 150px;
+  width: 300px;
+  height: auto;
   margin-bottom: 1rem;
 `;
 

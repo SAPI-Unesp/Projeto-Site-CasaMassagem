@@ -7,8 +7,17 @@ import '@fontsource/cormorant/400.css';
 import BackgroundImage from '../assets/backgroundImage.png';
 
 export const GlobalStyles = createGlobalStyle`
-  //agora os estilos globais vão funcionar
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
   :root {
     font-family: 'Cinzel', serif;
     background-color: #242424;
