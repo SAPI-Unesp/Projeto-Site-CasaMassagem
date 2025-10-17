@@ -3,8 +3,6 @@ import {
   HeroContainer,
   TextContainer,
   HeroLogo,
-  HeroTitle,
-  HeroSubtitle,
   HeroSlogan,
   ImageFrame,
   MassagistImage
@@ -29,8 +27,6 @@ export function Home() {
             <HeroContainer>
                 <TextContainer>
                     <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />
-                    <HeroTitle>Monique Ferraz</HeroTitle>
-                    <HeroSubtitle>MASSOTERAPEUTA</HeroSubtitle>
                 </TextContainer>
                 <ImageFrame>
                     <MassagistImage src={massagistImage} alt="Massoterapeuta Monique Ferraz" />

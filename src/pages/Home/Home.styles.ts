@@ -20,27 +20,9 @@ export const TextContainer = styled.div`
 `;
 
 export const HeroLogo = styled.img`
-  width: 300px;
+  width: 500px;
   height: auto;
   margin-bottom: 1rem;
-`;
-
-export const HeroTitle = styled.h1`
-  font-family: 'Cinzel', serif;
-  font-size: 4rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  margin: 0;
-  line-height: 1.1;
-`;
-
-export const HeroSubtitle = styled.h2`
-  font-family: 'Cormorant', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 5px;
-  margin: 0;
-  text-transform: uppercase;
 `;
 
 export const HeroSlogan = styled.p`
@@ -48,7 +30,7 @@ export const HeroSlogan = styled.p`
   bottom: 2rem;
   left: 6rem;
   font-family: 'Cormorant', serif;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   color: #f1f1f1;
 `;
