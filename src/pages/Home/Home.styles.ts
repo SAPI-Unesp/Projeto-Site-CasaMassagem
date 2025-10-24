@@ -86,8 +86,9 @@ export const SectionTitle = styled.h2`
 
 export const DepoimentosGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  justify-content: center;
+  gap: 25px; 
   justify-items: center;
   max-width: 1600px;
   margin: 0 auto;
@@ -95,13 +96,13 @@ export const DepoimentosGrid = styled.div`
 
 export const DepoimentoCard = styled.div`
   background-color: #d1b897; 
-  border-radius: 50px;
+  border-radius: 40px;
   padding: 25px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
   text-align: left;
   position: relative;
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   min-height: 110px; 
   display: flex;
   flex-direction: column;
@@ -109,16 +110,16 @@ export const DepoimentoCard = styled.div`
 `;
 
 export const DepoimentoText = styled.p`
-  font-size: 1.2em;
-  color: #5a402d; 
+  font-size: 1.4em;
+  color: #835e4eff; 
   margin: 0;
   font-family: 'Times New Roman', serif;
-  font-style: italic;
+  font-style: bold;
 `;
 
 export const DepoimentoAuthor = styled.p`
-  font-size: 1em;
-  color: #7a604c; 
+  font-size: 1.1em;
+  color: #000000ff; 
   margin: 0;
   margin-top: 1rem;
   text-align: right;

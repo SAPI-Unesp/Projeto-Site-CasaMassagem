@@ -52,6 +52,21 @@ export function Home() {
                         <DepoimentoText>"Ambiente super aconchegante e profissional excelente."</DepoimentoText>
                         <DepoimentoAuthor>@juliana_m</DepoimentoAuthor>
                     </DepoimentoCard>
+
+                     <DepoimentoCard>
+                        <DepoimentoText>"A Monique tem mãos de fada! Saí de lá renovada."</DepoimentoText>
+                        <DepoimentoAuthor>@ana_lais</DepoimentoAuthor>
+                    </DepoimentoCard>
+
+                    <DepoimentoCard>
+                        <DepoimentoText>"Melhor massagem que já recebi. Recomendo muito!"</DepoimentoText>
+                        <DepoimentoAuthor>@carlos_souza</DepoimentoAuthor>
+                    </DepoimentoCard>
+                    
+                    <DepoimentoCard>
+                        <DepoimentoText>"Ambiente super aconchegante e profissional excelente."</DepoimentoText>
+                        <DepoimentoAuthor>@juliana_m</DepoimentoAuthor>
+                    </DepoimentoCard>
                 </DepoimentosGrid>
             </DepoimentosSection>
         </>
