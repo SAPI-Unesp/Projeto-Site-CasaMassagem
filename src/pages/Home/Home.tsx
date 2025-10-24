@@ -13,6 +13,7 @@ import {
   SectionTitle,
   DepoimentosGrid,
   DepoimentoCard,
+  DepoimentoCard2,
   DepoimentoText,
   DepoimentoAuthor
 } from './Home.styles';
@@ -53,20 +54,20 @@ export function Home() {
                         <DepoimentoAuthor>@juliana_m</DepoimentoAuthor>
                     </DepoimentoCard>
 
-                     <DepoimentoCard>
+                     <DepoimentoCard2>
                         <DepoimentoText>"A Monique tem mãos de fada! Saí de lá renovada."</DepoimentoText>
                         <DepoimentoAuthor>@ana_lais</DepoimentoAuthor>
-                    </DepoimentoCard>
+                    </DepoimentoCard2>
 
-                    <DepoimentoCard>
+                    <DepoimentoCard2>
                         <DepoimentoText>"Melhor massagem que já recebi. Recomendo muito!"</DepoimentoText>
                         <DepoimentoAuthor>@carlos_souza</DepoimentoAuthor>
-                    </DepoimentoCard>
+                    </DepoimentoCard2>
                     
-                    <DepoimentoCard>
+                    <DepoimentoCard2>
                         <DepoimentoText>"Ambiente super aconchegante e profissional excelente."</DepoimentoText>
                         <DepoimentoAuthor>@juliana_m</DepoimentoAuthor>
-                    </DepoimentoCard>
+                    </DepoimentoCard2>
                 </DepoimentosGrid>
             </DepoimentosSection>
         </>
