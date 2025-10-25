@@ -125,6 +125,21 @@ export const DepoimentoCard = styled.div`
   justify-content: space-between;
 `;
 
+export const DepoimentoCard2 = styled.div`
+  background-color: #d1b897; 
+  border-radius: 40px;
+  padding: 25px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  text-align: left;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  min-height: 110px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const DepoimentoText = styled.p`
   font-size: 1.4em;
   color: #835e4eff; 
