@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   :root {
+    --global-bg: url(${BackgroundImage});
     font-family: 'Cinzel', serif;
     background-color: #242424;
     font-synthesis: none;
@@ -35,11 +36,11 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     min-width: 320px;
     min-height: 100vh;
-
-    background-image: url(${BackgroundImage});
+    background-image: var(--global-bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: relative;
     background-attachment: fixed;
   }
 `;

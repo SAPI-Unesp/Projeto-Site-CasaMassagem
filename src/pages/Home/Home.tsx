@@ -5,7 +5,7 @@ import {
   HeroLogo,
   HeroSlogan,
   ImageFrame,
-  MassagistImage
+  MassagistImage,
 } from './Home.styles';
 
 import {

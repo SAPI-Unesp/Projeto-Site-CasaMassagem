@@ -3,20 +3,23 @@ import styled from 'styled-components';
 export const HeroContainer = styled.section`
   width: 100%;
   height: 100vh;
-  background-color: #97A767;
-  opacity: 0.77;
+  /*background-color: #97A767;
+  opacity: 0.77;*/
+  background-color: rgba(151, 167, 103, 0.77);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 6rem;
   overflow: hidden;
-  position: relative; /*adicionado para o slogan*/
+  position: relative;
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   color: #f1f1f1;
+  flex: 1;
+  z-index: 2;
 `;
 
 export const HeroLogo = styled.img`
@@ -33,38 +36,51 @@ export const HeroSlogan = styled.p`
   font-size: 2.5rem;
   letter-spacing: 2px;
   color: #f1f1f1;
+  z-index: 2;
 `;
 
 export const ImageFrame = styled.div`
-  width: 50%;
+  width: 55%;
   height: 70%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: var(--global-bg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50px 0 0 50px;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
     border: 2px solid white;
-    border-radius: 40px; 
+    border-right: none;
+    box-sizing: border-box;
+    border-radius: 40px 0 0 40px;
   }
 
   &::before {
-    inset: 15px;
+    inset: 2.5px;
   }
 
   &::after {
-    inset: 25px;
+    inset: 25px 0 25px 25px;
   }
 `;
 
 export const MassagistImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 25px);
+  height: calc(100% - 50px);
   object-fit: cover;
-  border-radius: 50px;
+  position: relative;
+  border-radius: 40px 0 0 40px;
+  margin-left: auto;
+  margin-right: 0;
+
+  z-index: 2;
 `;
 
 
