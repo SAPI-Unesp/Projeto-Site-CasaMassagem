@@ -3,15 +3,30 @@ import styled from 'styled-components';
 export const HeroContainer = styled.section`
   width: 100%;
   height: 100vh;
-  /*background-color: #97A767;
+  /*background-color: var(--global-color-green);
   opacity: 0.77;*/
-  background-color: rgba(151, 167, 103, 0.77);
+  background-color: var(--global-color-green);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 6rem;
   overflow: hidden;
   position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 30' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C300,5 700,25 1000,10' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3C/svg%3E");
+    
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -30,13 +45,12 @@ export const HeroLogo = styled.img`
 
 export const HeroSlogan = styled.p`
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 6rem;
   font-family: 'Cormorant', serif;
   font-size: 2.5rem;
   letter-spacing: 2px;
   color: #f1f1f1;
-  z-index: 2;
 `;
 
 export const ImageFrame = styled.div`
@@ -50,7 +64,9 @@ export const ImageFrame = styled.div`
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 50px 0 0 50px;
+  z-index: 1;
 
   &::before,
   &::after {
@@ -60,10 +76,11 @@ export const ImageFrame = styled.div`
     border-right: none;
     box-sizing: border-box;
     border-radius: 40px 0 0 40px;
+    z-index: 3;
   }
 
   &::before {
-    inset: 2.5px;
+    inset: 1.5px 0 1.5px 1.5px; 
   }
 
   &::after {
@@ -80,7 +97,7 @@ export const MassagistImage = styled.img`
   margin-left: auto;
   margin-right: 0;
 
-  z-index: 2;
+  z-index: 1;
 `;
 
 

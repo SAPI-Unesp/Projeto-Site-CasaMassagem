@@ -20,6 +20,8 @@ export const GlobalStyles = createGlobalStyle`
   
   :root {
     --global-bg: url(${BackgroundImage});
+    --global-color-green: rgba(151, 167, 103, 0.77);
+    --global-color-brown: #6b4d3a; 
     font-family: 'Cinzel', serif;
     background-color: #242424;
     font-synthesis: none;
