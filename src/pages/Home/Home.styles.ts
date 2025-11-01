@@ -65,7 +65,7 @@ export const ImageFrame = styled.div`
   background-size: cover;
   background-position: center;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  border-radius: 50px 0 0 50px;
+  border-radius: 80px 0 0 80px;
   z-index: 1;
 
   &::before,
@@ -75,7 +75,7 @@ export const ImageFrame = styled.div`
     border: 2px solid white;
     border-right: none;
     box-sizing: border-box;
-    border-radius: 40px 0 0 40px;
+    border-radius: 80px 0 0 80px;
     z-index: 3;
   }
 
@@ -93,7 +93,7 @@ export const MassagistImage = styled.img`
   height: calc(100% - 50px);
   object-fit: cover;
   position: relative;
-  border-radius: 40px 0 0 40px;
+  border-radius: 80px 0 0 80px;
   margin-left: auto;
   margin-right: 0;
 
