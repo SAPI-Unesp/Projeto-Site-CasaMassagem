@@ -2,7 +2,9 @@
 
 import { createGlobalStyle } from 'styled-components';
 import '@fontsource/cinzel/400.css';
+import '@fontsource/cinzel/700.css'; 
 import '@fontsource/cormorant/400.css';
+import '@fontsource/cormorant/700.css'; 
 
 import BackgroundImage from '../assets/backgroundImage.png';
 
@@ -23,6 +25,7 @@ export const GlobalStyles = createGlobalStyle`
     --global-color-green: rgba(151, 167, 103, 0.77);
     --global-color-brown: #6b4d3a; 
     font-family: 'Cinzel', serif;
+    font-weight: normal;
     background-color: #242424;
     font-synthesis: none;
     text-rendering: optimizeLegibility;

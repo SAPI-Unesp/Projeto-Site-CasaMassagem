@@ -112,9 +112,10 @@ export const DepoimentosSection = styled.section`
 export const SectionTitle = styled.h2`
   font-size: 2.5em;
   color: #6b4d3a; 
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   text-align: left;
   padding-left: 20px; 
+  
 `;
 
 export const DepoimentosGrid = styled.div`
@@ -162,7 +163,7 @@ export const DepoimentoText = styled.p`
   color: #835e4eff; 
   margin: 0;
   font-family: 'Times New Roman', serif;
-  font-style: bold;
+  font-weight: bold;
 `;
 
 export const DepoimentoAuthor = styled.p`

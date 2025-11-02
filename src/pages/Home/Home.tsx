@@ -18,8 +18,11 @@ import {
   DepoimentoAuthor
 } from './Home.styles';
 
+import {ContactSection} from './Sections/Contact'
+
 import logoImage from '../../assets/logo.png';
 import massagistImage from '../../assets/image.png';
+import { AboutUsSection } from './Sections/AboutUs';
 
 export function Home() {
     return (
@@ -34,6 +37,8 @@ export function Home() {
                 </ImageFrame>
                 <HeroSlogan>ALIVIO, EQUILIBRIO E CUIDADO EM CADA SESSÃO</HeroSlogan>
             </HeroContainer>
+
+            <AboutUsSection/>
 
             {/*Depoimentos*/}
             <DepoimentosSection>
@@ -70,6 +75,10 @@ export function Home() {
                     </DepoimentoCard2>
                 </DepoimentosGrid>
             </DepoimentosSection>
+
+            <ContactSection>
+
+            </ContactSection>
         </>
     );
 }
