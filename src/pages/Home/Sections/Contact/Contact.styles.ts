@@ -12,7 +12,7 @@ export const Title = styled.div`
   text-align: left;
   width: 100%;
   max-width: 1200px;
-  margin-bottom: 35px;
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   font-weight: bold;
 
@@ -71,12 +71,6 @@ export const Card = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-  }
-
-  img {
-    width: 100%;
-    height:300px;
-    object-fit: cover;
   }
 
   iframe {

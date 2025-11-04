@@ -19,5 +19,14 @@ export const theme = {
         regular: 400,
         bold: 700,
     },
-    spacing: (factor: number) => `${factor * 0.25}rem`,
+    spacing: {
+        xxs: "0.125rem", // 2px
+        xs: "0.25rem",   // 4px
+        s: "0.5rem",     // 8px
+        m: "1rem",       // 16px
+        l: "1.5rem",     // 24px
+        xl: "2rem",      // 32px
+        xxl: "3rem",     // 48px
+        xxxl: "4rem",    // 64px
+  },
 };

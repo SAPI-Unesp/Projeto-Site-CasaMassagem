@@ -112,7 +112,7 @@ export const DepoimentosSection = styled.section`
 export const SectionTitle = styled.h2`
   font-size: 2.5em;
   color: #6b4d3a; 
-  margin-bottom: 35px;
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
   text-align: left;
   padding-left: 20px; 
   

@@ -18,11 +18,11 @@ import {
   DepoimentoAuthor
 } from './Home.styles';
 
-import {ContactSection} from './Sections/Contact'
+import {ContactSection} from './Sections/Contact/Contact'
 
 import logoImage from '../../assets/logo.png';
 import massagistImage from '../../assets/image.png';
-import { AboutUsSection } from './Sections/AboutUs';
+import { AboutUsSection } from './Sections/AboutUs/AboutUs';
 
 export function Home() {
     return (

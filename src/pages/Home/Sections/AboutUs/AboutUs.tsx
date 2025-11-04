@@ -1,5 +1,6 @@
 import { SectionContainer, Title, ContentContainer, ImageWrapper, TextWrapper } from "./AboutUs.style";
-import MassageImage from "./../../../assets/imagem-sobrenos.png";
+import MassageImage from "../../../../assets/imagem-sobrenos.png";
+import { BorderedImage } from "../../../../components/BorderedImage/BorderedImage";
 
 export function AboutUsSection() {
   return (
@@ -10,7 +11,10 @@ export function AboutUsSection() {
 
       <ContentContainer>
         <ImageWrapper>
-          <img src={MassageImage} alt="Massoterapia no Hub Monique Ferraz" />
+          <BorderedImage
+                    src={MassageImage}
+                    alt="Local"
+                    />
         </ImageWrapper>
 
         <TextWrapper>

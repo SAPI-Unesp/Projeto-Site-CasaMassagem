@@ -1,7 +1,8 @@
 import React from "react";
 import { SectionContainer, Title, CardsContainer, Card, IconText, Info } from "./Contact.styles";
 import { FaWhatsapp, FaInstagram, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import LocationImage from "./../../../assets/testeLocation.jpg"
+import LocationImage from "../../../../assets/testeLocation.jpg"
+import { BorderedImage } from "../../../../components/BorderedImage/BorderedImage";
 
 export function ContactSection() {
   const contactInfo = {
@@ -26,7 +27,12 @@ export function ContactSection() {
 
       <CardsContainer>
         <Card>
-          <img src={contactInfo.image} alt="Local" />
+          <BorderedImage
+          src={contactInfo.image}
+          alt="Local"
+          height="300px"
+          borderRadius="30px 30px 0 0"
+          />
           <Info>
             <IconText><FaMapMarkerAlt /> {contactInfo.address}</IconText>
             <IconText><FaWhatsapp /> {contactInfo.phone}</IconText>
