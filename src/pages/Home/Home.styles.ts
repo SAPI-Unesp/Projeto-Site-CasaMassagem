@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 
 
+export const HomeContainer = styled.main`
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff4ee; 
+`;
+
 //Depoimentos
 export const DepoimentosSection = styled.section`
   padding: 40px 20px;

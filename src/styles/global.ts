@@ -35,7 +35,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    display: flex;
+    display: flex;//retirar caso queira que a pagina nao tenha a ideia de bloco
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
