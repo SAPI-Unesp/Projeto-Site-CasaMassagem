@@ -1,13 +1,3 @@
-
-import {
-  HeroContainer,
-  TextContainer,
-  HeroLogo,
-  HeroSlogan,
-  ImageFrame,
-  MassagistImage,
-} from './Home.styles';
-
 import {
   DepoimentosSection,
   SectionTitle,
@@ -18,25 +8,14 @@ import {
   DepoimentoAuthor
 } from './Home.styles';
 
+import {HeroSection} from './Sections/Hero/Hero'
 import {ContactSection} from './Sections/Contact/Contact'
-
-import logoImage from '../../assets/logo.png';
-import massagistImage from '../../assets/image.png';
 import { AboutUsSection } from './Sections/AboutUs/AboutUs';
 
 export function Home() {
     return (
         <>
-            {/*Hero*/}
-            <HeroContainer>
-                <TextContainer>
-                    <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />
-                </TextContainer>
-                <ImageFrame>
-                    <MassagistImage src={massagistImage} alt="Massoterapeuta Monique Ferraz" />
-                </ImageFrame>
-                <HeroSlogan>ALIVIO, EQUILIBRIO E CUIDADO EM CADA SESSÃO</HeroSlogan>
-            </HeroContainer>
+            <HeroSection/>
 
             <AboutUsSection/>
 
