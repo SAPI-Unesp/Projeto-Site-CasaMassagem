@@ -9,6 +9,7 @@ export const theme = {
     },
     fontSizes: {
         Title: '3.5rem',
+        //...
         //adicionar tamanhos de fontespara paragrafos, titulos, subtitulos..
     },
     fontsStyles: {

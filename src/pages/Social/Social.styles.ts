@@ -1,18 +1,41 @@
 import styled from 'styled-components';
 
-export const AppContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: gold;
+import HeroBackgroundSVG from '../../assets/backgroundSocialHero.svg?react';
+
+export const HeroContainer = styled.section`
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
-export const Title = styled.h1`
-    font-size: ${({ theme }) => theme.fontSizes.xs};
-    margin-top: 0.1rem;
-    color: black;
+export const StyledHeroBackground = styled(HeroBackgroundSVG).attrs(() => ({
+  preserveAspectRatio: "xMidYMid slice" 
+}))`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.77;
+`;
+
+export const LogoContainer = styled.div`
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+`;
+
+export const LogoImage = styled.img`
+  width: 600px;
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
 `;

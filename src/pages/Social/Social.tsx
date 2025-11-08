@@ -1,9 +1,21 @@
-import { AppContainer, Title } from './Social.styles';
+import { 
+    HeroContainer,
+    StyledHeroBackground,
+    LogoContainer,
+    LogoImage
+} from './Social.styles';
+
+import logoImage from '../../assets/logo.png';
 
 export function Social() {
     return (
-        <AppContainer>
-            <Title>PROJETO SOCIAL</Title>
-        </AppContainer>
+        <>
+            <HeroContainer>
+                <StyledHeroBackground />
+                <LogoContainer>
+                    <LogoImage src={logoImage} alt="Logo Monique Ferraz" />
+                </LogoContainer>
+            </HeroContainer>
+        </>
     );
 }
