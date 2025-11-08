@@ -1,21 +1,9 @@
-import { 
-    HeroContainer,
-    StyledHeroBackground,
-    LogoContainer,
-    LogoImage
-} from './Social.styles';
-
-import logoImage from '../../assets/logo.png';
+import { Hero } from "./Hero/Hero.tsx";
 
 export function Social() {
     return (
         <>
-            <HeroContainer>
-                <StyledHeroBackground />
-                <LogoContainer>
-                    <LogoImage src={logoImage} alt="Logo Monique Ferraz" />
-                </LogoContainer>
-            </HeroContainer>
+            <Hero />
         </>
     );
 }
