@@ -2,58 +2,79 @@ import React from "react";
 import { BorderedImage } from "../../../components/BorderedImage/BorderedImage";
 import {
   SectionContainer,
-  ImageSideWrapper,
-  ContentSideWrapper,
   SectionTitle,
+  Subtitle,
   MotivationBox,
   MotivationText,
+  GreenFrameWrapper,
+  BeigeBorderFix,
   ImagesRow,
   ImageCard,
   ImageCaption,
 } from "./Description.styles";
 
+import video from '../../../assets/image.png';
+import Image1 from '../../../assets/image.png';
+import Image2 from '../../../assets/image.png';
+
 export function Description() {
   return (
     <SectionContainer>
-      <ImageSideWrapper>
-        <img
-          src="../../../assets/image.png"
-          alt=""
-          className="main-image"
-        />
-      </ImageSideWrapper>
-      <ContentSideWrapper>
-        <SectionTitle>“Cuidar de quem cuida”</SectionTitle>
-        <h2 className="subtitle">MINHA MOTIVAÇÃO</h2>
+      <SectionTitle>
+        “CUIDAR DE<br />QUEM CUIDA”
+      </SectionTitle>
 
-        <MotivationBox>
-          <MotivationText>
-            O Hub Monique Ferraz acredita que o cuidado precisa alcançar quem
-            dedica a vida a cuidar dos outros. Por isso, criamos o projeto
-            “Cuidar de Quem Cuida”, uma ação que leva toques de Quiropraxia e
-            Massagem para profissionais colaboradores das escolas de Itapecerica
-            (SP).
-            <br />
-            <br />
-            As sessões acontecem dentro das escolas e têm o objetivo de aliviar o
-            estresse, promover bem-estar e recordar o poder que a massagem tem na
-            vida. É uma forma de agradecimento e reconhecimento a quem ensina,
-            forma e inspira tantas pessoas.
-          </MotivationText>
-        </MotivationBox>
+      <div style={{ width: "100%", marginBottom: "3rem" }}>
+        <GreenFrameWrapper>
+          <BeigeBorderFix>
+              <BorderedImage
+                src={video}
+                alt="Detalhe da terapia"
+                height="400px"
+              />
+            </BeigeBorderFix>
+        </GreenFrameWrapper>
+      </div>
 
-        <ImagesRow>
-          <ImageCard>
-            <BorderedImage src="../../../assets/image.png" alt="" />
-            <ImageCaption>Toque que acolhe</ImageCaption>
-          </ImageCard>
+      <Subtitle>MINHA MOTIVAÇÃO</Subtitle>
 
-          <ImageCard>
-            <BorderedImage src="../../../assets/image.png" alt="" />
-            <ImageCaption>Bem-estar na escola</ImageCaption>
-          </ImageCard>
-        </ImagesRow>
-      </ContentSideWrapper>
+      <MotivationBox>
+        <MotivationText>
+          O Hub Monique Ferraz acredita que o cuidado precisa alcançar quem
+          dedica a vida a cuidar dos outros. Por isso, criamos o projeto
+          “Cuidar de Quem Cuida”, uma ação que leva toques de Quiropraxia e
+          Massagem para profissionais colaboradores das escolas.
+        </MotivationText>
+        <MotivationText>
+          As sessões acontecem dentro das escolas e têm o objetivo de aliviar o
+          estresse, promover bem-estar e recordar o poder que a massagem tem na
+          vida. É uma forma de agradecimento a quem ensina.
+        </MotivationText>
+      </MotivationBox>
+
+      <ImagesRow>
+        <ImageCard>
+            <BeigeBorderFix>
+              <BorderedImage
+                src={Image1}
+                alt="Massagem facial"
+                height="400px"
+              />
+            </BeigeBorderFix>
+          <ImageCaption>“Parte mais marcante do texto acima escrita aqui [...]”</ImageCaption>
+        
+        </ImageCard>
+        <ImageCard>
+            <BeigeBorderFix>
+              <BorderedImage
+                src={Image2}
+                alt="Detalhe da terapia"
+                height="400px" 
+              />
+            </BeigeBorderFix>
+          <ImageCaption>“[...] Outra parte marcante!”</ImageCaption>
+        </ImageCard>
+      </ImagesRow>
 
     </SectionContainer>
   );

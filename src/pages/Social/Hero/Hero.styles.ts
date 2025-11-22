@@ -4,7 +4,7 @@ import HeroBackgroundSVG from '../../../assets/backgroundSocialHero.svg?react';
 
 export const HeroContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@ export const HeroContainer = styled.section`
 `;
 
 export const StyledHeroBackground = styled(HeroBackgroundSVG).attrs(() => ({
-  preserveAspectRatio: "xMidYMid slice" 
+  preserveAspectRatio: "xMidYMid meet" 
 }))`
   position: absolute;
   top: 0;
