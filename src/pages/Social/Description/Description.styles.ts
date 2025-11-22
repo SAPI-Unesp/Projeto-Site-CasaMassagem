@@ -6,7 +6,8 @@ const colors = {
   text: "#6D5F52",
   greenFrame: "#7C8C61",
   beigeFrame: "#E9E2D0",
-  boxBg: "#F7F0E3",
+  boxBg: "#FAEBD4",
+  boxBorder: "#ffffff",
 };
 
 export const SectionContainer = styled.section`
@@ -18,7 +19,7 @@ export const SectionContainer = styled.section`
   align-items: center;
   padding: 6rem 2rem;
   background: transparent;
-  font-family: "Times New Roman", Times, serif;
+  font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
 `;
 
 
@@ -63,8 +64,9 @@ export const SectionTitle = styled.h1`
 export const Subtitle = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: 1.8rem; 
+  font-size: ${({ theme }) => theme.spacing.xxxl}; 
   font-weight: 600;
+  font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   color: ${colors.subtitle};
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -73,17 +75,17 @@ export const Subtitle = styled.h2`
 
 export const MotivationBox = styled.div`
   background: ${colors.boxBg};
-  padding: 4rem 3.5rem 6rem 3.5rem; 
-  border-radius: 40px;
-  width: 100%;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 15px solid ${colors.boxBorder};
+  padding: 4rem 3.5rem 7rem 3.5rem; 
+  border-radius: 45px;
+  width: 150%;
   box-shadow: 0 8px 20px rgba(139, 90, 60, 0.08);
   position: relative;
   z-index: 1;
 `;
 
 export const MotivationText = styled.p`
-  font-size: 1.4rem; 
+  font-size: ${({ theme }) => theme.spacing.xl}; 
   color: ${colors.text};
   line-height: 1.8;
   text-align: justify;
