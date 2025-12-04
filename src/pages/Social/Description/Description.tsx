@@ -15,7 +15,6 @@ import {
 
 import video from '../../../assets/image.png';
 import Image1 from '../../../assets/image.png';
-import Image2 from '../../../assets/image.png';
 
 export function Description() {
   return (
@@ -67,7 +66,7 @@ export function Description() {
         <ImageCard>
             <BeigeBorderFix>
               <BorderedImage
-                src={Image2}
+                src={Image1}
                 alt="Detalhe da terapia"
                 height="400px" 
               />

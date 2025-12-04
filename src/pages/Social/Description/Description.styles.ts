@@ -50,7 +50,7 @@ export const BeigeBorderFix = styled.div`
 
 
 export const SectionTitle = styled.h1`
-  font-size: 3.8rem; 
+  font-size: ${({ theme }) => theme.fontSizes.Title3};
   text-align: center;
   color: ${colors.title};
   font-weight: 700;
@@ -64,8 +64,8 @@ export const SectionTitle = styled.h1`
 export const Subtitle = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: ${({ theme }) => theme.spacing.xxxl}; 
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSizes.Title2}; 
+  font-weight: 400;
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   color: ${colors.subtitle};
   text-transform: uppercase;
@@ -75,11 +75,11 @@ export const Subtitle = styled.h2`
 
 export const MotivationBox = styled.div`
   background: ${colors.boxBg};
-  border: 15px solid ${colors.boxBorder};
   padding: 4rem 3.5rem 7rem 3.5rem; 
-  border-radius: 45px;
+  border-radius: 63px;
   width: 150%;
-  box-shadow: 0 8px 20px rgba(139, 90, 60, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), 
+              inset 0 0 0 9px rgba(255, 255, 255, 0.4);
   position: relative;
   z-index: 1;
 `;

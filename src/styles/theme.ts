@@ -25,6 +25,7 @@ export const theme = {
     fontSizes: {
         Title1: '4.25rem',
         Title2: '3.75rem',
+        Title3: '6.5rem',
         Paragrafo: '1.4rem',
         //...
         //adicionar tamanhos de fontes para paragrafos, titulos, subtitulos..
