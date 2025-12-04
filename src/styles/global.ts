@@ -55,7 +55,7 @@ body {
     width: 100%;
     max-width: 1600px; 
     min-height: 600px; 
-
+    background-color: rgba(225, 221, 212, 0.15);
     box-shadow: 0px 16px 10px 12px rgba(0, 0, 0, 0.25);
 
     display: flex;

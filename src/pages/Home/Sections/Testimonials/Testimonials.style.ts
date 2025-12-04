@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const DepoimentosSection = styled.div`
   width: 100%;
-  background-color: #fff4ee;
   padding: 80px 20px;
   box-sizing: border-box;
   display: flex;

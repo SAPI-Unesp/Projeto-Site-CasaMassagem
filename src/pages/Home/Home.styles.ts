@@ -6,7 +6,7 @@ export const HomeContainer = styled.main`
   flex-direction: column; 
   align-items: center; 
   width: 100%;
-  min-height: 100vh;
-  background-color: #fff4ee; 
+  min-height: 100vh; 
+  background-color: rgba(225, 221, 212, 0.2);
 `;
 

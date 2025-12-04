@@ -1,15 +1,16 @@
 import {
   AboutUsSection,
   SectionTitle,
-  ProjectImage,
-  TextBox,
-  Text,
-  MoreInfoButton
+  ContentContainer,
+  ImageWrapper,
+  TextWrapper
 } from './Project.style';
 
 import { useNavigate } from "react-router-dom";
 
 import BoxImage from "../../../../assets/foto-teste-social.png"
+import { BorderedImage } from "../../../../components/BorderedImage/BorderedImage";
+import { Button } from '../../../../components/Button/Button';
 
 
 export function ProjectSection() {
@@ -23,25 +24,25 @@ export function ProjectSection() {
 
   return (
     <AboutUsSection>
-      <SectionTitle>Projeto "Cuidar de <br></br> Quem Cuida"</SectionTitle>
+      <SectionTitle>Projeto "Cuidar de <br/> Quem Cuida"</SectionTitle>
 
-      <ProjectImage 
-        src={BoxImage} 
-        alt="calma" 
-      />
+      <ContentContainer>
+        <ImageWrapper>
+        <BorderedImage
+                  src={BoxImage}
+                  alt="projeto-social-image"
+        />
+        </ImageWrapper>
+        <TextWrapper>
+          <p>
+           O Hub Monique Ferraz acredita que o cuidado precisa alcançar quem dedica a vida a cuidar dos outros. Por isso, criamos o projeto “Cuidar de Quem Cuida”, uma ação que leva o toque da Quick Massage até professores e colaboradores das escolas de Itaporanga (SP).
+          </p>
+        </TextWrapper>
 
-      <TextBox>
-        <Text>
-          O Hub Monique Ferraz acredita que o cuidado precisa alcançar
-          quem dedica a vida a cuidar dos outros. Por isso, criamos o
-          projeto “Cuidar de Quem Cuida”, uma ação que leva o toque da
-          Quick Massage até professores e colaboradores das escolas de
-          Itaporanga (SP).
-        </Text>
-        <MoreInfoButton onClick={handleClick}>
-          Saiba Mais...
-        </MoreInfoButton>
-      </TextBox>
+        <Button onClick={handleClick}>Saiba mais</Button>
+      </ContentContainer>
+
+      
       
     </AboutUsSection>
   );

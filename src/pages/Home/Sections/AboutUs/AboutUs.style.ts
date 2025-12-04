@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const SectionContainer = styled.section`
   width: 100%;
-  background: #fff4ee;
-
   padding: 100px 20px;
   display: flex;
   flex-direction: column;
@@ -56,8 +54,8 @@ export const TextWrapper = styled.div`
               inset 0 0 0 9px rgba(255, 255, 255, 0.4);
 
   font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
-  font-size: 1.4rem;
-  color: #6b4f3b;
+  font-size: ${({ theme }) => theme.fontSizes.Paragrafo};
+  color: ${({ theme }) => theme.colors.marrom1};
   line-height: 1.7;
   text-align: justify;
   position: relative;
