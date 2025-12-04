@@ -9,7 +9,7 @@ import {
 } from './Hero.styles';
 
 import logoImage from '../../../../assets/logo.png';
-import massagistImage from '../../../../assets/image.png';
+import massagistImage from '../../../../assets/template.jpg';
 
 
 export function HeroSection() {

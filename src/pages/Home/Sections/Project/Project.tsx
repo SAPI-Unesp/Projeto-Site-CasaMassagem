@@ -7,16 +7,26 @@ import {
   MoreInfoButton
 } from './Project.style';
 
-// Você precisará substituir isso pelo caminho real da sua imagem
-const massagemImage = "https://placehold.co/600x400/e8c1a0/7a5c4a?text=Vou por dps";
+import { useNavigate } from "react-router-dom";
+
+import BoxImage from "../../../../assets/foto-teste-social.png"
+
 
 export function ProjectSection() {
+
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate("/projetosocial");
+    window.scrollTo(0, 0);
+  }
+
   return (
     <AboutUsSection>
-      <SectionTitle>Projeto "Cuidar de Quem Cuida"</SectionTitle>
+      <SectionTitle>Projeto "Cuidar de <br></br> Quem Cuida"</SectionTitle>
 
       <ProjectImage 
-        src={massagemImage} 
+        src={BoxImage} 
         alt="calma" 
       />
 
@@ -28,7 +38,7 @@ export function ProjectSection() {
           Quick Massage até professores e colaboradores das escolas de
           Itaporanga (SP).
         </Text>
-        <MoreInfoButton>
+        <MoreInfoButton onClick={handleClick}>
           Saiba Mais...
         </MoreInfoButton>
       </TextBox>

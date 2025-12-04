@@ -12,7 +12,7 @@ function App() {
             <BrowserRouter>
                 <Routes> 
                     <Route path="/" element={<Home />}/>
-                    <Route path="/ProjetoSocial" element={<Social />}/>
+                    <Route path="/projetosocial" element={<Social />}/>
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>

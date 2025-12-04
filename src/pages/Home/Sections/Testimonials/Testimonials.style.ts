@@ -1,21 +1,23 @@
 import styled from "styled-components";
 
 export const DepoimentosSection = styled.div`
-  padding: 40px 22px;
-  background-color: #fff4ee; 
-  text-align: center;
-  max-width: 16200px;    /* Mesmo max-width do grid */
-  margin-left: auto;   /* Centraliza o bloco do título */
-  margin-right: auto;  /* Centraliza o bloco do título */
+  width: 100%;
+  background-color: #fff4ee;
+  padding: 80px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2.5em;
-  color: #6b4d3a; 
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  padding-left: 40px;
+  width: 100%; 
+  max-width: 1500;
   text-align: left;
-  padding-left: 1px; 
-  
+  font-size: ${({ theme }) => theme.fontSizes.Title2};
+  color: ${({ theme }) => theme.colors.marrom1};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
 `;
 
 export const DepoimentosGrid = styled.div`
@@ -24,7 +26,7 @@ export const DepoimentosGrid = styled.div`
   justify-content: start;
   gap: 25px; 
   justify-items: center;
-  max-width: 1600px;
+  max-width: 1500px;
   margin: 0 auto;
 `;
 
@@ -67,10 +69,10 @@ export const DepoimentoText = styled.p`
 `;
 
 export const DepoimentoAuthor = styled.p`
-  font-size: 1.1em;
-  color: #000000ff; 
+  font-size: 1.4em;
+  color: black; 
+  font-family: ${({theme}) => theme.fontsStyles.Cormorant};
   margin: 0;
   margin-top: 1rem;
   text-align: right;
-  font-weight: bold;
 `;

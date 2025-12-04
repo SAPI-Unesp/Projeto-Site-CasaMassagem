@@ -33,19 +33,32 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  body {
+body {
     margin: 0;
-    display: flex;//retirar caso queira que a pagina nao tenha a ideia de bloco
+    
+    display: flex; 
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
+    
     min-width: 320px;
     min-height: 100vh;
+    
     background-image: var(--global-bg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: relative;
     background-attachment: fixed;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 1600px; 
+    min-height: 600px; 
+
+    box-shadow: 0px 16px 10px 12px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
   }
 `;

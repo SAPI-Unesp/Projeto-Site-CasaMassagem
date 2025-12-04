@@ -17,8 +17,8 @@ export const Title = styled.div`
   h2 {
     font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
     font-weight: ${({ theme }) => theme.fontWeights.regular};
-    font-size: ${({ theme }) => theme.fontSizes.Title};
-    color: #5e4633;
+    font-size: ${({ theme }) => theme.fontSizes.Title1};
+    color: ${({ theme }) => theme.colors.marrom1};
     margin-top: 10px;
   }
 `;

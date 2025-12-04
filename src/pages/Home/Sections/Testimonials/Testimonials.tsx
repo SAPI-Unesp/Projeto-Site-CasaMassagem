@@ -43,6 +43,7 @@ export function TestimonialsSection() {
                         <DepoimentoText>"Ambiente super aconchegante e profissional excelente."</DepoimentoText>
                         <DepoimentoAuthor>@juliana_m</DepoimentoAuthor>
                     </DepoimentoCard2>
+        
                 </DepoimentosGrid>
             </DepoimentosSection>
   );

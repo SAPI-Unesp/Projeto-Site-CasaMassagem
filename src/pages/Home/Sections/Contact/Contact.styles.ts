@@ -8,7 +8,7 @@ export const SectionContainer = styled.section`
 `;
 
 export const Title = styled.div`
-  padding-left: 20px; 
+  padding-left: 40px; 
   text-align: left;
   width: 100%;
   max-width: 1200px;
@@ -16,18 +16,9 @@ export const Title = styled.div`
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   font-weight: bold;
 
-  span {
-    color: #835e4e; 
-    font-weight: 700;
-    font-size: 1.6rem;
-    font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
-    letter-spacing: 1px;
-    font-weight: normal;
-  }
-
   h2 {
-    font-size: 2.5rem;
-    color: #6b4d3a;
+    font-size: ${({ theme }) => theme.fontSizes.Title2};
+    color: ${({ theme }) => theme.colors.marrom1};
     font-weight: 900;
     line-height: 1.2;
   }
@@ -87,7 +78,7 @@ export const Card = styled.div`
 export const Info = styled.div`
   background: linear-gradient(
     to bottom, 
-    rgba(143, 156, 103, 0.85), 
+    rgba(132, 145, 96, 0.85), 
     rgba(132, 150, 79, 0.87)
   );
   padding: 1.5rem;
@@ -104,7 +95,8 @@ export const IconText = styled.div`
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  color: white;
+  color: ${({theme}) => theme.colors.bege2};
+  text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.25);
   font-size: 1.12rem;
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   font-weight: 700;

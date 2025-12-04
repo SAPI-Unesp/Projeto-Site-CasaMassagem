@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import HeroBackgroundSVG from '../../../assets/backgroundSocialHero.svg?react';
 
 export const HeroContainer = styled.section`
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -15,17 +15,14 @@ export const HeroContainer = styled.section`
 export const StyledHeroBackground = styled(HeroBackgroundSVG).attrs(() => ({
   preserveAspectRatio: "xMidYMid meet" 
 }))`
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100%;
   z-index: 0;
   opacity: 0.77;
 `;
 
 export const LogoContainer = styled.div`
-  position: relative;
+  position:  absolute;
   z-index: 1;
   display: flex;
   justify-content: center;

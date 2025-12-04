@@ -11,18 +11,20 @@ export const theme = {
         verde: '#9CA86A',     //tema principal
         branco1: '#F2E4D4',   //fundo 'sobre nos'
         branco2: '#F4E3BD',   //letra 'servicos' na main
-        marrom1: '#91654E',   //letras 'sobre nos', projeto,
+        marrom1: '#805F46',   //letras 'sobre nos', projeto,
                                 //depoimentos, 'fale comigo'
-        beje: '#C8B189',      //fundo depoimentos
-
+        beje: '#C8B189',      //fundo depoimentosh
+        bege2: '#D0DBB3', //especificacoes do endereco
         //Servicos
         verdeEscuro: '#707C47',  //fundo logo
         verdeClaro: '#98A371',   //fundo header
         marrom2: '#88583F',      //letra pop-up
         branco3: '#E1DDD5',      //fundo pop-up
+        
     },
     fontSizes: {
-        Title: '3.5rem',
+        Title1: '4.25rem',
+        Title2: '3.75rem',
         //...
         //adicionar tamanhos de fontes para paragrafos, titulos, subtitulos..
     },

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { theme } from "../../../../styles/theme";
 
 export const AboutUsSection = styled.section`
   display: flex;
@@ -10,12 +10,13 @@ export const AboutUsSection = styled.section`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2.5em;
-  color: #91654E; /* Cor exata da sua imagem */
+  font-size: ${({ theme }) => theme.fontSizes.Title1};
+  color: ${({ theme }) => theme.colors.marrom1}; /* Cor exata da sua imagem */
   text-transform: uppercase;
   margin-bottom: 40px;
   text-align: center;
-  font-family: 'Times New Roman', serif; /* Fonte parecida */
+  font-family: ${({theme}) => theme.fontsStyles.Cinzel};
+  font-weight: ${({theme}) => theme.fontWeights.regular};
 `;
 
 export const ProjectImage = styled.img`
@@ -23,10 +24,6 @@ export const ProjectImage = styled.img`
   max-width: 750px; /* Tamanho da imagem */
   border-radius: 45px;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra forte */
-
- 
-  padding-left: 340px
-  
   z-index: 1;
 `;
 

@@ -19,7 +19,6 @@ export function ContactSection() {
   return (
     <SectionContainer>
       <Title>
-        <span>Fale comigo</span>
         <h2>
           Alguma dúvida? <br /> Entre em contato
         </h2>
