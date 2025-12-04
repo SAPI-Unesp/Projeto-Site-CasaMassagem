@@ -109,7 +109,7 @@ export const ImagesRow = styled.div`
 
 export const ImageCard = styled.div`
   position: relative;
-  width: 90%;
+  width: 130%;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
 
   &:nth-child(odd) {
@@ -130,11 +130,13 @@ export const ImageCaption = styled.div`
   transform: translateX(-50%);
   width: 85%;
   
-  background: rgba(255, 255, 255, 0.3);
+  /*background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
+  -webkit-backdrop-filter: blur(10px);*/
+  /*border: 2px solid rgba(255, 255, 255, 0.6);*/
+  /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+
+  /*border-radius: 16px;*/
 
   padding: 1rem;
   font-size: 1.1rem; 

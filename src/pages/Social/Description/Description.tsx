@@ -13,8 +13,8 @@ import {
   ImageCaption,
 } from "./Description.styles";
 
-import video from '../../../assets/image.png';
-import Image1 from '../../../assets/image.png';
+import video from '../../../assets/template.jpg';
+import Image1 from '../../../assets/foto-teste-social.png';
 
 export function Description() {
   return (
