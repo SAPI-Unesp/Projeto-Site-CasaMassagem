@@ -13,7 +13,6 @@ import {
   ImageCaption,
 } from "./Description.styles";
 
-import video from '../../../assets/template.jpg';
 import Image1 from '../../../assets/foto-teste-social.png';
 
 export function Description() {
@@ -23,18 +22,22 @@ export function Description() {
         “CUIDAR DE<br />QUEM CUIDA”
       </SectionTitle>
 
-      <div style={{ width: "100%", marginBottom: "3rem" }}>
+      <div style={{ width: "100%", marginBottom: "3rem", pointerEvents: "auto" }}>
         <GreenFrameWrapper>
           <BeigeBorderFix>
-              <BorderedImage
-                src={video}
-                alt="Detalhe da terapia"
-                height="400px"
-              />
-            </BeigeBorderFix>
+            <iframe 
+              width="100%" 
+              height="400px" 
+              src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0"} 
+              title="Detalhe da terapia" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen // No TSX, passar o atributo assim já significa allowFullScreen={true}
+              style={{ display: "block" }} 
+            />
+          </BeigeBorderFix>
         </GreenFrameWrapper>
       </div>
-
       <Subtitle>MINHA MOTIVAÇÃO</Subtitle>
 
       <MotivationBox>
