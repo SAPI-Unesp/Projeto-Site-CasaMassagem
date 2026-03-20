@@ -1,16 +1,19 @@
 import { CardBackground, CardBtn, CardImage, CardInfoContainer, CardTitle } from "./card.styles";
-import template from "../../../assets/template.jpg"
 
+type CardProps = {
+    title: string;
+    image: string;
+};
 
-export function Card() {
+export function Card({ title, image }: CardProps) {
 
     return (
             
         <div style={{ position: "relative" }}>
-            <CardImage src={template} />
+            <CardImage src={image} />
 
             <CardInfoContainer> 
-                <CardTitle> Relaxante </CardTitle>
+                <CardTitle> {title} </CardTitle>
                 <CardBtn> Saiba Mais</CardBtn>
             </CardInfoContainer>
         </div>
