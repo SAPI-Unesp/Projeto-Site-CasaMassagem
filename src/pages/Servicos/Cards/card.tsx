@@ -1,4 +1,4 @@
-import { CardBackground, CardBtn, CardImage, CardInfoContainer, CardTitle } from "./card.styles";
+import { CardBtn, CardImage, CardInfoContainer, CardTitle } from "./card.styles";
 
 type CardProps = {
     title: string;
