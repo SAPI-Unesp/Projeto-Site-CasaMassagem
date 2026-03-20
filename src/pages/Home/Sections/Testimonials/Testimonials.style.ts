@@ -1,6 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
-export const DepoimentosSection = styled.div`
+// --- ANIMAÇÃO ---
+
+const scrollAnimation = keyframes`
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+`;
+// --------------------------------
+
+export const TestimonialSection = styled.div`
   width: 100%;
   padding: 80px 20px;
   box-sizing: border-box;
@@ -12,66 +24,53 @@ export const DepoimentosSection = styled.div`
 export const SectionTitle = styled.h2`
   padding-left: 40px;
   width: 100%; 
-  max-width: 1500;
+  max-width: 1500px;
   text-align: left;
-  font-size: ${({ theme }) => theme.fontSizes.Title2};
-  color: ${({ theme }) => theme.colors.marrom1};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  font-size: ${({ theme }) => theme.fontSizes?.Title2 || '2rem'};
+  color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
+  margin-bottom: 40px;
 `;
 
-export const DepoimentosGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-  justify-content: start;
-  gap: 25px; 
-  justify-items: center;
+export const CarroselContainer = styled.div`
+  display: flex;
+  width: 100%;
   max-width: 1500px;
+  overflow: hidden; 
   margin: 0 auto;
 `;
 
-export const DepoimentoCard = styled.div`
+export const CarroselTrack = styled.div`
+  display: flex;
+  gap: 25px;
+  padding: 20px; /* Importante ser igual ao gap para o loop funfar */
+  width: max-content;
+  animation: ${scrollAnimation} 20s linear infinite;
+  
+`;
+
+
+export const TestimonialCard = styled.div`
   background-color: #d1b897; 
   border-radius: 40px;
   padding: 25px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
   text-align: left;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
+  
+  flex-shrink: 0; 
+  width: 350px; 
   min-height: 110px; 
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-export const DepoimentoCard2 = styled.div`
-  background-color: #d1b897; 
-  border-radius: 40px;
-  padding: 25px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
-  text-align: left;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  min-height: 110px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+export const TestimonialText = styled.p`
+  font-size: 1rem;
+  font-style: italic;
 `;
 
-export const DepoimentoText = styled.p`
-  font-size: 1.4em;
-  color: #835e4eff; 
-  margin: 0;
-  font-family: 'Times New Roman', serif;
+export const TestimonialAuthor = styled.span`
   font-weight: bold;
-`;
-
-export const DepoimentoAuthor = styled.p`
-  font-size: 1.4em;
-  color: black; 
-  font-family: ${({theme}) => theme.fontsStyles.Cormorant};
-  margin: 0;
-  margin-top: 1rem;
-  text-align: right;
+  margin-top: 15px;
 `;
