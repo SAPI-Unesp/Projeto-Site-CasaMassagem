@@ -8,6 +8,7 @@ export const TopbarSection = styled.div`
     justify-content: space-between;
     width: 100%;
     height: auto;
+    margin-bottom: 30px;
 `;
 
 export const TopbarBackground = styled.div`
@@ -18,6 +19,7 @@ export const TopbarBackground = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    opacity: 0.9;
 `;
 
 export const TopbarLogo = styled.img`
