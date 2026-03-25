@@ -8,6 +8,7 @@ import { AboutUsSection } from './Sections/AboutUs/AboutUs';
 import { TestimonialsSection } from './Sections/Testimonials/Testimonials';
 import { ProjectSection } from './Sections/Project/Project';
 import { Footer } from  './Sections/Footer/Footer';
+import { ServicesSection } from './Sections/Services/Services';
 
 export function Home() {
     return (
@@ -17,6 +18,9 @@ export function Home() {
             <AboutUsSection/>
 
             <ProjectSection/>
+
+            <ServicesSection/>
+            
             <TestimonialsSection/>
 
             <ContactSection>
