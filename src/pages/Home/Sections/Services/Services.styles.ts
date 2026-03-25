@@ -44,9 +44,6 @@ background: linear-gradient(
 
   border-radius: 88px 88px 0 0;
 
-  & > button{
-    margin-top: 30px;
-  }
 `;
 
 export const SectionTitle = styled.h2`
