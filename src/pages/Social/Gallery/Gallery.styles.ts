@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const GalleryContainer = styled.div`
     width: 80%;
     margin-bottom: 100px;
@@ -24,8 +25,8 @@ export const GREEN = styled.div`
     padding: 32px;
 
     display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    grid-auto-rows: calc((100vw - 64px - (17 * 16px)) / 18);
+    grid-template-columns: repeat(50, 1fr);
+    grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
 
     background-color: #7c8c61;
 
