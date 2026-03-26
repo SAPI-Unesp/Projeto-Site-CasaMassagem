@@ -18,7 +18,46 @@ export const GalleryTitle = styled.h1`
 `;
 
 export const GREEN = styled.div`
-    background-color: #7C8C61;
     width: 100%;
     height: 1000px;
+    gap: 16px;
+    padding: 32px;
+
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-auto-rows: calc((100vw - 64px - (17 * 16px)) / 18);
+
+    background-color: #7c8c61;
+
+    // Esconde a barra de rolagem, mas permite rolar
+    overflow-y: scroll;
+
+    // Chrome, Safari, Edge novo
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    // Firefox
+    scrollbar-width: none;
+
+    // IE, Edge velho
+    -ms-overflow-style: none;
+`;
+
+export const ImageCard = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background-color: #f0f0f0;
+    border: 2px solid #9e4141;
+
+    grid-column: span ${props => props.colSpan || 1};
+    grid-row: span ${props => props.rowSpan || 1};
+`;
+
+export const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `;
