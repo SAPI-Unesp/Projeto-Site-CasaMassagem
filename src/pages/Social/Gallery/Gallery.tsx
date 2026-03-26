@@ -20,8 +20,13 @@ import img10 from '../../../assets/gallery/10.png';
 export function Gallery() {
     return (
         <GalleryContainer>
-            <GalleryTitle> Fotos </GalleryTitle>
+            <GalleryTitle> Acompanhe Nossas Visitas </GalleryTitle>
             <GREEN>
+                {/* Imagens dispostas em grid de largura 50 unidades */}
+                {/* cada imagem e disposta sobre colSpan unidades de largura*/}
+                {/* e rowSpan unidades de altura, gap automaticamente adicionado*/}
+                {/* tentar fazer cada linha somar 50 em colSpan */}
+
                 <ImageCard colSpan={22} rowSpan={14}>
                     <Image src={img1} alt="Foto 1" />
                 </ImageCard>
