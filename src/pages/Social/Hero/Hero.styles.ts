@@ -18,7 +18,7 @@ export const StyledHeroBackground = styled(HeroBackgroundSVG).attrs(() => ({
   position: relative;
   width: 100%;
   z-index: 0;
-  opacity: 0.77;
+  /* opacity: 0.77; */
 `;
 
 export const LogoContainer = styled.div`

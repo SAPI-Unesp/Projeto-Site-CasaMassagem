@@ -17,35 +17,52 @@ interface CarouselProps {
 }
 
 export function Carousel({ items, borderRadius = "40px" }: CarouselProps) {
+  
   return (
-    <S.SwiperContainer
-      modules={[EffectCoverflow, Navigation]}
-      effect="coverflow"
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={'auto'} 
-      loop={true}
-      loopAdditionalSlides={3}
-      coverflowEffect={{
-        rotate: 0,     
-        stretch: 0, 
-        depth: 300,    
-        modifier: 1,
-        slideShadows: false,
-      }}
-      navigation={true}
-    >
-      {items.map((item, index) => (
-        <SwiperSlide key={index}>
-          <BorderedImage 
-            src={item.src} 
-            alt={item.alt || item.title} 
-            borderRadius={borderRadius}
-            height="100%" 
-          />
-          {item.title && <S.SlideCaption>{item.title}</S.SlideCaption>}
-        </SwiperSlide>
-      ))}
-    </S.SwiperContainer>
+    <S.Wrapper>
+      <S.SwiperContainer
+        modules={[EffectCoverflow, Navigation]}
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
+        }}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'} 
+        loop={true}
+        loopAdditionalSlides={3}
+        spaceBetween={15}
+        coverflowEffect={{
+          rotate: 0,     
+          stretch: 0, 
+          depth: 300,    
+          modifier: 1,
+          slideShadows: false,
+        }}
+      >
+        {items.map((item, index) => (
+          <SwiperSlide key={index}>
+            <BorderedImage 
+              src={item.src} 
+              alt={item.alt || item.title} 
+              borderRadius={borderRadius}
+              height="100%" 
+            />
+            {item.title && (
+              <S.SlideCaption>
+                {item.title.split(" ").slice(0, 2).join(" ")}
+                <br />
+                {item.title.split(" ").slice(2).join(" ")}
+              </S.SlideCaption>
+            )}
+          </SwiperSlide>
+        ))}
+      </S.SwiperContainer>
+      <S.NavContainer>
+        <div className="swiper-button-prev custom-prev" />
+        <div className="swiper-button-next custom-next" />
+      </S.NavContainer>
+    </S.Wrapper>  
   );
 }

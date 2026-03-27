@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const SectionContainer = styled.section`
 width: 100%;
-padding: 100px 20px;
+padding: 80px 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
 box-sizing: border-box;
-position: relative;   
+position: relative;
+margin-top: 15px;
 
 background: linear-gradient(
     360deg,
@@ -44,13 +45,16 @@ background: linear-gradient(
 
   border-radius: 88px 88px 0 0;
 
+  & > button{
+    margin-top: 15px;
+  }
 `;
 
 export const SectionTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSizes.Title1};
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   color: ${({ theme }) => theme.colors.branco2};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  /* margin-bottom: ${({ theme }) => theme.spacing.s}; */
   font-weight: ${({ theme }) => theme.fontWeights.black};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
