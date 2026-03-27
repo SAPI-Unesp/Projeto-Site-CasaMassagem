@@ -13,6 +13,7 @@ export const GalleryTitle = styled.h1`
     font-weight: 400;
     font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
     color: #A48774;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
@@ -49,9 +50,10 @@ export const ImageCard = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
-    aspect-ratio: 1 / 1;
+    border-radius: 10px;
     background-color: #f0f0f0;
-    border: 2px solid #9e4141;
+
+    aspect-ratio: 1 / 1;
 
     grid-column: span ${props => props.colSpan || 1};
     grid-row: span ${props => props.rowSpan || 1};
@@ -63,6 +65,7 @@ export const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
     transition: transform 0.4s ease;
 
 `;
