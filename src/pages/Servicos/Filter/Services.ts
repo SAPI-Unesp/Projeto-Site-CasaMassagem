@@ -1,5 +1,11 @@
 import template from "../../../assets/template.jpg"
 
+export type Service = {
+    title: string,
+    categoria: string,
+    image: string
+}
+
 export const services = [
     {
         title: "Relaxante",
