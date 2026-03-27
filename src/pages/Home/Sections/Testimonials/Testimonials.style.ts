@@ -77,9 +77,9 @@ export const TestimonialCard = styled.div`
   border: 3px solid transparent; 
 
   &:hover {
-    transform: scale(1.15); 
-    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3); 
-    background-color: #dbbd8d;
+    transform: scale(1.18); 
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3); 
+    background-color: #dbbd7a;
     border-color: ${({ theme }) => theme.colors?.marrom1
   }
 `;
