@@ -3,7 +3,9 @@ import {
     GREEN,
     GalleryTitle,
     ImageCard,
-    Image
+    Image,
+    HoverOverlay,
+    HoverTitle
 } from './Gallery.styles';
 
 import img1  from '../../../assets/gallery/1.png';
@@ -16,6 +18,21 @@ import img7  from '../../../assets/gallery/7.png';
 import img8  from '../../../assets/gallery/8.png';
 import img9  from '../../../assets/gallery/9.png';
 import img10 from '../../../assets/gallery/10.png';
+import img11 from '../../../assets/gallery/11.png';
+
+const images = [
+    { src: img1, alt: "Foto 1", colSpan: 22, rowSpan: 14, hover: "Prazer de estar aqui" },
+    { src: img2, alt: "Foto 2", colSpan: 14, rowSpan: 25, hover: "Prazer de estar aqui" },
+    { src: img3, alt: "Foto 3", colSpan: 14, rowSpan: 25, hover: "Prazer de estar aqui" },
+    { src: img4, alt: "Foto 4", colSpan: 22, rowSpan: 28, hover: "Prazer de estar aqui" },
+    { src: img5, alt: "Foto 5", colSpan: 28, rowSpan: 17, hover: "Prazer de estar aqui" },
+    { src: img6, alt: "Foto 6", colSpan: 25, rowSpan: 17, hover: "Prazer de estar aqui" },
+    { src: img7, alt: "Foto 7", colSpan: 25, rowSpan: 17, hover: "Prazer de estar aqui" },
+    { src: img8, alt: "Foto 8", colSpan: 22, rowSpan: 14, hover: "Prazer de estar aqui" },
+    { src: img9, alt: "Foto 9", colSpan: 14, rowSpan: 25, hover: "Prazer de estar aqui" },
+    { src: img10, alt: "Foto 10", colSpan: 14, rowSpan: 25, hover: "Prazer de estar aqui" },
+    { src: img11, alt: "Foto 11", colSpan: 22, rowSpan: 32, hover: "Prazer de estar aqui" },
+];
 
 export function Gallery() {
     return (
@@ -27,39 +44,15 @@ export function Gallery() {
                 {/* e rowSpan unidades de altura, gap automaticamente adicionado*/}
                 {/* tentar fazer cada linha somar 50 em colSpan */}
 
-                <ImageCard colSpan={22} rowSpan={14}>
-                    <Image src={img1} alt="Foto 1" />
-                </ImageCard>
-                <ImageCard colSpan={14} rowSpan={25}>
-                    <Image src={img2} alt="Foto 2" />
-                </ImageCard>
-                <ImageCard colSpan={14} rowSpan={25}>
-                    <Image src={img3} alt="Foto 3" />
-                </ImageCard>
+                {images.map((image) => (
+                    <ImageCard colSpan={image.colSpan} rowSpan={image.rowSpan}>
+                        <Image src={image.src} alt={image.alt} />
+                        <HoverOverlay>
+                            <HoverTitle>"{image.hover}"</HoverTitle>
+                        </HoverOverlay>
+                    </ImageCard>
+                ))}
 
-                <ImageCard colSpan={22} rowSpan={28}>
-                    <Image src={img4} alt="Foto 4" />
-                </ImageCard>
-                <ImageCard colSpan={28} rowSpan={17}>
-                    <Image src={img5} alt="Foto 5" />
-                </ImageCard>
-
-                <ImageCard colSpan={25} rowSpan={17}>
-                    <Image src={img6} alt="Foto 6" />
-                </ImageCard>
-                <ImageCard colSpan={25} rowSpan={17}>
-                    <Image src={img7} alt="Foto 7" />
-                </ImageCard>
-
-                <ImageCard colSpan={22} rowSpan={14}>
-                    <Image src={img8} alt="Foto 8" />
-                </ImageCard>
-                <ImageCard colSpan={14} rowSpan={25}>
-                    <Image src={img9} alt="Foto 9" />
-                </ImageCard>
-                <ImageCard colSpan={14} rowSpan={25}>
-                    <Image src={img10} alt="Foto 10" />
-                </ImageCard>
             </GREEN>
         </GalleryContainer>
     );
