@@ -3,6 +3,7 @@ import { Card } from "./Cards/card";
 import { Filter } from "./Filter/filter";
 import { useState } from "react";
 import type { Service } from "./Filter/Services";
+import { CardGrid } from "./Servicos.style";
 
 export function Servicos() {
 
@@ -12,13 +13,17 @@ export function Servicos() {
         <SocialContainer>
             <Filter onFilterChange={setFilteredServices} />
 
-            {filteredServices.map(service => (
-                <Card
-                    key={service.title + service.categoria}
-                    title={service.title}
-                    image={service.image}
-                />
-            ))}
+
+            <CardGrid>
+                {filteredServices.map(service => (
+                    <Card
+                        key={service.title + service.categoria}
+                        title={service.title}
+                        image={service.image}
+                    />
+                ))}
+            </CardGrid>    
+        
         </SocialContainer>
     );
 }

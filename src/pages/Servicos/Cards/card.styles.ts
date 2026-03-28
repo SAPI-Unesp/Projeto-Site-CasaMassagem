@@ -6,50 +6,64 @@ export const CardBackground = styled.div`
     border-radius: 20px;
 `;
 
-export const CardImage = styled.img`
-    border-radius: 40px;
-    height: 240px;
-    width: 420px;
-    background-color: #8f9c67;
-    padding: 8px;
-    display: flex;
-    flex-direction: row;
-`;
-
 export const CardInfoContainer = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 50%;
+    width: 100%;
     height: 50%;
     display: flex;
+    margin-bottom:5px;
     flex-direction: column;
     align-items: center;
+    gap:1rem;
     justify-content: center;
 `;
 
 export const CardTitle = styled.h1`
     font-size: 30px;
-    font-weght: bold;
+    font-weight: bold;
     color: #ffffff;
-    align-self: flex-start;
+    align-self: flex-end;
+    margin-right:20px;
+    white-space:nowrap;
+    position: relative;
+    transition: margin 1s, font-size 1s;
+`;
+
+export const CardImage = styled.img`
+    border-radius: 40px;
+    width: 600px;
+    height: 320px;
+    background-color: #8f9c67;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    transition: 0.3s;
+    box-shadow: 
 `;
 
 export const CardBtn = styled.button`
     border: 2px solid #8f9c67;
     border-radius: 20px;
-    heigth: auto;
+    height: auto;
     width: auto;
     background-color: transparent;
     color: #8f9c67;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 2px;
+    padding: 10px 20px 2px 20px;
     font-size: 14px;
     align-self: flex-end;
     margin-right: 25px;
     font-family: Cinzel;
+    font-weight: bold;
+    transition:1s;
+
+    &:hover{
+        cursor: pointer;
+        background-color: #8f9c67;
+        color: white;
+        transition : 0.5s;
+    }
 `;
 
 export const OverlayContentBox = styled.div`
@@ -89,4 +103,23 @@ export const Divider = styled.div`
     height: 2px;
     background-color: #805f46;
     margin: 10px 0;
+`;
+
+export const CardWrapper = styled.div`
+    position: relative;
+    width: 600px;      
+    height: 320px;     
+
+    &:hover ${CardTitle} {
+        font-size: 50px;
+    }
+
+    &:hover ${CardBtn} {
+        transform : scale(1.1) translateX(-190px);
+    }
+
+    &:hover ${CardImage} {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 50px black
+    }
 `;
