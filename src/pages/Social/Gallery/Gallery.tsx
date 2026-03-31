@@ -1,3 +1,5 @@
+import { Overlay } from '../OverlaySocial/Overlay';
+
 import {
     GalleryContainer,
     GREEN,
@@ -5,7 +7,9 @@ import {
     ImageCard,
     Image,
     HoverOverlay,
-    HoverTitle
+    HoverTitle,
+    OverlayContentBox,
+    Divider,
 } from './Gallery.styles';
 
 import img1  from '../../../assets/gallery/1.png';
@@ -19,6 +23,7 @@ import img8  from '../../../assets/gallery/8.png';
 import img9  from '../../../assets/gallery/9.png';
 import img10 from '../../../assets/gallery/10.png';
 import img11 from '../../../assets/gallery/11.png';
+import { useState } from 'react';
 
 
         {/* Imagens dispostas em grid de largura 50 unidades */}
@@ -40,6 +45,8 @@ const images = [
 ];
 
 export function Gallery() {
+    const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
+
     return (
         <GalleryContainer>
             <GalleryTitle> Acompanhe Nossas Visitas </GalleryTitle>
@@ -48,13 +55,26 @@ export function Gallery() {
                 {images.map((image) => (
                     <ImageCard colSpan={image.colSpan} rowSpan={image.rowSpan}>
                         <Image src={image.src} alt={image.alt} />
-                        <HoverOverlay>
+                        <HoverOverlay onClick={() => setIsOverlayOpen(true)}>
                             <HoverTitle>"{image.hover}"</HoverTitle>
                         </HoverOverlay>
                     </ImageCard>
                 ))}
 
             </GREEN>
+
+            <Overlay
+                isOpen={isOverlayOpen}
+                onClose={() => setIsOverlayOpen(false)}
+            >
+                <OverlayContentBox>
+                    <div>
+                        <h1>Fotos</h1>
+                        <Divider />
+                    </div>
+                </OverlayContentBox>
+            </Overlay>
+
         </GalleryContainer>
     );
 }

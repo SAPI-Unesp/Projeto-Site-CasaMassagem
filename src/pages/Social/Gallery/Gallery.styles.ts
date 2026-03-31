@@ -110,3 +110,20 @@ export const HoverTitle = styled.p`
     align-content: center;
 `;
 
+
+export const OverlayContentBox = styled.div`
+    h1 {
+        font-size: 55px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 1px;
+        line-height: 1.1;
+    }
+`;
+
+export const Divider = styled.div`
+    width: 100%;
+    height: 4px;
+    background-color: #805f46;
+    margin: 10px 0;
+`;
