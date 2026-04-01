@@ -21,7 +21,7 @@ export const GalleryTitle = styled.h1`
 
 export const GREEN = styled.div`
     width: 100%;
-    height: 1000px;
+    height: 105vh;
     gap: 16px;
     padding: 32px;
 
@@ -29,7 +29,9 @@ export const GREEN = styled.div`
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
 
-    background-color: #7c8c61;
+
+
+    /*background-color: #7c8c61;*/
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;
@@ -44,6 +46,9 @@ export const GREEN = styled.div`
 
     // IE, Edge velho
     -ms-overflow-style: none;
+
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 `;
 
 export const ImageCard = styled.div`
