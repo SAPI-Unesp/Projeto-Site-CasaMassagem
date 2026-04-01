@@ -27,7 +27,7 @@ export function Card({ title, image }: CardProps) {
             <CardInfoContainer>
                 <CardTitle> {title} </CardTitle>
                 <CardBtn onClick={() => setIsOverlayOpen(true)}>
-                    Saiba Mais
+                    <span> Saiba Mais </span>
                 </CardBtn>
             </CardInfoContainer>
             

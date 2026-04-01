@@ -11,7 +11,8 @@ export const CardInfoContainer = styled.div`
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 50%;
+    height: 50%;transform-origin: right center;
+    transition: transform 0.5s ease, margin 0.5s ease;
     display: flex;
     margin-bottom:5px;
     flex-direction: column;
@@ -24,12 +25,13 @@ export const CardTitle = styled.h1`
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
-    align-self: flex-end;
+    align-self: center;
     margin-right:20px;
     white-space:nowrap;
     position: relative;
     transition: margin 1s, font-size 1s;
 `;
+
 
 export const CardImage = styled.img`
     border-radius: 40px;
@@ -40,7 +42,6 @@ export const CardImage = styled.img`
     display: flex;
     flex-direction: row;
     transition: 0.3s;
-    box-shadow: 
 `;
 
 export const CardBtn = styled.button`
@@ -58,11 +59,36 @@ export const CardBtn = styled.button`
     font-weight: bold;
     transition:1s;
 
+    overflow: hidden;          
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: #8f9c67;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+        z-index: 0;
+    }
+
+    &:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
     &:hover{
         cursor: pointer;
-        background-color: #8f9c67;
         color: white;
-        transition : 0.5s;
+        transition : 0.5s ease-out;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
     }
 `;
 
@@ -108,18 +134,22 @@ export const Divider = styled.div`
 export const CardWrapper = styled.div`
     position: relative;
     width: 600px;      
-    height: 320px;     
+    height: 320px;   
 
     &:hover ${CardTitle} {
         font-size: 50px;
+        width: 100%;
+        text-align: center;
+        margin:0px;
     }
 
     &:hover ${CardBtn} {
-        transform : scale(1.1) translateX(-190px);
+        transform : scale(1.1);
     }
-
+    
     &:hover ${CardImage} {
         transform: scale(1.05);
-        box-shadow: 10px 10px 50px black
+        box-shadow: 10px 10px 10px #0000009f;
+        background-color: #a8b879;
     }
 `;
