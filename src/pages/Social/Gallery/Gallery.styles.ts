@@ -47,8 +47,9 @@ export const GREEN = styled.div`
     // IE, Edge velho
     -ms-overflow-style: none;
 
-    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    // Chrome e Safari
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 `;
 
 export const ImageCard = styled.div`
