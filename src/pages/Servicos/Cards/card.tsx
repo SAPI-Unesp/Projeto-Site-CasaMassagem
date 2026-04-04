@@ -9,6 +9,7 @@ import {
 } from './card.styles';
 import { useState } from 'react';
 import imgOverlay from '../../../assets/imgOverlay.png';
+import imgWhats from '../../../assets/imgWhats.png';
 
 type CardProps = {
     title: string;
@@ -50,6 +51,21 @@ export function Card({ title, image }: CardProps) {
                         </h2>
                     </div>
                 </OverlayContentBox>
+                <div className="contato">
+                    <h1>Contate-nos</h1>
+                    <a
+                        href="https://wa.me/5519992669159"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src={imgWhats}
+                            width={60}
+                            height={60}
+                            alt="WhatsApp"
+                        />
+                    </a>
+                </div>
             </Overlay>
         </div>
     );

@@ -30,6 +30,24 @@ export const OverlayContent = styled.div`
 export const OverlayChildren = styled.div`
     display: flex;
     color: #805f46;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+
+    .contato {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-end;
+        padding-right: 20px;
+
+        h1 {
+            font-family: Inter;
+            color: #000;
+            font-size: 22px;
+        }
+    }
 `;
 
 export const OverlayControls = styled.div`
