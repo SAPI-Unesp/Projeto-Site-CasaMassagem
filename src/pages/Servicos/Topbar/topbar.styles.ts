@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const TopbarSection = styled.div`
     display: flex;
     flex-direction: row;
@@ -23,10 +22,9 @@ export const TopbarBackground = styled.div`
 `;
 
 export const TopbarLogo = styled.img`
-    width: 300px;
+    width: ${props => props.width + '%' || 'auto'};
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 `;
 
 export const TopbarTitleBackground = styled.img`

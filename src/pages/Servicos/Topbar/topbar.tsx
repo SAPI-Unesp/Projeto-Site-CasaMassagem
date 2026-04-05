@@ -7,7 +7,8 @@ import {
     TopbarTitle
 } from "./topbar.styles";
 
-import logoImage from '../../../assets/logo.png';
+import logo2 from '../../../assets/logo2.png';
+import logo3 from '../../../assets/logo3.png';
 import floral from "../../../assets/servicosfloral.png";
 
 
@@ -15,7 +16,14 @@ export function Topbar() {
     return (
         <TopbarSection>
             <TopbarBackground>
-                <TopbarLogo src={logoImage} alt="Logo" />
+                <TopbarLogo src={logo2} width={60} />
+                <TopbarTitle>
+                    <TopbarTitleBackground src={floral} alt="Background floral" />
+                    <TopbarTitleText> Nossos Serviços </TopbarTitleText>
+                </TopbarTitle>
+
+
+                <TopbarLogo src={logo3} width={40} />
                 <TopbarTitle> 
                     <TopbarTitleBackground src={floral} alt="Background floral" />
                     <TopbarTitleText> Nossos Serviços </TopbarTitleText>
