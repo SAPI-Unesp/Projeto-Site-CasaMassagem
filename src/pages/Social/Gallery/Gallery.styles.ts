@@ -92,6 +92,8 @@ export const HoverOverlay = styled.div`
     padding: 1.5rem;
     padding: 1rem;
 
+    border-radius: 10px;
+
     ${ImageCard}:hover & {
         opacity: 1;
     }
