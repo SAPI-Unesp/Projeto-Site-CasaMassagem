@@ -6,6 +6,7 @@ import {
     CardTitle,
     OverlayContentBox,
     Divider,
+    CardWrapper,
 } from './card.styles';
 import { useState } from 'react';
 import imgOverlay from '../../../assets/imgOverlay.png';
@@ -20,15 +21,17 @@ export function Card({ title, image }: CardProps) {
     const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
 
     return (
-        <div style={{ position: 'relative' }}>
-            <CardImage src={image} />
+        <CardWrapper>
+
+            <CardImage src={image}/>
 
             <CardInfoContainer>
                 <CardTitle> {title} </CardTitle>
                 <CardBtn onClick={() => setIsOverlayOpen(true)}>
-                    Saiba Mais
+                    <span> Saiba Mais </span>
                 </CardBtn>
             </CardInfoContainer>
+            
 
             <Overlay
                 isOpen={isOverlayOpen}
@@ -67,6 +70,6 @@ export function Card({ title, image }: CardProps) {
                     </a>
                 </div>
             </Overlay>
-        </div>
+        </CardWrapper>
     );
 }
