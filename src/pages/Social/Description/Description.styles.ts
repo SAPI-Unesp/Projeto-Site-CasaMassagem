@@ -20,6 +20,7 @@ export const SectionContainer = styled.section`
   padding: 6rem 2rem;
   background: transparent;
   font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
+  
 `;
 
 
@@ -40,9 +41,8 @@ export const BeigeBorderFix = styled.div`
   height: 100%;
   border: 4px solid ${colors.beigeFrame};
   border-radius: 35px;
-
   overflow: hidden; 
-  
+
   background-color: #fff;
   display: flex;
   position: relative;
