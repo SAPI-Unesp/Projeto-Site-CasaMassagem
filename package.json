@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "24": "^0.0.0",
     "@fontsource/cinzel": "^5.2.6",
     "@fontsource/cormorant": "^5.2.7",
     "react": "^19.1.1",
