@@ -21,10 +21,12 @@ export const FilterSectionAligner = styled.div`
     flex-direction: column;
     align-items: center;
     justify-Content: center;
+    font-size: 20px;
 `
 
 export const FilterCheckboxesContainer = styled.div`
     display: flex;
+    width: 200px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -46,7 +48,7 @@ export const CheckboxAligner = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 160px;
+    width: 200px;
 `;
 
 export const CheckboxFilter = styled.input`
@@ -66,6 +68,7 @@ export const CheckboxFilter = styled.input`
 
 export const CheckboxLabel = styled.label`
     color: #805F46;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: bold;
+    white-space: nowrap;
 `;
