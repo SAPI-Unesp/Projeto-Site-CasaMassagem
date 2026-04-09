@@ -51,7 +51,7 @@ export const CardBtn = styled.button`
     width: auto;
     background-color: transparent;
     color: #8f9c67;
-    padding: 10px 20px 2px 20px;
+    padding: 5px 20px 5px 20px;
     font-size: 14px;
     align-self: flex-end;
     margin-right: 25px;
@@ -149,7 +149,7 @@ export const CardWrapper = styled.div`
     
     &:hover ${CardImage} {
         transform: scale(1.05);
-        box-shadow: 10px 10px 10px #0000009f;
+        box-shadow: 10px 10px 10px #00000057;
         background-color: #a8b879;
     }
 `;
