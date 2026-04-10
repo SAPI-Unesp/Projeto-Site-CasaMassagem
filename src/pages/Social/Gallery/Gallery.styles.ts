@@ -19,7 +19,7 @@ export const GalleryTitle = styled.h1`
     text-align: center;
 `;
 
-export const GREEN = styled.div`
+export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
     gap: 16px;
@@ -28,10 +28,6 @@ export const GREEN = styled.div`
     display: grid;
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
-
-
-
-    /*background-color: #7c8c61;*/
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;
