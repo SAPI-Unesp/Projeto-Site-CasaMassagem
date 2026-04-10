@@ -10,6 +10,7 @@ export const OverlayBackground = styled.div`
     display: flex;
     cursor: pointer;
     z-index: 9;
+
 `;
 
 export const OverlayContent = styled.div`
@@ -21,10 +22,11 @@ export const OverlayContent = styled.div`
     bottom: 0;
     margin: auto;
     z-index: 10;
-    padding: 20px;
+    padding: 20px 35px;
     background-color: #e1ddd5;
     width: fit-content;
     height: fit-content;
+    border-radius: 50px;
 `;
 
 export const OverlayChildren = styled.div`
@@ -33,21 +35,6 @@ export const OverlayChildren = styled.div`
     flex-direction: column;
     gap: 20px;
     max-width: 700px;
-
-    .contato {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        align-self: flex-end;
-        padding-right: 20px;
-
-        h1 {
-            font-family: Inter;
-            color: #000;
-            font-size: 22px;
-        }
-    }
 `;
 
 export const OverlayControls = styled.div`

@@ -7,10 +7,18 @@ import {
     OverlayContentBox,
     Divider,
     CardWrapper,
+    Tag,
+    ContainerTags,
+    ContainerTagContato,
+    Contato,
 } from './card.styles';
+
 import { useState } from 'react';
 import imgOverlay from '../../../assets/imgOverlay.png';
 import imgWhats from '../../../assets/imgWhats.png';
+import tagType from '../../../assets/tagType.png';
+import tagArea from '../../../assets/tagArea.png';
+import tagTime from '../../../assets/tagTime.png';
 
 type CardProps = {
     title: string;
@@ -54,21 +62,38 @@ export function Card({ title, image }: CardProps) {
                         </h2>
                     </div>
                 </OverlayContentBox>
-                <div className="contato">
-                    <h1>Contate-nos</h1>
-                    <a
-                        href="https://wa.me/5519992669159"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <img
-                            src={imgWhats}
-                            width={60}
-                            height={60}
-                            alt="WhatsApp"
-                        />
-                    </a>
-                </div>
+                <ContainerTagContato>
+                    <ContainerTags>
+                        <Tag>
+                            <img src={tagType} width={30} height={30} alt="Tipo" />
+                            <h1>Tipo</h1>
+                        </Tag>
+                        <Tag>
+                            <img src={tagArea} width={30} height={30} alt="Área" />
+                            <h1>Área</h1>
+                        </Tag>
+                        <Tag>
+                            <img src={tagTime} width={30} height={30} alt="Tempo" />
+
+                            <h1>Tempo</h1>
+                        </Tag>
+                    </ContainerTags>
+                    <Contato>
+                        <h1>Contate-nos</h1>
+                        <a
+                            href="https://wa.me/5515996800015"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src={imgWhats}
+                                width={60}
+                                height={60}
+                                alt="WhatsApp"
+                            />
+                        </a>
+                    </Contato>
+                </ContainerTagContato>
             </Overlay>
         </CardWrapper>
     );

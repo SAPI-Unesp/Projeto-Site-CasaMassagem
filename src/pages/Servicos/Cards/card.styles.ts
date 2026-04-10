@@ -99,6 +99,7 @@ export const OverlayContentBox = styled.div`
 
     img {
         object-fit: cover;
+        border-radius: 50px;
     }
 
     div {
@@ -152,4 +153,43 @@ export const CardWrapper = styled.div`
         box-shadow: 10px 10px 10px #00000057;
         background-color: #a8b879;
     }
+`;
+
+export const Tag = styled.div`
+        display: flex;
+        background-color: #8f9c67;
+        border-radius: 50px;
+        padding: 10px 20px;
+        align-items: center;
+        font-size: 8px;
+        gap: 15px;
+`;
+
+export const ContainerTags = styled.div`
+        align-items: center;
+        display: flex;
+        gap: 30px;
+        font-family: Cormorant Garamond;
+        color: #fff;
+`;
+
+export const ContainerTagContato = styled.div`
+        display: flex;
+        justify-content: flex-end;
+        gap: 60px;
+`;
+
+export const Contato = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-end;
+        padding-right: 20px;
+
+        h1 {
+            font-family: Inter;
+            color: #000;
+            font-size: 22px;
+        }
 `;
