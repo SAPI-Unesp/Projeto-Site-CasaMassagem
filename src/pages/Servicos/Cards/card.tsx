@@ -14,7 +14,6 @@ import {
 } from './card.styles';
 
 import { useState } from 'react';
-import imgOverlay from '../../../assets/imgOverlay.png';
 import imgWhats from '../../../assets/imgWhats.png';
 import tagType from '../../../assets/tagType.png';
 import tagArea from '../../../assets/tagArea.png';
@@ -23,9 +22,10 @@ import tagTime from '../../../assets/tagTime.png';
 type CardProps = {
     title: string;
     image: string;
+    text: string;
 };
 
-export function Card({ title, image }: CardProps) {
+export function Card({ title, image, text }: CardProps) {
     const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
 
     return (
@@ -47,19 +47,12 @@ export function Card({ title, image }: CardProps) {
             >
                 <OverlayContentBox>
                     <img
-                        src={imgOverlay}
-                        width={320}
-                        height={270}
-                        alt="foto do spa"
+                        src={image} alt="foto do spa"
                     />
                     <div>
-                        <h1>Spa dos Pés e Reflexologia Podal</h1>
+                        <h1>{title}</h1>
                         <Divider />
-                        <h2>
-                            Tratamento profundo que remove calosidades e
-                            asperezas, deixando os pés lisos, macios e com
-                            aparência saudável.
-                        </h2>
+                        <h2>{text}</h2>
                     </div>
                 </OverlayContentBox>
                 <ContainerTagContato>
@@ -74,7 +67,6 @@ export function Card({ title, image }: CardProps) {
                         </Tag>
                         <Tag>
                             <img src={tagTime} width={30} height={30} alt="Tempo" />
-
                             <h1>Tempo</h1>
                         </Tag>
                     </ContainerTags>

@@ -34,7 +34,7 @@ export const OverlayChildren = styled.div`
     color: #805f46;
     flex-direction: column;
     gap: 20px;
-    max-width: 700px;
+    max-width: 900px;
 `;
 
 export const OverlayControls = styled.div`

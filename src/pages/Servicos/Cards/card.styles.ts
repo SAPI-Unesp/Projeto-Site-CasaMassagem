@@ -100,6 +100,8 @@ export const OverlayContentBox = styled.div`
     img {
         object-fit: cover;
         border-radius: 50px;
+        width: 420px;
+        height: 270px;
     }
 
     div {

@@ -20,6 +20,7 @@ export function Servicos() {
                         key={service.title + service.categoria}
                         title={service.title}
                         image={service.image}
+                        text={service.text}
                     />
                 ))}
             </CardGrid>    
