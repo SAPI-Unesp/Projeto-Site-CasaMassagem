@@ -1,6 +1,6 @@
 import { SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation} from "swiper/modules";
-import { BorderedImage } from "../BorderedImage/BorderedImage"; // Ajuste o caminho conforme sua pasta
+import { EffectCoverflow, Navigation } from "swiper/modules";
+import { BorderedImage } from "../BorderedImage/BorderedImage";
 import * as S from "./Carousel.styles";
 
 import 'swiper/swiper-bundle.css';
@@ -13,14 +13,30 @@ interface CarouselItem {
 
 interface CarouselProps {
   items: CarouselItem[];
-  borderRadius?: string;
+  imageBorderRadius?: string;
+  initialIndex?: number;
+  slideWidth?: string;
+  slideHeight?: string;
+  slideBorderRadius?: string;
+  imageFit?: "cover" | "contain";
 }
 
-export function Carousel({ items, borderRadius = "40px" }: CarouselProps) {
-  
+export function Carousel({
+  items,
+  imageBorderRadius = "60px",
+  initialIndex = 0,
+  slideWidth = "600px",
+  slideHeight = "400px",
+  slideBorderRadius = "60px",
+  imageFit = "cover",
+}: CarouselProps) {
   return (
     <S.Wrapper>
       <S.SwiperContainer
+        initialSlide={initialIndex}
+        slideWidth={slideWidth}
+        slideHeight={slideHeight}
+        slideBorderRadius={slideBorderRadius}
         modules={[EffectCoverflow, Navigation]}
         navigation={{
           nextEl: ".custom-next",
@@ -29,26 +45,28 @@ export function Carousel({ items, borderRadius = "40px" }: CarouselProps) {
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={'auto'} 
+        slidesPerView="auto"
         loop={true}
         loopAdditionalSlides={3}
         spaceBetween={15}
         coverflowEffect={{
-          rotate: 0,     
-          stretch: 0, 
-          depth: 300,    
+          rotate: 0,
+          stretch: 0,
+          depth: 300,
           modifier: 1,
           slideShadows: false,
         }}
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <BorderedImage 
-              src={item.src} 
-              alt={item.alt || item.title} 
-              borderRadius={borderRadius}
-              height="100%" 
+            <BorderedImage
+              src={item.src}
+              alt={item.alt || item.title}
+              borderRadius={imageBorderRadius}
+              height="100%"
+              objectFit="cover"
             />
+
             {item.title && (
               <S.SlideCaption>
                 {item.title.split(" ").slice(0, 2).join(" ")}
@@ -59,10 +77,11 @@ export function Carousel({ items, borderRadius = "40px" }: CarouselProps) {
           </SwiperSlide>
         ))}
       </S.SwiperContainer>
+
       <S.NavContainer>
         <div className="swiper-button-prev custom-prev" />
         <div className="swiper-button-next custom-next" />
       </S.NavContainer>
-    </S.Wrapper>  
+    </S.Wrapper>
   );
 }

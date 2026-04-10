@@ -3,6 +3,7 @@ import styled from "styled-components"
 interface WrapProps {
   height?: string;
   borderRadius?: string;
+  objectFit: 'cover' | 'contain';
 }
 
 export const Wrap = styled.div<WrapProps>`
@@ -15,7 +16,7 @@ export const Wrap = styled.div<WrapProps>`
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: ${({ objectFit }) => objectFit};
   }
 
   &::after {

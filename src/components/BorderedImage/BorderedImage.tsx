@@ -5,11 +5,12 @@ interface BorderedImageProps {
   alt?: string;
   height?: string;
   borderRadius?: string;
+  objectFit?: 'cover' | 'contain';
 }
 
-export function BorderedImage({ src, alt, height, borderRadius} : BorderedImageProps) {
+export function BorderedImage({ src, alt, height, borderRadius, objectFit = 'cover'} : BorderedImageProps) {
   return (
-    <Wrap height={height} borderRadius={borderRadius}>
+    <Wrap height={height} borderRadius={borderRadius} objectFit={objectFit}>
       <img src={src} alt={alt} />
     </Wrap>
   );

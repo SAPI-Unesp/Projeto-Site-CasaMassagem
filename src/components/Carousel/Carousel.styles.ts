@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { Swiper } from "swiper/react";
+interface SwiperContainerProps {
+  slideWidth: string;
+  slideHeight: string;
+  slideBorderRadius: string;
+}
 
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
 `;
 
-export const SwiperContainer = styled(Swiper)`
+export const SwiperContainer = styled(Swiper)<SwiperContainerProps>`
   width: 100%;
   padding: 40px 0;
 
@@ -27,9 +32,9 @@ export const SwiperContainer = styled(Swiper)`
 
   .swiper-slide {
     /* width: 50% !important; */
-    width: 600px; //props aqui
-    height: 400px;
-    border-radius: 60px;
+    width: ${({ slideWidth }) => slideWidth};
+    height: ${({ slideHeight }) => slideHeight};
+    border-radius: ${({ slideBorderRadius }) => slideBorderRadius};
     opacity: 0.95;
     transition: all 0.5s ease-in-out;
     transform: scale(0.8);
