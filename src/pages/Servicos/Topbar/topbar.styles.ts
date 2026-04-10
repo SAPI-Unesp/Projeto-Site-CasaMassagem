@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const TopbarSection = styled.div`
     display: flex;
     flex-direction: row;
@@ -23,10 +22,9 @@ export const TopbarBackground = styled.div`
 `;
 
 export const TopbarLogo = styled.img`
-    width: 300px;
+    width: ${props => props.width + '%' || 'auto'};
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 `;
 
 export const TopbarTitleBackground = styled.img`
@@ -38,11 +36,12 @@ export const TopbarTitleBackground = styled.img`
 export const TopbarTitleText = styled.h1`
     color: #F1F1F1;
     font-family: 'Cinzel', serif;
-    font-size: 3.5rem;
+    font-size: 2.25rem;
+    margin-top: 3px;
     letter-spacing: 2px;
     position: absolute;
 
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 `;
 
 export const TopbarTitle = styled.div`
@@ -52,4 +51,5 @@ export const TopbarTitle = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    margin-top: 5px;
 `;
