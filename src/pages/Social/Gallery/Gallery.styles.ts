@@ -19,19 +19,16 @@ export const GalleryTitle = styled.h1`
     text-align: center;
 `;
 
-export const GREEN = styled.div`
+export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
     gap: 16px;
-    padding: 32px;
+    padding-top: 64px;
+    padding-bottom: 64px;
 
     display: grid;
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
-
-
-
-    /*background-color: #7c8c61;*/
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;
@@ -47,9 +44,9 @@ export const GREEN = styled.div`
     // IE, Edge velho
     -ms-overflow-style: none;
 
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
     // Chrome e Safari
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 `;
 
 export const ImageCard = styled.div`

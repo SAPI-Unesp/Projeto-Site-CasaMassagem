@@ -2,14 +2,14 @@ import { Overlay } from '../OverlaySocial/Overlay';
 
 import {
     GalleryContainer,
-    GREEN,
+    Scrollable,
     GalleryTitle,
     ImageCard,
     Image,
     HoverOverlay,
     HoverTitle,
     OverlayContentBox,
-    Divider,
+    Divider
 } from './Gallery.styles';
 
 import img1  from '../../../assets/gallery/1.png';
@@ -50,7 +50,7 @@ export function Gallery() {
     return (
         <GalleryContainer>
             <GalleryTitle> Acompanhe Nossas Visitas </GalleryTitle>
-            <GREEN>
+            <Scrollable>
 
                 {images.map((image) => (
                     <ImageCard colSpan={image.colSpan} rowSpan={image.rowSpan}>
@@ -61,8 +61,7 @@ export function Gallery() {
                     </ImageCard>
                 ))}
 
-            </GREEN>
-
+            </Scrollable>
             <Overlay
                 isOpen={isOverlayOpen}
                 onClose={() => setIsOverlayOpen(false)}
