@@ -23,8 +23,8 @@ export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
     gap: 16px;
-    //padding: 32px;
-    padding: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
 
     display: grid;
     grid-template-columns: repeat(50, 1fr);
@@ -44,10 +44,8 @@ export const Scrollable = styled.div`
     // IE, Edge velho
     -ms-overflow-style: none;
 
-    //mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
     // Chrome e Safari
-    //-webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 `;
 
