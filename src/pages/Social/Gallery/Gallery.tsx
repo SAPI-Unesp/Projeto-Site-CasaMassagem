@@ -62,7 +62,6 @@ export function Gallery() {
                 ))}
 
             </Scrollable>
-
             <Overlay
                 isOpen={isOverlayOpen}
                 onClose={() => setIsOverlayOpen(false)}
