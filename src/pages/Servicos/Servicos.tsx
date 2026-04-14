@@ -10,6 +10,8 @@ export function Servicos() {
 
     const [filteredServices, setFilteredServices] = useState<Service[]>([]);
 
+    console.log(filteredServices)
+
     return (
         <SocialContainer>
             <Topbar></Topbar>

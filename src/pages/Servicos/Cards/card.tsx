@@ -11,6 +11,7 @@ import {
     ContainerTags,
     ContainerTagContato,
     Contato,
+    Temp,
 } from './card.styles';
 
 import { useState } from 'react';
@@ -34,10 +35,12 @@ export function Card({ title, image, text }: CardProps) {
             <CardImage src={image}/>
 
             <CardInfoContainer>
-                <CardTitle> {title} </CardTitle>
                 <CardBtn onClick={() => setIsOverlayOpen(true)}>
                     <span> Saiba Mais </span>
                 </CardBtn>
+                <Temp>
+                    <CardTitle> {title} </CardTitle>
+                </Temp>
             </CardInfoContainer>
             
 

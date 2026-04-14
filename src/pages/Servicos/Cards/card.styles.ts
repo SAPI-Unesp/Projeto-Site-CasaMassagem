@@ -8,30 +8,44 @@ export const CardBackground = styled.div`
 
 export const CardInfoContainer = styled.div`
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 50%;transform-origin: right center;
-    transition: transform 0.5s ease, margin 0.5s ease;
+    height: 100%;
     display: flex;
-    margin-bottom:5px;
     flex-direction: column;
     align-items: center;
-    gap:1rem;
     justify-content: center;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    pointer-events: none; 
+`;
+
+export const Temp = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    scale: 1.1;
+    transition: 0.7s;
+    position: absolute;
+    bottom: 0;
+    height: auto;
+    margin-bottom: 20px;
 `;
 
 export const CardTitle = styled.h1`
+    margin-bottom: 10px;
+    white-space: pre-line;
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
     align-self: center;
-    margin-right:20px;
-    white-space:nowrap;
     position: relative;
+    text-align: center;
     transition: margin 1s, font-size 1s;
+    justify-self: flex-end;
 `;
-
 
 export const CardImage = styled.img`
     border-radius: 40px;
@@ -42,11 +56,16 @@ export const CardImage = styled.img`
     display: flex;
     flex-direction: row;
     transition: 0.3s;
+    position: relative;
 `;
 
 export const CardBtn = styled.button`
     border: 2px solid #8f9c67;
     border-radius: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 30px;
     height: auto;
     width: auto;
     background-color: transparent;
@@ -58,6 +77,8 @@ export const CardBtn = styled.button`
     font-family: Cinzel;
     font-weight: bold;
     transition:1s;
+    pointer-events: auto;
+    z-index: 3;
 
     overflow: hidden;          
 
@@ -139,19 +160,23 @@ export const CardWrapper = styled.div`
     width: 600px;      
     height: 320px;   
 
+    &:hover ${Temp} { 
+        transform: scale(1.5);
+        z-index: 1;
+    }   
+
     &:hover ${CardTitle} {
-        font-size: 50px;
-        width: 100%;
-        text-align: center;
-        margin:0px;
+        z-index: 1;
     }
 
     &:hover ${CardBtn} {
-        transform : scale(1.1);
+        transform : scale(1.3);
+        z-index: 1;
     }
     
     &:hover ${CardImage} {
-        transform: scale(1.05);
+        transform: scale(1.15);
+        z-index: 1;
         box-shadow: 10px 10px 10px #00000057;
         background-color: #a8b879;
     }
