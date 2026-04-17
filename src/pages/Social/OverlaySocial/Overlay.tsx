@@ -3,7 +3,7 @@ import {
     OverlayContent,
 } from './Overlay.styles';
 
-import { Carousel } from '../../../components/Carousel/Carousel';
+import { CarouselSingle } from '../../../components/SingleCarousel/SingleCarousel';
 
 type OverlayProps = {
     isOpen: boolean;
@@ -29,14 +29,10 @@ export function Overlay({
 
             <OverlayContent>
                 {children}
-                <Carousel
+                <CarouselSingle
                     items={images}
                     initialIndex={selectedIndex}
-                    imageBorderRadius='40px'
-                    slideBorderRadius='40px'
-                    slideWidth='900px'
-                    slideHeight='500px'
-                    imageFit='cover'
+                    imageBorderRadius='30px'
                 />
             </OverlayContent>
         </>

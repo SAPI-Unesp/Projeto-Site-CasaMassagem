@@ -20,8 +20,10 @@ import img5 from '../../../assets/gallery/5.png';
 import img6 from '../../../assets/gallery/6.png';
 import img7 from '../../../assets/gallery/7.png';
 import img8 from '../../../assets/gallery/8.png';
-import img9 from '../../../assets/gallery/9.png';
-import img10 from '../../../assets/gallery/10.png';
+// import img9 from '../../../assets/gallery/9.png';
+// import img10 from '../../../assets/gallery/10.png';
+import img9 from '../../../assets/imagem-sobrenos.png';
+import img10 from '../../../assets/template.jpg';
 import img11 from '../../../assets/gallery/11.png';
 
 import { useState } from 'react';

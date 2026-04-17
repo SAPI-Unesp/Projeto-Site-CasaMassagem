@@ -9,7 +9,7 @@ export type Service = {
 
 export const services = [
     {
-        title: "Relaxante",
+        title: "Massagem Relaxante",
         categoria: "massagem",
         image: template,
         text: "reduz o estresse e as tensões do dia a dia, proporcionando sensação de leveza e bem-estar."
@@ -76,4 +76,13 @@ export const services = [
     }
 
 ];
+
+export function getServiceId(service: Service) {
+    return `${service.categoria}-${service.title}`
+        .toLowerCase()
+        .normalize("NFD")                        
+        .replace(/[\u0300-\u036f]/g, "")         
+        .replace(/\s+/g, "-")                    
+        .replace(/[^a-z0-9-]/g, "");             
+}
 

@@ -4,28 +4,38 @@ import { Filter } from "./Filter/filter";
 import { Topbar } from "./Topbar/topbar";
 import { useState } from "react";
 import type { Service } from "./Filter/Services";
+import { getServiceId } from "./Filter/Services";
 import { CardGrid } from "./Servicos.style";
+import { useLocation } from "react-router-dom";
 
 export function Servicos() {
+    const location = useLocation();
+    const openServiceId = location.state?.openServiceId;
 
     const [filteredServices, setFilteredServices] = useState<Service[]>([]);
 
-    console.log(filteredServices)
-
     return (
         <SocialContainer>
-            <Topbar></Topbar>
+            <Topbar />
+
             <Filter onFilterChange={setFilteredServices} />
+
             <CardGrid>
-                {filteredServices.map(service => (
-                    <Card
-                        key={service.title + service.categoria}
-                        title={service.title}
-                        image={service.image}
-                        text={service.text}
-                    />
-                ))}
-            </CardGrid>    
+                {filteredServices.map((service) => {
+                    const shouldOpen =
+                        getServiceId(service) === openServiceId;
+
+                    return (
+                        <Card
+                            key={getServiceId(service)}
+                            title={service.title}
+                            image={service.image}
+                            text={service.text}
+                            defaultOpen={shouldOpen}
+                        />
+                    );
+                })}
+            </CardGrid>
         </SocialContainer>
     );
 }

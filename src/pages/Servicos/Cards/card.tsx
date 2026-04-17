@@ -23,12 +23,13 @@ import tagTime from '../../../assets/tagTime.png';
 type CardProps = {
     title: string;
     image: string;
-    text: string;
+    text: string;   
+    defaultOpen?: boolean;
 };
 
-export function Card({ title, image, text }: CardProps) {
-    const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
-
+export function Card({ title, image, text, defaultOpen = false }: CardProps) {
+    const [isOverlayOpen, setIsOverlayOpen] = useState(defaultOpen);
+    
     return (
         <CardWrapper>
 

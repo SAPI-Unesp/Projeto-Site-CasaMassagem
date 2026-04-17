@@ -5,10 +5,12 @@ import * as S from "./Carousel.styles";
 
 import 'swiper/swiper-bundle.css';
 
+
 interface CarouselItem {
   src: string;
   title?: string;
   alt?: string;
+  serviceId?: string;
 }
 
 interface CarouselProps {
@@ -19,6 +21,7 @@ interface CarouselProps {
   slideHeight?: string;
   slideBorderRadius?: string;
   imageFit?: "cover" | "contain";
+  onActiveChange?: (serviceId: string) => void;
 }
 
 export function Carousel({
@@ -29,6 +32,7 @@ export function Carousel({
   slideHeight = "400px",
   slideBorderRadius = "60px",
   imageFit = "cover",
+  onActiveChange,
 }: CarouselProps) {
   return (
     <S.Wrapper>
@@ -56,9 +60,17 @@ export function Carousel({
           modifier: 1,
           slideShadows: false,
         }}
+        onSlideChange={(swiper) => {
+        const active = items[swiper.realIndex];
+        if (active?.serviceId) onActiveChange?.(active.serviceId);
+        }}
+        onSwiper={(swiper) => {
+            const active = items[swiper.realIndex];
+            if (active?.serviceId) onActiveChange?.(active.serviceId);
+        }}
       >
         {items.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index}> 
             <BorderedImage
               src={item.src}
               alt={item.alt || item.title}
