@@ -201,7 +201,6 @@ export const ContainerTags = styled.div`
         gap: 30px;
         font-family: Cormorant Garamond;
         color: #fff;
-        padding-right: 50px;
 `;
 
 export const ContainerTagContato = styled.div`
