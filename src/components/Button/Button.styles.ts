@@ -1,37 +1,51 @@
 import styled from "styled-components"
 
-export const StyledButton = styled.button`
-  background-color: #8F9C67; 
-  border: none;
-  border-radius: 63px;
-  padding: 12px 25px;
+type ButtonSize = "sm" | "md" | "lg"
 
-  color: ${({theme}) => theme.colors.branco1};
-  font-family: ${({theme}) => theme.fontsStyles.Cinzel};
-  font-size: 1.8rem;
+const sizeStyles = {
+  sm: `
+    padding: 8px 16px;
+    font-size: 1.4rem;
+  `,
+  md: `
+    padding: 12px 25px;
+    font-size: 1.8rem;
+  `,
+  lg: `
+    padding: 14px 32px;
+    font-size: 2rem;
+  `,
+}
+
+export const StyledButton = styled.button<{ $size: ButtonSize; $fullWidth?: boolean }>`
+  background-color: #8F9C67;
+   border: 2px solid transparent;
+  border-radius: 63px;
+
+  color: ${({ theme }) => theme.colors.branco1};
+  font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   font-weight: bold;
   text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.25);
 
+  width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "auto")};
 
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-`;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-// import styled from "styled-components";
+  &:hover {
+    transform: scale(1.03);
+  }
 
-// export const Button = styled.button`
-//   background-color: #8F9C67;
-//   color: #fff;
-//   border: 4px solid rgba(0, 0, 0, 0.08); /* Stroke 8% inside */
-//   border-radius: 49px; /* Corner Radius 49 */
-  
-//   padding: 12px 25px;
-//   font-size: 1em;
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   cursor: pointer;
+  &:active {
+    border: 2px solid ${({ theme }) => theme.colors?.marrom1};
+    transform: scale(0.99);
+  }
 
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-//   transition: all 0.2s ease-in-out;
-//   align-self: center;
-// `;
+  &:focus-visible {
+    outline: none;
+    border: 2px solid ${({ theme }) => theme.colors?.marrom1};
+    transform: scale(1.03);
+  }
+
+  ${({ $size }) => sizeStyles[$size]}
+`

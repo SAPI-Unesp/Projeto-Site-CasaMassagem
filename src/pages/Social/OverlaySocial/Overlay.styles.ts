@@ -1,0 +1,26 @@
+import styled from 'styled-components';
+
+export const OverlayBackground = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    cursor: pointer;
+    z-index: 9;
+`;
+
+export const OverlayContent = styled.div`
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color: #8F9C67DD;
+    width: 100%;
+    height: fit-content;
+    padding: 4rem;
+`;
+

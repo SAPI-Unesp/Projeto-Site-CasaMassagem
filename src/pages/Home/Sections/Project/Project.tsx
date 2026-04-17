@@ -39,7 +39,7 @@ export function ProjectSection() {
           </p>
         </TextWrapper>
 
-        <Button onClick={handleClick}>Saiba mais</Button>
+        <Button size='md' onClick={handleClick}>Saiba mais</Button>
       </ContentContainer>
 
       
