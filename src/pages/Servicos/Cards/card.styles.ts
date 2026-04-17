@@ -117,15 +117,18 @@ export const OverlayContentBox = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    padding-bottom: 25px;
 
     img {
-        object-fit: cover;
-        border-radius: 50px;
         width: 420px;
         height: 270px;
+        object-fit: cover;
+        border-radius: 50px;
+        flex-shrink: 0;
     }
 
     div {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -198,21 +201,27 @@ export const ContainerTags = styled.div`
         gap: 30px;
         font-family: Cormorant Garamond;
         color: #fff;
+        padding-right: 50px;
 `;
 
 export const ContainerTagContato = styled.div`
+        position: relative;
         display: flex;
-        justify-content: flex-end;
-        gap: 60px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 `;
 
 export const Contato = styled.div`
+        position: absolute;
+        right: 20px;
+        top: 40%;
+        transform: translateY(-50%);
+
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        align-self: flex-end;
-        padding-right: 20px;
 
         h1 {
             font-family: Inter;

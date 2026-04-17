@@ -15,16 +15,13 @@ export const OverlayBackground = styled.div`
 
 export const OverlayContent = styled.div`
     position: fixed;
-    top: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    bottom: 0;
-    margin: auto;
     z-index: 10;
     padding: 20px 35px;
     background-color: #e1ddd5;
-    width: fit-content;
+    width: 1000px;
     height: fit-content;
     border-radius: 50px;
 `;
@@ -34,7 +31,6 @@ export const OverlayChildren = styled.div`
     color: #805f46;
     flex-direction: column;
     gap: 20px;
-    max-width: 900px;
 `;
 
 export const OverlayControls = styled.div`
