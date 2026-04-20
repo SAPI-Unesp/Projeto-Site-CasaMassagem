@@ -1,6 +1,8 @@
 import {
     OverlayBackground,
     OverlayContent,
+    OverlayControls,
+    OverlayClose,
 } from './Overlay.styles';
 
 import { CarouselSingle } from '../../../components/SingleCarousel/SingleCarousel';
@@ -28,11 +30,14 @@ export function Overlay({
             <OverlayBackground onClick={onClose} />
 
             <OverlayContent>
+                <OverlayControls>
+                    <OverlayClose type="button" onClick={onClose} />
+                </OverlayControls>
                 {children}
                 <CarouselSingle
                     items={images}
                     initialIndex={selectedIndex}
-                    imageBorderRadius='30px'
+                    imageBorderRadius="30px"
                 />
             </OverlayContent>
         </>

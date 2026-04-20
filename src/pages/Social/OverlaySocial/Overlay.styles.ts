@@ -21,6 +21,24 @@ export const OverlayContent = styled.div`
     background-color: #8F9C67DD;
     width: 100%;
     height: fit-content;
-    padding: 4rem;
+    padding: 3rem;
+`;
+
+export const OverlayControls = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+
+export const OverlayClose = styled.button`
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+
+    &::after {
+        display: inline-block;
+        content: '\\00d7';
+    }
 `;
 
