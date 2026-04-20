@@ -5,6 +5,7 @@ import { Topbar } from "./Topbar/topbar";
 import { useState } from "react";
 import type { Service } from "./Filter/Services";
 import { CardGrid } from "./Servicos.style";
+import { Footer } from "../Home/Sections/Footer/Footer";
 
 export function Servicos() {
 
@@ -13,19 +14,22 @@ export function Servicos() {
     console.log(filteredServices)
 
     return (
-        <SocialContainer>
-            <Topbar></Topbar>
-            <Filter onFilterChange={setFilteredServices} />
-            <CardGrid>
-                {filteredServices.map(service => (
-                    <Card
+        <>
+            <SocialContainer>
+                <Topbar></Topbar>
+                <Filter onFilterChange={setFilteredServices} />
+                <CardGrid>
+                    {filteredServices.map(service => (
+                        <Card
                         key={service.title + service.categoria}
                         title={service.title}
                         image={service.image}
-                        text={service.text}
-                    />
-                ))}
-            </CardGrid>    
-        </SocialContainer>
+                            text={service.text}
+                            />
+                        ))}
+                </CardGrid>    
+            </SocialContainer>
+            <Footer></Footer>
+        </>
     );
 }

@@ -68,8 +68,8 @@ export const CardBtn = styled.button`
     margin-top: 30px;
     height: auto;
     width: auto;
-    background-color: transparent;
-    color: #8f9c67;
+    background-color: #8f9c67;
+    color: white;
     padding: 5px 20px 5px 20px;
     font-size: 14px;
     align-self: flex-end;
@@ -89,7 +89,7 @@ export const CardBtn = styled.button`
         left: 50%;
         width: 0;
         height: 0;
-        background-color: #8f9c67;
+        background-color: #a8b879;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
