@@ -28,6 +28,8 @@ export const GreenFrameWrapper = styled.div`
   background-color: ${colors.greenFrame};
   padding: 20px;
   border-radius: 50px;
+  scale: 1.5;
+  margin: 15% 15% 20% 15%;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   width: 100%;
   box-sizing: border-box;
