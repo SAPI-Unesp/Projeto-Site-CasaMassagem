@@ -6,7 +6,6 @@ import { Social } from './pages/Social/Social';
 import { GlobalStyles } from './styles/global';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
-
 import backgroundImage from './assets/backgroundImage.png';
 
 function App() {
@@ -15,19 +14,44 @@ function App() {
             <ParallaxProvider> 
                 <GlobalStyles />
                 
-<Parallax speed={-50} style={{ position: 'absolute', top: 300, left: 0, zIndex: -1 }}>
-    <img src={backgroundImage} alt="teste" style={{ width: '100vw', height: 'auto' }}/>
-</Parallax>
 
-                <BrowserRouter>
-                    <Routes> 
-                        <Route path="/" element={<Home />}/>
-                        <Route path="/projetosocial" element={<Social />}/>
-                    </Routes>
-                </BrowserRouter>
+                <div style={{ position: 'relative', minHeight: '100vh' }}>
+                    
+
+                    <div style={{ 
+                        position: 'absolute', 
+                        top: 0, 
+                        left: 0, 
+                        width: '100%', 
+                        height: '100%', 
+                        zIndex: -1, 
+                        overflow: 'hidden' 
+                    }}>
+                        <Parallax speed={-45}>
+                            <img 
+                                src={backgroundImage} 
+                                alt="Fundo do site"
+                                style={{ 
+                                    width: '100%', 
+                                    height: 'auto', 
+                                    display: 'block' 
+                                }} 
+                            />
+                        </Parallax>
+                    </div>
+
+                    
+                    <BrowserRouter>
+                        <Routes> 
+                            <Route path="/" element={<Home />}/>
+                            <Route path="/projetosocial" element={<Social />}/>
+                        </Routes>
+                    </BrowserRouter>
+                    
+                </div>
             </ParallaxProvider>
         </ThemeProvider>
     );
 }
-//teste
+
 export default App;
