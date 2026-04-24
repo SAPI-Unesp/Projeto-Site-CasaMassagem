@@ -27,7 +27,7 @@ function App() {
                         zIndex: -1, 
                         overflow: 'hidden' 
                     }}>
-                        <Parallax speed={-45}>
+                        <Parallax speed={-90}>
                             <img 
                                 src={backgroundImage} 
                                 alt="Fundo do site"
