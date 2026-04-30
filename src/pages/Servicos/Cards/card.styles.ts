@@ -4,6 +4,12 @@ export const CardBackground = styled.div`
     width: 458px;
     height: 240px;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height:157px;
+    }
+
 `;
 
 export const CardInfoContainer = styled.div`
@@ -45,6 +51,11 @@ export const CardTitle = styled.h1`
     text-align: center;
     transition: margin 1s, font-size 1s;
     justify-self: flex-end;
+
+    @media (max-width:768px) {
+        font-size: 13px;
+        margin-bottom:0px;
+    }
 `;
 
 export const CardImage = styled.img`
@@ -57,6 +68,11 @@ export const CardImage = styled.img`
     flex-direction: row;
     transition: 0.3s;
     position: relative;
+
+    @media (max-width:768px) {
+        width: 300px;
+        height: 180px;
+    }
 `;
 
 export const CardBtn = styled.button`
@@ -110,6 +126,10 @@ export const CardBtn = styled.button`
     span {
         position: relative;
         z-index: 1;
+    }
+
+    @media (max-width:768px) {
+        scale:0.8;
     }
 `;
 
@@ -183,6 +203,12 @@ export const CardWrapper = styled.div`
         box-shadow: 10px 10px 10px #00000057;
         background-color: #a8b879;
     }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 157px;
+    }
+    
 `;
 
 export const Tag = styled.div`
