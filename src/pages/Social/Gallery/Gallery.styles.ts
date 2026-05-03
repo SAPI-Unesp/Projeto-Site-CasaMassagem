@@ -22,13 +22,20 @@ export const GalleryTitle = styled.h1`
 export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
-    gap: 16px;
     padding-top: 64px;
     padding-bottom: 64px;
-
     display: grid;
+    
+    gap: 16px;
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
+
+    
+    @media (max-width: 768px) {
+        gap: 6px;
+        grid-template-columns: repeat(50, 1fr);
+        grid-auto-rows: calc((100vw - 64px - (99 * 6px)) / 100);
+    }
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;
