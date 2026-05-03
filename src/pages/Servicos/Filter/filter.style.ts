@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export const FilterTitle = styled.h1`
     color: #805F46;
     font-weight: bold;
@@ -31,6 +30,7 @@ export const FilterCheckboxesContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 16px;
+    background-color: red;
 `;
 
 export const DividerColumn = styled.div`

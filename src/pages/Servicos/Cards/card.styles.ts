@@ -254,3 +254,111 @@ export const Contato = styled.div`
             font-size: 22px;
         }
 `;
+
+
+// OVERLAY MOBILE CONTENTS
+export const ImgOverlayMobile = styled.img`
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50px;
+    flex-shrink: 0;
+    margin-left:14px;
+`;
+
+export const OverlayContentBoxMobile = styled.div`
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+
+    img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50px;
+        flex-shrink: 0;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+        color: #805f46;
+        text-align: center;
+        letter-spacing: 5%;
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #805f46;
+        font-weight: normal;
+        text-align: center;
+        letter-spacing: 5%;
+        line-height: 1.1;
+    }
+`;
+
+export const TagMobile = styled.div`
+        display: flex;
+        background-color: #8f9c67;
+        border-radius: 50px;
+        padding: 10px 20px;
+        align-items: center;
+        font-size: 7px;
+        gap: 15px;
+        
+        img{
+            width:20px;
+            height:20px;
+        }
+`;
+
+export const ContainerTagsMobile = styled.div`
+        display: flex;
+        flex-direction:column;
+        gap: 10px;
+        font-family: Cormorant Garamond;
+        color: #fff;
+`;
+
+export const ContainerTagContatoMobile = styled.div`
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 80%;
+`;
+
+export const ContatoMobile = styled.div`
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-family: Inter;
+            color: #000;
+            font-size: 15px;
+        }
+`;
+
+export const OverlayHeaderMobile = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+`;
+
+export const DividerMobile = styled.div`
+    align-self: center;
+    width: 65%;
+    height: 2px;
+    background-color: #805f46;
+    margin: 10px 0;
+`;

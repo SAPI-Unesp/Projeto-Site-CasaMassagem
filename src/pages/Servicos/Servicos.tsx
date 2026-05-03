@@ -4,7 +4,7 @@ import { Filter } from "./Filter/filter";
 import { Topbar } from "./Topbar/topbar";
 import { useState } from "react";
 import type { Service } from "./Filter/Services";
-import { CardGrid } from "./Servicos.style";
+import { CardGrid, ServicesContainer } from "./Servicos.style";
 import { Footer } from "../Home/Sections/Footer/Footer";
 
 export function Servicos() {
@@ -15,7 +15,7 @@ export function Servicos() {
 
     return (
         <>
-            <SocialContainer>
+            <ServicesContainer>
                 <Topbar></Topbar>
                 <Filter onFilterChange={setFilteredServices} />
                 <CardGrid>
@@ -28,7 +28,7 @@ export function Servicos() {
                             />
                         ))}
                 </CardGrid>    
-            </SocialContainer>
+            </ServicesContainer>
             <Footer></Footer>
         </>
     );
