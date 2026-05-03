@@ -25,7 +25,7 @@ export const ServicesContainer = styled.main`
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: rgba(225, 221, 212, 0.2);
 `;

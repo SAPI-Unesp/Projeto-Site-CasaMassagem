@@ -30,7 +30,6 @@ export const FilterCheckboxesContainer = styled.div`
     align-items: center;
     justify-content: center;
     gap: 16px;
-    background-color: red;
 `;
 
 export const DividerColumn = styled.div`

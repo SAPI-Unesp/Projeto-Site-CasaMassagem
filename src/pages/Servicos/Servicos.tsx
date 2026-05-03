@@ -1,4 +1,3 @@
-import { SocialContainer } from "../Social/Social.styles";
 import { Card } from "./Cards/card";
 import { Filter } from "./Filter/filter";
 import { Topbar } from "./Topbar/topbar";
