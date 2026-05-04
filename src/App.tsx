@@ -16,8 +16,6 @@ function App() {
                 
 
                 <div style={{ position: 'relative', minHeight: '100vh' }}>
-                    
-
                     <div style={{ 
                         position: 'absolute', 
                         top: 0, 
@@ -27,7 +25,7 @@ function App() {
                         zIndex: -1, 
                         overflow: 'hidden' 
                     }}>
-                        <Parallax speed={-90}>
+                        <Parallax speed={-120}>
                             <img 
                                 src={backgroundImage} 
                                 alt="Fundo do site"

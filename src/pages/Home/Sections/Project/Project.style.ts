@@ -43,10 +43,12 @@ export const ImageWrapper = styled.div`
   border-radius: 63px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 900px;
-  margin-left: 290px;
-  height: 433px;
   z-index: 1;
+  width: 100%; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  height: auto;
+  aspect-ratio: 900 / 433; 
 `;
 export const TextWrapper = styled.div`
   background: #F2E4D4;
