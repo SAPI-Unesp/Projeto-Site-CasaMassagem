@@ -82,7 +82,12 @@ export const TestimonialCard = styled.div`
     background-color: #dbbd7a;
     border-color: ${({ theme }) => theme.colors?.marrom1
   }
+  
+  @media screen and (max-width: 768px) {
+    width: 580px; 
+  }
 `;
+
 
 export const TestimonialText = styled.p`
   font-size: 1rem;
