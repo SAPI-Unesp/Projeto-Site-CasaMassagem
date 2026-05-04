@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
 
 // --- ANIMAÇÃO ---
 
@@ -12,50 +13,60 @@ const scrollAnimation = keyframes`
 `;
 // --------------------------------
 
-export const TestimonialSection = styled.div`
-  width: 100%;
-  padding: 80px 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+export const TestimonialSection = styled(motion.div)`
+    width: 100%;
+    padding: ${({ theme }) => theme.spacing.sectionGap} 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
-export const SectionTitle = styled.h2`
-  padding-left: 40px;
-  width: 100%; 
-  max-width: 1500px;
-  text-align: center;
-  font-size: ${({ theme }) => theme.fontSizes?.Title2 || '2rem'};
-  color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
-  margin-bottom: 40px;
+export const SectionTitle = styled(motion.h2)`
+    padding-left: 40px;
+    width: 100%;
+    max-width: 1500px;
+    text-align: center;
+    font-size: ${({ theme }) => theme.fontSizes?.Title2 || '2rem'};
+    color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
+    margin-bottom: 40px;
 `;
 
-export const CarroselContainer = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 1500px;
-  overflow: hidden; 
-  margin: 0 auto;
-  padding: 5px;
+export const CarroselContainer = styled(motion.div)`
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 5px;
 
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 
-  &:hover > div {
-    animation-play-state: paused;
-  }
+    &:hover > div {
+        animation-play-state: paused;
+    }
 `;
 export const CarroselTrack = styled.div`
-  display: flex;
-  gap: 40px;
-  padding: 25px; 
-  width: max-content;
-  
+    display: flex;
+    gap: 40px;
+    padding: 25px;
+    width: max-content;
 
-  animation: ${scrollAnimation} 20s linear infinite; 
+    animation: ${scrollAnimation} 20s linear infinite;
 `;
-
 
 export const TestimonialCard = styled.div`
   background-color: #d1b897; 
@@ -80,7 +91,7 @@ export const TestimonialCard = styled.div`
     transform: scale(1.18); 
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3); 
     background-color: #dbbd7a;
-    border-color: ${({ theme }) => theme.colors?.marrom1
+    border-color: ${({ theme }) => theme.colors?.marrom1};
   }
   
   @media screen and (max-width: 768px) {
@@ -88,13 +99,12 @@ export const TestimonialCard = styled.div`
   }
 `;
 
-
 export const TestimonialText = styled.p`
-  font-size: 1rem;
-  font-style: italic;
+    font-size: 1rem;
+    font-style: italic;
 `;
 
 export const TestimonialAuthor = styled.span`
-  font-weight: bold;
-  margin-top: 15px;
+    font-weight: bold;
+    margin-top: 15px;
 `;

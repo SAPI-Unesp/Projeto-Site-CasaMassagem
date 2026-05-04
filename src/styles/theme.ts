@@ -35,19 +35,20 @@ export const theme = {
         Cormorant: "'Cormorant', serif",
         Cinzel: "'Cinzel', 'Times New Roman', serif",
     },
-    fontWeights: { 
+    fontWeights: {
         regular: 400,
         bold: 700,
         black: 900,
     },
     spacing: {
-        xxs: "0.125rem", // 2px
-        xs: "0.25rem",   // 4px
-        s: "0.5rem",     // 8px
-        m: "1rem",       // 16px
-        l: "1.5rem",     // 24px
-        xl: "2rem",      // 32px
-        xxl: "3rem",     // 48px
-        xxxl: "4rem",    // 64px
-  },
+        xxs: '0.125rem', // 2px
+        xs: '0.25rem', // 4px
+        s: '0.5rem', // 8px
+        m: '1rem', // 16px
+        l: '1.5rem', // 24px
+        xl: '2rem', // 32px
+        xxl: '3rem', // 48px
+        xxxl: '4rem', // 64px
+        sectionGap: '5rem', // 80px
+    },
 };
