@@ -39,8 +39,8 @@ export const FilterSection = styled.div`
     gap: 40px;
 
     @media(max-width: 768px){
-        gap: 15px;
-        max-width: 350px;
+        gap: 30px;
+        max-width: 280px;
     }
 `;
 
@@ -53,7 +53,7 @@ export const FilterCheckboxesContainer = styled.div`
     width: 150px;
 
     @media(max-width: 768px){
-        width: auto;
+        width: 100%;
         flex: 1;
     }
 `;
