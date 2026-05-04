@@ -307,10 +307,10 @@ export const TagMobile = styled.div`
         display: flex;
         background-color: #8f9c67;
         border-radius: 50px;
-        padding: 10px 20px;
+        padding: 8px 10px;
         align-items: center;
         font-size: 7px;
-        gap: 15px;
+        gap: 10px;
         
         img{
             width:20px;
@@ -320,8 +320,8 @@ export const TagMobile = styled.div`
 
 export const ContainerTagsMobile = styled.div`
         display: flex;
-        flex-direction:column;
-        gap: 10px;
+        flex-direction:column;      
+        gap: 14px;
         font-family: Cormorant Garamond;
         color: #fff;
 `;

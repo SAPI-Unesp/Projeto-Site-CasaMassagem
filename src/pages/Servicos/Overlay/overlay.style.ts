@@ -70,11 +70,12 @@ export const OverlayBackgroundMobile = styled.div`
 export const OverlayContentMobile = styled.div`
     position: fixed;
     top: 50%;
-    left: 43.4%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     background-color: #e1ddd5;
-    width: 85%;
+    align-self:center;
+    width: 95%;
     height: fit-content;
     border-radius: 50px;
 `;
