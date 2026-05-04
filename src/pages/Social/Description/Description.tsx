@@ -19,19 +19,17 @@ export function Description() {
   return (
     <SectionContainer>
       <SectionTitle>
-        “CUIDAR DE<br />QUEM CUIDA”
+        <span>“CUIDAR DE</span>
+        <span>QUEM CUIDA”</span>
       </SectionTitle>
 
       <GreenFrameWrapper>
-          <iframe 
-            width="100%" 
-            height="400px"
-            src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0"} 
-            title="Projeto social" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen 
-            style={{ borderRadius: 35 }} 
-          />
+        <iframe
+          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0"}
+          title="Projeto social"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
       </GreenFrameWrapper>
 
       <Subtitle>MINHA MOTIVAÇÃO</Subtitle>
@@ -52,24 +50,23 @@ export function Description() {
 
       <ImagesRow>
         <ImageCard>
-            <BeigeBorderFix>
-              <BorderedImage
-                src={Image1}
-                alt="Massagem facial"
-                height="400px"
-              />
-            </BeigeBorderFix>
+          <BeigeBorderFix>
+            <BorderedImage
+              src={Image1}
+              alt="Massagem facial"
+              height="400px"
+            />
+          </BeigeBorderFix>
           <ImageCaption>“Parte mais marcante do texto acima escrita aqui [...]”</ImageCaption>
-        
         </ImageCard>
         <ImageCard>
-            <BeigeBorderFix>
-              <BorderedImage
-                src={Image1}
-                alt="Detalhe da terapia"
-                height="400px" 
-              />
-            </BeigeBorderFix>
+          <BeigeBorderFix>
+            <BorderedImage
+              src={Image1}
+              alt="Detalhe da terapia"
+              height="400px"
+            />
+          </BeigeBorderFix>
           <ImageCaption>“[...] Outra parte marcante!”</ImageCaption>
         </ImageCard>
       </ImagesRow>

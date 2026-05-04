@@ -26,16 +26,24 @@ export const SectionContainer = styled.section`
 
 export const GreenFrameWrapper = styled.div`
   background-color: ${colors.greenFrame};
-  padding: 20px;
-  border-radius: 50px;
-  scale: 1.5;
-  margin: 15% 15% 20% 15%;
+  padding: clamp(0.5rem, 2.2vw, 1.25rem);
+  border-radius: clamp(1.25rem, 4vw, 3.125rem);
+  margin: clamp(0.75rem, 3vw, 2rem) 0 clamp(3rem, 8vw, 6rem);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-  width: 100%;
+  width: min(1100px, calc(100vw - 2rem));
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+    border-radius: clamp(1rem, 3vw, 2.1875rem);
+    display: block;
+  }
 `;
 
 export const BeigeBorderFix = styled.div`
@@ -52,15 +60,25 @@ export const BeigeBorderFix = styled.div`
 
 
 export const SectionTitle = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes.Title3};
+  font-size: clamp(3rem, 11vw, ${({ theme }) => theme.fontSizes.Title3});
   text-align: center;
   color: ${colors.title};
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 3rem;
-  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0;
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+  span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    font-size: clamp(2.3rem, 14vw, 3.9rem);
+    line-height: 1;
+  }
 `;
 
 export const Subtitle = styled.h2`
