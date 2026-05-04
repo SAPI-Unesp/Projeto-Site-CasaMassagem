@@ -1,5 +1,5 @@
 import { SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import { BorderedImage } from "../BorderedImage/BorderedImage";
 import * as S from "./Carousel.styles";
 
@@ -24,6 +24,19 @@ interface CarouselProps {
   onActiveChange?: (serviceId: string) => void;
 }
 
+function getTitleLines(title: string) {
+  const words = title.split(" ");
+
+  if (words.length <= 2) {
+    return words;
+  }
+
+  return [
+    words.slice(0, 2).join(" "),
+    words.slice(2).join(" "),
+  ].filter(Boolean);
+}
+
 export function Carousel({
   items,
   imageBorderRadius = "60px",
@@ -41,7 +54,7 @@ export function Carousel({
         slideWidth={slideWidth}
         slideHeight={slideHeight}
         slideBorderRadius={slideBorderRadius}
-        modules={[EffectCoverflow, Navigation]}
+        modules={[Autoplay, EffectCoverflow, Navigation]}
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
@@ -53,6 +66,12 @@ export function Carousel({
         loop={true}
         loopAdditionalSlides={3}
         spaceBetween={15}
+        speed={850}
+        autoplay={{
+          delay: 3200,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -76,14 +95,14 @@ export function Carousel({
               alt={item.alt || item.title}
               borderRadius={imageBorderRadius}
               height="100%"
-              objectFit="cover"
+              objectFit={imageFit}
             />
 
             {item.title && (
               <S.SlideCaption>
-                {item.title.split(" ").slice(0, 2).join(" ")}
-                <br />
-                {item.title.split(" ").slice(2).join(" ")}
+                {getTitleLines(item.title).map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
               </S.SlideCaption>
             )}
           </SwiperSlide>

@@ -49,6 +49,26 @@ export const SectionContainer = styled(motion.section)`
     & > button {
         margin-top: 15px;
     }
+
+    @media (max-width: 768px) {
+        padding: ${({ theme }) => theme.spacing.xxxl} 16px;
+        border-radius: 56px 56px 0 0;
+
+        &::before {
+            border-radius: 56px 56px 0 0;
+            padding: 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: ${({ theme }) => theme.spacing.xxl} 12px;
+        border-radius: 42px 42px 0 0;
+
+        &::before {
+            border-radius: 42px 42px 0 0;
+            padding: 5px;
+        }
+    }
 `;
 
 export const SectionTitle = styled(motion.h2)`
@@ -58,10 +78,27 @@ export const SectionTitle = styled(motion.h2)`
     /* margin-bottom: ${({ theme }) => theme.spacing.s}; */
     font-weight: ${({ theme }) => theme.fontWeights.black};
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @media (max-width: 768px) {
+        font-size: clamp(
+            3.35rem,
+            14vw,
+            ${({ theme }) => theme.fontSizes.Title1}
+        );
+        text-align: center;
+    }
+
+    @media (max-width: 480px) {
+        font-size: clamp(3.15rem, 15vw, 3.85rem);
+    }
 `;
 
 export const MotionWrapper = styled(motion.div)`
     width: 100%;
     display: flex;
     justify-content: center;
+
+    & + & {
+        margin-top: 15px;
+    }
 `;

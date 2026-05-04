@@ -5,15 +5,15 @@ type ButtonSize = "sm" | "md" | "lg"
 const sizeStyles = {
   sm: `
     padding: 8px 16px;
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 3.8vw, 1.4rem);
   `,
   md: `
     padding: 12px 25px;
-    font-size: 1.8rem;
+    font-size: clamp(1.15rem, 4.5vw, 1.8rem);
   `,
   lg: `
     padding: 14px 32px;
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 5vw, 2rem);
   `,
 }
 
@@ -28,6 +28,8 @@ export const StyledButton = styled.button<{ $size: ButtonSize; $fullWidth?: bool
   text-shadow: 0px 6px 5px rgba(0, 0, 0, 0.25);
 
   width: ${({ $fullWidth }) => ($fullWidth ? "100%" : "auto")};
+  max-width: 100%;
+  white-space: nowrap;
 
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -48,4 +50,9 @@ export const StyledButton = styled.button<{ $size: ButtonSize; $fullWidth?: bool
   }
 
   ${({ $size }) => sizeStyles[$size]}
+
+  @media (max-width: 480px) {
+    padding-inline: ${({ $size }) => ($size === "lg" ? "24px" : $size === "md" ? "20px" : "14px")};
+    min-height: 44px;
+  }
 `
