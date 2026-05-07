@@ -17,6 +17,13 @@ export const GalleryTitle = styled.h1`
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 2.75rem;
+        letter-spacing: 3px;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
 `;
 
 export const Scrollable = styled.div`
