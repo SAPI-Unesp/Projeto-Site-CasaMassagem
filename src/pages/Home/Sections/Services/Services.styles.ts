@@ -89,7 +89,7 @@ export const SectionTitle = styled(motion.h2)`
     }
 
     @media (max-width: 480px) {
-        font-size: clamp(3.15rem, 15vw, 3.85rem);
+        font-size: clamp(2.85rem, 13vw, 3.45rem);
     }
 `;
 

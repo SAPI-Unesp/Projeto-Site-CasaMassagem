@@ -6,6 +6,6 @@ export const HomeContainer = styled.main`
   align-items: center; 
   width: 100%;
   min-height: 100vh; 
+  overflow-x: hidden;
   background-color: rgba(225, 221, 212, 0.5);
 `;
-
