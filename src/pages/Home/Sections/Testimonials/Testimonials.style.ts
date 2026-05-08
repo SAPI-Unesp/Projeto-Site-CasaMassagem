@@ -1,24 +1,14 @@
-import styled, { keyframes } from 'styled-components';
-
-// --- ANIMAÇÃO ---
-
-const scrollAnimation = keyframes`
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-`;
-// --------------------------------
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const TestimonialSection = styled.div`
   width: 100%;
-  padding: 80px 20px;
+  padding: 80px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  overflow: hidden; 
 `;
 
 export const SectionTitle = styled.h2`
@@ -29,36 +19,30 @@ export const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
   margin-bottom: 40px;
   padding: 0 20px;
-  box-sizing: border-box; 
-  overflow-wrap: break-word;
-  hyphens: 
+  box-sizing: border-box;
 `;
 
 export const CarroselContainer = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1500px;
-  overflow: hidden; 
-  margin: 0 auto;
-  padding: 5px;
-
+  cursor: grab;
+  margin-bottom: 20px;
+  
+  /* Efeito de desfoque nas bordas */
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
-  &:hover > div {
-    animation-play-state: paused;
+  &:active {
+    cursor: grabbing;
   }
 `;
-export const CarroselTrack = styled.div`
+
+export const CarroselTrack = styled(motion.div)`
   display: flex;
   gap: 40px;
-  padding: 25px; 
+  padding: 25px;
   width: max-content;
-  
-
-  animation: ${scrollAnimation} 20s linear infinite; 
 `;
-
 
 export const TestimonialCard = styled.div`
   background-color: #d1b897; 
@@ -66,42 +50,36 @@ export const TestimonialCard = styled.div`
   padding: 25px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
   text-align: left;
-
-  box-sizing: border-box;
   flex-shrink: 0; 
   width: 350px; 
-  max-width: 350px; 
-  min-height: 110px; 
-  
+  min-height: 150px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; 
-  border: 3px solid transparent; 
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  user-select: none;
 
   &:hover {
-    transform: scale(1.18);
-    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3); 
     background-color: #dbbd7a;
-    border-color: ${({ theme }) => theme.colors?.marrom1};
-  } 
+    transform: translateY(-5px); 
+  }
 
-  @media screen and (max-width: 768px) {
-    width: 200px;
-    padding: 20px; 
-    &:hover {
-      transform: none; /* Tira o efeito de crescer no mobile */
-    }
+  @media screen and (max-width: 468px) {
+    width: 150px; 
+    border-radius: 25px;
   }
 `;
 
 export const TestimonialText = styled.p`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-style: italic;
+  color: #5d4037;
+  line-height: 1.5;
+  margin: 0;
 `;
 
 export const TestimonialAuthor = styled.span`
   font-weight: bold;
   margin-top: 15px;
+  color: #000;
 `;
