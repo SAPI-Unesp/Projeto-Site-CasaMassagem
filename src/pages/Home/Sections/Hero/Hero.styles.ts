@@ -17,7 +17,7 @@ export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   z-index: 1;
 `;
 
@@ -27,6 +27,7 @@ export const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateY(clamp(3.5rem, 12vh, 7.5rem));
 
   &::before {
     content: '';
@@ -48,8 +49,8 @@ export const LogoContainer = styled.div`
 `;
 
 export const HeroLogo = styled.img`
-  width: 90%;
-  max-width: 600px;
+  width: 95%;
+  max-width: 720px;
   height: auto;
   /* Certifique-se de que não há "filter: drop-shadow" aqui */
 `;
