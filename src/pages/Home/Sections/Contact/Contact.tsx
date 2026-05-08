@@ -17,7 +17,7 @@ export function ContactSection() {
     "https://www.google.com/maps?q=Rua+Pedro+Alcantara+de+Moraes,+991,+Itaporanga+SP&output=embed";
 
   return (
-    <SectionContainer>
+    <SectionContainer id="contact">
       <Title>
         <h2>
           Alguma dúvida? <br /> Entre em contato

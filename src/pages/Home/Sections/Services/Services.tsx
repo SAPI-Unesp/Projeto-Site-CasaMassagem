@@ -22,7 +22,7 @@ export function ServicesSection() {
     }
 
     return (
-        <SectionContainer>
+        <SectionContainer id="services">
             <SectionTitle>Serviços</SectionTitle>
             <Carousel
                 items={meusServicos}

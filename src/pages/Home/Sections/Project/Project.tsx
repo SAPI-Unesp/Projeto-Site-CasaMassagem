@@ -23,7 +23,7 @@ export function ProjectSection() {
   }
 
   return (
-    <AboutUsSection>
+    <AboutUsSection id="social">
       <SectionTitle>Projeto "Cuidar de <br/> Quem Cuida"</SectionTitle>
 
       <ContentContainer>
