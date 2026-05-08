@@ -120,6 +120,12 @@ export const SwiperContainer = styled(Swiper)<SwiperContainerProps>`
       height: clamp(230px, 66vw, 330px);
       border-radius: 40px;
     }
+
+    .swiper-slide-active {
+      & > div {
+        box-shadow: none;
+      }
+    }
   }
 
   @media (max-width: 480px) {

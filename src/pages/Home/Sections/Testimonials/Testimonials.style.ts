@@ -26,10 +26,22 @@ export const SectionTitle = styled(motion.h2)`
     padding-left: 40px;
     width: 100%;
     max-width: 1500px;
+    box-sizing: border-box;
     text-align: center;
     font-size: ${({ theme }) => theme.fontSizes?.Title2 || '2rem'};
     color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
     margin-bottom: 40px;
+    overflow-wrap: break-word;
+
+    @media screen and (max-width: 768px) {
+        padding-left: 0;
+        font-size: clamp(2.25rem, 11vw, ${({ theme }) => theme.fontSizes?.Title2 || '3.75rem'});
+        margin-bottom: 28px;
+    }
+
+    @media screen and (max-width: 480px) {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
 `;
 
 export const CarroselContainer = styled(motion.div)`
