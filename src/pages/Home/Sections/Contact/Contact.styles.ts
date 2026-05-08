@@ -103,4 +103,9 @@ export const IconText = styled.div`
         color: white;
         font-size: 1.5rem;
     }
+
+    @media (max-width:768px) {
+      font-size: 1rem;
+    }
+
 `;
