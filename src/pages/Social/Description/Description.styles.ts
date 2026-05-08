@@ -36,6 +36,10 @@ export const GreenFrameWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    scale: 1;
+  }
 `;
 
 export const BeigeBorderFix = styled.div`
@@ -84,6 +88,12 @@ export const MotivationBox = styled.div`
               inset 0 0 0 9px rgba(255, 255, 255, 0.4);
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-radius: 35px;
+    padding: 2rem 2rem 6rem 2rem;
+  }
 `;
 
 export const MotivationText = styled.p`
@@ -96,6 +106,12 @@ export const MotivationText = styled.p`
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.65rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
   }
 `;
 
@@ -123,6 +139,11 @@ export const ImageCard = styled.div`
     align-self: flex-end;
     transform: rotate(2deg) translateY(-40px);
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 `;
 
 export const ImageCaption = styled.div`
@@ -147,4 +168,8 @@ export const ImageCaption = styled.div`
   font-style: italic;
   text-align: center;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;

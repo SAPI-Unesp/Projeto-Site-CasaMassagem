@@ -67,7 +67,7 @@ export function Description() {
               <BorderedImage
                 src={Image1}
                 alt="Detalhe da terapia"
-                height="400px" 
+                height="400px"
               />
             </BeigeBorderFix>
           <ImageCaption>“[...] Outra parte marcante!”</ImageCaption>
