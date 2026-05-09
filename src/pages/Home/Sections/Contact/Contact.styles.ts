@@ -22,8 +22,9 @@ export const Title = styled(motion.div)`
         font-weight: 900;
         line-height: 1.2;
     }
-
+    
     @media (max-width: 768px) {
+        padding-left: 0px;
         h2 {
             font-size: 2rem;
             text-align: center;
