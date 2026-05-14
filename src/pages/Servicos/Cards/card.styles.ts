@@ -263,7 +263,6 @@ export const ImgOverlayMobile = styled.img`
     object-fit: cover;
     border-radius: 50px;
     flex-shrink: 0;
-    margin-left:14px;
 `;
 
 export const OverlayContentBoxMobile = styled.div`
@@ -305,11 +304,12 @@ export const OverlayContentBoxMobile = styled.div`
 
 export const TagMobile = styled.div`
         display: flex;
+        position: relative;
         background-color: #8f9c67;
         border-radius: 50px;
-        padding: 8px 10px;
+        padding: 5% 5%;
         align-items: center;
-        font-size: 7px;
+        font-size: 6px;
         gap: 10px;
         
         img{
@@ -320,7 +320,9 @@ export const TagMobile = styled.div`
 
 export const ContainerTagsMobile = styled.div`
         display: flex;
-        flex-direction:column;      
+        overflow: hidden;  
+        flex-direction:column;
+        justify-content:center;
         gap: 14px;
         font-family: Cormorant Garamond;
         color: #fff;
@@ -352,6 +354,8 @@ export const ContatoMobile = styled.div`
 export const OverlayHeaderMobile = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
 `;
 
