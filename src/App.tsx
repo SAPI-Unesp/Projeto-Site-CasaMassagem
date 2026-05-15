@@ -18,7 +18,7 @@ function App() {
             <ParallaxProvider>
                 <GlobalStyles />
 
-                {/* IMAGEM FIXA*/}
+                {/* ---------------------------------------- PARALLAX ---------------------------------------------- */}
                 <div style={{
                     position: 'fixed',
                     top: 0,
@@ -27,11 +27,8 @@ function App() {
                     height: '100vh',
                     zIndex: -10,
                 }}>
-                    <picture style={{ width: '100%', height: '100%' }}>
-               
-                    <source media="(max-width: 768px)" srcSet={backgroundImage} />
-                    
-                 
+                <picture style={{ width: '100%', height: '100%' }}>
+                <source media="(max-width: 768px)" srcSet={backgroundImage} />
                     <img
                         src={backgroundImagePc}
                         alt="Fundo do site"
@@ -40,10 +37,28 @@ function App() {
                             height: '100%',
                             objectFit: 'cover',
                             display: 'block',
-                            opacity: 0.99,
-                            filter: 'brightness(90%)'
+                            filter: 'brightness(90%)',
+                            transform: 'scale(1.05)',       
+                            transformOrigin: 'center center'
                         }}
                     />
+                    <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    
+                    background: 'linear-gradient(to right, ' +
+                    'rgba(0, 0, 0, 0.2) 0%, ' +
+                    'rgba(0, 0, 0, 0.2) calc(50% - 805px), ' + 
+                    'rgba(0, 0, 0, 0) calc(50% - 805px), ' +   
+                    'rgba(0, 0, 0, 0) calc(50% + 795px), ' +   
+                    'rgba(0, 0, 0, 0.2) calc(50% + 795px), ' + 
+                    'rgba(0, 0, 0, 0.2) 100%)',
+                    pointerEvents: 'none'
+                  
+                }} />
                 </picture>
                     <img src={Parallax1} alt="Parallax 1" style={{ width: '100%', height: 'auto' , opacity: 0.7, objectFit: 'cover'}} />
                 </div>
@@ -63,24 +78,17 @@ function App() {
                         overflow: 'hidden'
                     }}>
                         
-                     
                         <Parallax speed={-130} style={{ position: 'absolute', width: '100%', zIndex: 1 }}>
                             <img src={Parallax3} alt="Parallax 3" style={{ width: '100%', height: 'auto', opacity: 0.9 }} />
                         </Parallax>
-
                       
                         <Parallax speed={-180} style={{ position: 'absolute', width: '100%', zIndex: 2 }}>
                             <img src={Parallax2} alt="Parallax 2" style={{ width: '100%', height: 'auto' , opacity: 0.9}} />
-                        </Parallax>
-
-                        
-
-                    
-                        
+                        </Parallax>                
 
                     </div>
 
-                  
+                  {/* ---------------------------------------- FIM PARALLAX ---------------------------------------------- */}
                     <div style={{ position: 'relative', zIndex: 10 }}>
                         <BrowserRouter>
                             <Routes>

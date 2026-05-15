@@ -28,13 +28,12 @@ export const CarroselContainer = styled.div`
   cursor: grab;
   margin-bottom: 20px;
   
-  /* Efeito de desfoque nas bordas */
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
-  &:active {
-    cursor: grabbing;
-  }
+    &:active {
+      cursor: grabbing;
+    }
 `;
 
 export const CarroselTrack = styled(motion.div)`
@@ -61,7 +60,7 @@ export const TestimonialCard = styled.div`
 
   &:hover {
     background-color: #dbbd7a;
-    transform: translateY(-5px); /* Completei o efeito */
+    transform: translateY(-5px); 
   } 
 
   @media screen and (max-width: 468px) {
