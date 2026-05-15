@@ -61,8 +61,9 @@ export const TestimonialCard = styled.div`
 
   &:hover {
     background-color: #dbbd7a;
-    transform: translateY(-5px); 
-  }
+    transform: translateY(-5px); /* Completei o efeito */
+  } /* <-- CHAVE FECHADA AQUI! Agora o CSS volta a funcionar */
+  /* ---
 
   @media screen and (max-width: 468px) {
     width: 150px; 
