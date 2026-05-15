@@ -61,4 +61,12 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    scroll-margin-top: 50px;
+  }
 `;
