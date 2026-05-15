@@ -34,7 +34,7 @@ function App() {
                         alt="Fundo do site"
                         style={{
                             width: '100%',
-                            height: '100%',
+                            height: '120%',
                             objectFit: 'cover',
                             display: 'block',
                             filter: 'brightness(90%)',
