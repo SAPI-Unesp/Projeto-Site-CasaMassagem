@@ -15,6 +15,11 @@ const testimonialsLine1 = [
   { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
   { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
   { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  
 ];
 
 export function TestimonialsSection() {
