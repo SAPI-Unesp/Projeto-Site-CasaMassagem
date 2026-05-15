@@ -56,7 +56,8 @@ export function Description() {
               <BorderedImage
                 src={Image1}
                 alt="Massagem facial"
-                height="400px"
+                height="auto"
+                borderWidth="1vw"
               />
             </BeigeBorderFix>
           <ImageCaption>“Parte mais marcante do texto acima escrita aqui [...]”</ImageCaption>
@@ -67,7 +68,8 @@ export function Description() {
               <BorderedImage
                 src={Image1}
                 alt="Detalhe da terapia"
-                height="400px"
+                height="auto"
+                borderWidth="1vw"
               />
             </BeigeBorderFix>
           <ImageCaption>“[...] Outra parte marcante!”</ImageCaption>

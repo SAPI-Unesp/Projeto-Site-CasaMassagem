@@ -65,18 +65,32 @@ export const SectionTitle = styled.h1`
   letter-spacing: 3px;
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 `;
 
 export const Subtitle = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: ${({ theme }) => theme.fontSizes.Title2}; 
+  font-size: ${({ theme }) => theme.fontSizes.Title2};
   font-weight: 400;
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   color: ${colors.subtitle};
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+    letter-spacing: 3px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 `;
 
 export const MotivationBox = styled.div`
@@ -140,9 +154,9 @@ export const ImageCard = styled.div`
     transform: rotate(2deg) translateY(-40px);
   }
 
+
   @media (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 30px;
+    width: 110%;
   }
 `;
 
@@ -170,6 +184,7 @@ export const ImageCaption = styled.div`
   text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 7vw;
+    bottom: 2vw;
   }
 `;

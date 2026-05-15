@@ -3,6 +3,7 @@ import styled from "styled-components"
 interface WrapProps {
   height?: string;
   borderRadius?: string;
+  borderWidth?: string;
 }
 
 export const Wrap = styled.div<WrapProps>`
@@ -10,6 +11,7 @@ export const Wrap = styled.div<WrapProps>`
   width: 100%;
   height: ${({ height }) => height || "100%"};
   border-radius: ${({ borderRadius }) => borderRadius || "inherit"};
+
 
   img {
     width: 100%;
@@ -25,7 +27,7 @@ export const Wrap = styled.div<WrapProps>`
     border-radius: inherit;
     pointer-events: none;
     z-index: 2;
-    box-shadow: inset 0 0 0 9px rgba(235, 234, 234, 0.6);
+    box-shadow: inset 0 0 0 ${({ borderWidth }) => borderWidth || "9px"} rgba(235, 234, 234, 0.6);
   }
 `;
 
