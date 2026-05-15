@@ -1,154 +1,132 @@
+import React, { useEffect } from 'react';
+import { useAnimationControls } from 'framer-motion';
 import {
-    TestimonialSection,
-    SectionTitle,
-    CarroselContainer,
-    CarroselTrack,
-    TestimonialCard,
-    TestimonialText,
-    TestimonialAuthor,
+  TestimonialSection,
+  SectionTitle,
+  CarroselContainer,
+  CarroselTrack,
+  TestimonialCard,
+  TestimonialText,
+  TestimonialAuthor,
 } from './Testimonials.style';
 
-const sectionVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.16,
-        },
-    },
-};
-
-const riseVariants = {
-    hidden: {
-        opacity: 0,
-        y: 42,
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.62,
-            ease: 'easeOut',
-        },
-    },
-};
-
 const testimonialsLine1 = [
-    {
-        texto: 'A Monique tem mãos de fada! Saí de lá renovada.',
-        autor: '@ana_lais',
-    },
-    {
-        texto: 'Melhor massagem que já recebi. Recomendo muito!',
-        autor: '@carlos_souza',
-    },
-    {
-        texto: 'Ambiente super aconchegante e profissional excelente.',
-        autor: '@juliana_m',
-    },
-    {
-        texto: 'Ambiente super aconchegante e profissional excelente.',
-        autor: '@juliana_m',
-    },
-];
-
-const testimonialsLine2 = [
-    { texto: 'Um atendimento impecável do início ao fim!', autor: '@pedro_h' },
-    {
-        texto: 'Minha dor nas costas sumiu na primeira sessão.',
-        autor: '@carol_dias',
-    },
-    { texto: 'Não troco a Monique por nada, maravilhosa!', autor: '@marcos_v' },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+    { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+    { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+    { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+    { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+    { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  { texto: "A Monique tem mãos de fada! Saí de lá renovada.", autor: "@ana_lais" },
+  { texto: "Melhor massagem que já recebi. Recomendo muito!", autor: "@carlos_souza" },
+  { texto: "Ambiente super aconchegante e profissional excelente.", autor: "@juliana_m" },
+  { texto: "Experiência única, recomendo a todos!", autor: "@marina_silva" },
+  
 ];
 
 export function TestimonialsSection() {
-    return (
-        <TestimonialSection
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
+  const controlsLine1 = useAnimationControls();
+  const controlsLine2 = useAnimationControls();
+
+  const startLine1 = () => {
+    controlsLine1.start({
+      x: "-50%",
+      transition: { duration: 220, ease: "linear", repeat: Infinity }
+    });
+  };
+
+  const startLine2 = () => {
+    controlsLine2.start({
+      x: "-50%",
+      transition: { duration: 180, ease: "linear", repeat: Infinity } // Mais lenta
+    });
+  };
+
+  useEffect(() => {
+    startLine1();
+    startLine2();
+  }, []);
+
+  const renderList = (list, prefix) => (
+    <>
+      {list.map((item, index) => (
+        <TestimonialCard key={`${prefix}-${index}`}>
+          <TestimonialText>"{item.texto}"</TestimonialText>
+          <TestimonialAuthor>{item.autor}</TestimonialAuthor>
+        </TestimonialCard>
+      ))}
+    </>
+  );
+
+  return (
+    <TestimonialSection>
+      <SectionTitle>Depoimentos</SectionTitle>
+
+      {/* Linha 1 - Velocidade 25s */}
+      <CarroselContainer>
+        <CarroselTrack
+          animate={controlsLine1}
+          drag="x"
+          dragConstraints={{ left: -2000, right: 0 }}
+          onDragEnd={startLine1}
+          onTap={startLine1}
         >
-            <SectionTitle variants={riseVariants}>Depoimentos</SectionTitle>
+          {renderList(testimonialsLine1, "l1-orig")}
+          {renderList(testimonialsLine1, "l1-dup")}
+        </CarroselTrack>
+      </CarroselContainer>
 
-            {/* Primeira linha de depoimentos */}
-            <CarroselContainer variants={riseVariants}>
-                <CarroselTrack>
-                    {testimonialsLine1.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-                <CarroselTrack>
-                    {testimonialsLine1.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-                <CarroselTrack aria-hidden="true">
-                    {testimonialsLine1.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-            </CarroselContainer>
-
-            {/* Segunda linha de depoimentos */}
-            <CarroselContainer variants={riseVariants}>
-                <CarroselTrack>
-                    {testimonialsLine2.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-                <CarroselTrack>
-                    {testimonialsLine2.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-                <CarroselTrack aria-hidden="true">
-                    {testimonialsLine2.map((testimonial, index) => (
-                        <TestimonialCard key={index}>
-                            <TestimonialText>
-                                {testimonial.texto}
-                            </TestimonialText>
-                            <TestimonialAuthor>
-                                {testimonial.autor}
-                            </TestimonialAuthor>
-                        </TestimonialCard>
-                    ))}
-                </CarroselTrack>
-            </CarroselContainer>
-        </TestimonialSection>
-    );
+      {/* Linha 2 - Velocidade 40s */}
+      <CarroselContainer style={{ marginTop: '20px' }}>
+        <CarroselTrack
+          animate={controlsLine2}
+          drag="x"
+          dragConstraints={{ left: -2000, right: 0 }}
+          onDragEnd={startLine2}
+          onTap={startLine2} //
+        >
+          {renderList(testimonialsLine1, "l2-orig")}
+          {renderList(testimonialsLine1, "l2-dup")}
+        </CarroselTrack>
+      </CarroselContainer>
+    </TestimonialSection>
+  );
 }
