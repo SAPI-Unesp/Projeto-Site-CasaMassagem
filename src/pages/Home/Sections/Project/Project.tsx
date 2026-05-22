@@ -76,7 +76,8 @@ export function ProjectSection() {
     }
 
     return (
-        <AboutUsSection
+        <AboutUsSection 
+        id="social"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"

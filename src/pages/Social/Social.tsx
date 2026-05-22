@@ -6,7 +6,7 @@ import { Gallery } from "./Gallery/Gallery.tsx";
 
 export function Social() {
     return (
-        <SocialContainer>
+        <SocialContainer id="social">
             <Hero />
             <Description />
             <Gallery />

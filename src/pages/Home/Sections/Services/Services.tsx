@@ -60,6 +60,7 @@ export function ServicesSection() {
 
     return (
         <SectionContainer
+            id="service"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"

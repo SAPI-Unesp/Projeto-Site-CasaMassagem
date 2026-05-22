@@ -79,7 +79,8 @@ export function ContactSection() {
         'https://www.google.com/maps?q=Rua+Pedro+Alcantara+de+Moraes,+991,+Itaporanga+SP&output=embed';
 
     return (
-        <SectionContainer
+        <SectionContainer 
+            id="contact"
             variants={sectionVariants}
             initial="hidden"
             whileInView="visible"
