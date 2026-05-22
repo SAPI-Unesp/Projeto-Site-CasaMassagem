@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
+import { NavBar } from "../../components/NavBar/NavBar";
 import { Card } from "./Cards/card";
 import { Filter } from "./Filter/filter";
-import { Topbar } from "./Topbar/topbar";
 import type { Service } from "./Filter/Services";
 import { getServiceId } from "./Filter/Services";
 import { CardGrid, ServicesContainer } from "./Servicos.style";
@@ -17,8 +17,15 @@ export function Servicos() {
 
   return (
     <>
+      <NavBar
+        items={[
+          { label: "Sobre Nós", href: "/#about" },
+          { label: "Projeto Social", href: "/projetosocial" },
+          { label: "Serviços", href: "/servicos" },
+          { label: "Contato", href: "/#contact" },
+        ]}
+      />
       <ServicesContainer>
-        <Topbar />
         <Filter onFilterChange={setFilteredServices} />
         <CardGrid>
           {filteredServices.map((service) => {

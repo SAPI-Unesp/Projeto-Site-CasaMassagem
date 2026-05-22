@@ -17,7 +17,7 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
   background: transparent;
   font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
 `;
