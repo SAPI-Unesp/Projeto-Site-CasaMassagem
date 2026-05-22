@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.nav<{ $scrolled: boolean }>`
+export const Container = styled.nav<{ $scrolled: boolean; $animate: boolean }>`
     display: flex;
     align-items: center;
     width: 100%;
@@ -14,15 +14,15 @@ export const Container = styled.nav<{ $scrolled: boolean }>`
 
     height: ${({ $scrolled }) => ($scrolled ? "95px" : "150px")};
 
-    transition: all 0.4s ease;
+    transition: ${({ $animate }) => ($animate ? "all 0.4s ease" : "none")};
 `;
 
-export const NavLogo = styled.div<{ $scrolled: boolean }>`
+export const NavLogo = styled.div<{ $scrolled: boolean; $animate: boolean }>`
     position: relative;
 
     .logoNav {
         width: ${({ $scrolled }) => ($scrolled ? "150px" : "215px")};
-        transition: all 0.4s ease;
+        transition: ${({ $animate }) => ($animate ? "all 0.4s ease" : "none")};
         position: relative;
         margin: ${({ $scrolled }) =>
             $scrolled ? "20px 0 20px 50px" : "13px 0 13px 50px"};
@@ -32,7 +32,7 @@ export const NavLogo = styled.div<{ $scrolled: boolean }>`
     .backNav {
         width: ${({ $scrolled }) => ($scrolled ? "290px" : "390px")};
         height: ${({ $scrolled }) => ($scrolled ? "116px" : "165px")};
-        transition: all 0.4s ease;
+        transition: ${({ $animate }) => ($animate ? "all 0.4s ease" : "none")};
         position: absolute;
         top: ${({ $scrolled }) => ($scrolled ? "0" : "-8px")};
         left: 0;
@@ -40,7 +40,7 @@ export const NavLogo = styled.div<{ $scrolled: boolean }>`
     }
 `;
 
-export const NavItems = styled.div<{ $scrolled: boolean }>`
+export const NavItems = styled.div<{ $scrolled: boolean; $animate: boolean }>`
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -53,7 +53,7 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
         position: relative;
         font-size: ${({ $scrolled }) => ($scrolled ? "24px" : "35px")};
         line-height: 1;
-        transition: all 0.4s ease;
+        transition: ${({ $animate }) => ($animate ? "all 0.4s ease" : "none")};
         font-family: 'Cinzel', serif;
         color: #f2e4d4;
         text-decoration: none;

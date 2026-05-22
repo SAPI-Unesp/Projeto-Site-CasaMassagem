@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Home } from './pages/Home/Home';
 import { Social } from './pages/Social/Social';
 import { Servicos } from './pages/Servicos/Servicos';
@@ -12,6 +13,25 @@ import backgroundImagePc from './assets/backgroundImagePc.png';
 import Parallax1 from './assets/Parallax1.png';
 import Parallax2 from './assets/Parallax2.png';
 import Parallax3 from './assets/Parallax3.png';
+
+function ScrollToHash() {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const targetId = location.hash.replace('#', '');
+        const target = document.getElementById(targetId);
+
+        if (!target) return;
+
+        requestAnimationFrame(() => {
+            target.scrollIntoView({ block: 'start' });
+        });
+    }, [location.pathname, location.hash]);
+
+    return null;
+}
 
 function App() {
     return (
@@ -92,6 +112,7 @@ function App() {
                   {/* ---------------------------------------- FIM PARALLAX ---------------------------------------------- */}
                     <div style={{ position: 'relative', zIndex: 10 }}>
                         <BrowserRouter>
+                            <ScrollToHash />
                             <Routes>
                                 <Route path="/" element={<Home />}/>
                                 <Route path="/projetosocial" element={<Social />}/>

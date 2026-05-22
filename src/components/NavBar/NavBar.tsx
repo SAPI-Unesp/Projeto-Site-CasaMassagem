@@ -15,7 +15,8 @@ type NavBarProps = {
 };
 
 export function NavBar({ items }: NavBarProps) {
-    const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(() => window.scrollY > 50);
+    const [animate, setAnimate] = useState(() => !window.location.hash);
     const [activeSection, setActiveSection] = useState('');
     const location = useLocation();
 
@@ -24,9 +25,25 @@ export function NavBar({ items }: NavBarProps) {
             setScrolled(window.scrollY > 50);
         };
 
+        handleScroll();
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (!location.hash) {
+            setAnimate(true);
+            return;
+        }
+
+        setAnimate(false);
+
+        const timeout = window.setTimeout(() => {
+            setAnimate(true);
+        }, 500);
+
+        return () => window.clearTimeout(timeout);
+    }, [location.hash]);
 
     useEffect(() => {
         const sections = document.querySelectorAll('[id]');
@@ -54,18 +71,22 @@ export function NavBar({ items }: NavBarProps) {
     }, []);
 
     return (
-        <Container $scrolled={scrolled}>
-            <NavLogo $scrolled={scrolled}>
+        <Container $scrolled={scrolled} $animate={animate}>
+            <NavLogo $scrolled={scrolled} $animate={animate}>
                 <img className="logoNav" src={logoNav} alt="Logo" />
                 <img className="backNav" src={backNav} alt="Background" />
             </NavLogo>
 
-            <NavItems $scrolled={scrolled}>
+            <NavItems $scrolled={scrolled} $animate={animate}>
                 {items.map((item, index) => {
-                    const isSectionLink = item.href.startsWith('#');
+                    const hashIndex = item.href.indexOf('#');
+                    const isSectionLink = hashIndex !== -1;
                     const sectionId = isSectionLink
-                        ? item.href.replace('#', '')
+                        ? item.href.slice(hashIndex + 1)
                         : '';
+                    const linkPath = isSectionLink
+                        ? item.href.slice(0, hashIndex) || location.pathname
+                        : item.href;
                     const isActive =
                         isSectionLink
                             ? activeSection === sectionId
@@ -74,12 +95,12 @@ export function NavBar({ items }: NavBarProps) {
                     return (
                         <React.Fragment key={item.href}>
                             {isSectionLink ? (
-                                <a
-                                    href={item.href}
+                                <Link
+                                    to={`${linkPath}#${sectionId}`}
                                     className={isActive ? 'active' : ''}
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
                             ) : (
                                 <Link
                                     to={item.href}
