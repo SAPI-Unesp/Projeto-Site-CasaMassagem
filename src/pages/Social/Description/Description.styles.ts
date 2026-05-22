@@ -56,7 +56,7 @@ export const BeigeBorderFix = styled.div`
 `;
 
 export const SectionTitle = styled.h1`
-  font-size: clamp(3rem, 11vw, ${({ theme }) => theme.fontSizes.Title3});
+  font-size: clamp(3rem, 11vw, ${({ theme }) => theme.fontSizes.Title3} - 1.4rem);
   text-align: center;
   color: ${colors.title};
   font-weight: 700;

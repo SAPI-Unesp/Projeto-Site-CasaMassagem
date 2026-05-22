@@ -13,6 +13,13 @@ export const HeroContainer = styled.section<{ $backgroundImage: string }>`
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  @media (max-width: 768px) {
+    height: 100svh;
+    min-height: 100svh;
+    background-attachment: scroll;
+    background-position: center center;
+  }
 `;
 
 export const LogoContainer = styled.div<{ $logoImage: string }>`
@@ -54,5 +61,22 @@ export const LogoContainer = styled.div<{ $logoImage: string }>`
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    &::before,
+    &::after {
+      background-attachment: scroll;
+      background-position: center center;
+    }
+
+    &::before {
+      background-size: min(92vw, 560px) min(48vw, 320px);
+      filter: blur(30px);
+    }
+
+    &::after {
+      background-size: min(92vw, 560px) auto;
+    }
   }
 `;

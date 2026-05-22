@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Card } from "./Cards/card";
@@ -14,6 +14,10 @@ export function Servicos() {
   const openServiceId = location.state?.openServiceId;
 
   const [filteredServices, setFilteredServices] = useState<Service[]>([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
