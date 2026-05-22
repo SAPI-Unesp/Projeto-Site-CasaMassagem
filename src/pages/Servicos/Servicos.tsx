@@ -7,6 +7,7 @@ import type { Service } from "./Filter/Services";
 import { getServiceId } from "./Filter/Services";
 import { CardGrid } from "./Servicos.style";
 import { useLocation } from "react-router-dom";
+import { ServiceContainer } from "./Servicos.style";
 
 export function Servicos() {
     const location = useLocation();
@@ -15,7 +16,8 @@ export function Servicos() {
     const [filteredServices, setFilteredServices] = useState<Service[]>([]);
 
     return (
-        <SocialContainer>
+        
+        <ServiceContainer>
             <Topbar />
 
             <Filter onFilterChange={setFilteredServices} />
@@ -36,6 +38,6 @@ export function Servicos() {
                     );
                 })}
             </CardGrid>
-        </SocialContainer>
+        </ServiceContainer>
     );
 }

@@ -85,12 +85,12 @@ function App() {
                         </Parallax>
                       
                         <Parallax speed={-160} style={{ position: 'absolute', width: '100%', zIndex: 4 }}>
-                            <img src={Parallax2} alt="Parallax 2" style={{ width: '100%', height: 'auto' , opacity: 0.9, display: 'flex', justifyContent: 'center', alignItems: 'cemter'}} />
+                            <img src={Parallax2} alt="Parallax 2" style={{ width: '100%', height: 'auto' , opacity: 0.9, display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
                         </Parallax>   
 
                         <div className="no-mobile">
                             <Parallax speed={-220} style={{ position: 'absolute', width: '100%', zIndex: 2 }}>
-                                <img src={Parallax1} alt="Parallax 1" style={{ width: '100%', height: 'auto' , opacity: 0.5, display: 'flex', justifyContent: 'center', alignItems: 'cemter'}} />
+                                <img src={Parallax1} alt="Parallax 1" style={{ width: '100%', height: 'auto' , opacity: 0.5, display: 'flex', justifyContent: 'center', alignItems: 'center'}} />
                             </Parallax>   
                         </div> 
                         

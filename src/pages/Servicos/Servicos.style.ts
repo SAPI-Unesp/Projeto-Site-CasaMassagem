@@ -24,3 +24,11 @@ export const CardGrid = styled.div`
     }
 
 `;
+export const ServiceContainer = styled.main`
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(225, 221, 212, 0.5);
+`;
