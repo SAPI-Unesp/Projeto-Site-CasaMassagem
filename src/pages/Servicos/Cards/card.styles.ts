@@ -60,10 +60,11 @@ export const CardTitle = styled.h1`
 
 export const CardImage = styled.img`
     border-radius: 40px;
-    width: 600px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     background-color: #8f9c67;
     padding: 8px;
+    object-fit: cover;
     display: flex;
     flex-direction: row;
     transition: 0.3s;

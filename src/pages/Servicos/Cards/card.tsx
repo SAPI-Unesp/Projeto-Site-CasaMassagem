@@ -151,7 +151,6 @@ export function Card({ title, image, text }: CardProps) {
                                 </Tag>
                             </ContainerTags>
                             <Contato>
-                                <h1>Contate-nos</h1>
                                 <a
                                     href="https://wa.me/5515996800015"
                                     target="_blank"
