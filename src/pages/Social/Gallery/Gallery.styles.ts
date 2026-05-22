@@ -17,18 +17,32 @@ export const GalleryTitle = styled.h1`
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 2.75rem;
+        letter-spacing: 3px;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
 `;
 
 export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
-    gap: 16px;
     padding-top: 64px;
     padding-bottom: 64px;
-
     display: grid;
+    
+    gap: 16px;
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
+
+    
+    @media (max-width: 768px) {
+        gap: 6px;
+        grid-template-columns: repeat(50, 1fr);
+        grid-auto-rows: calc((100vw - 64px - (99 * 6px)) / 100);
+    }
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;

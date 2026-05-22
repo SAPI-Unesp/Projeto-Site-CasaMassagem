@@ -75,7 +75,7 @@ export const SectionTitle = styled.h1`
     white-space: nowrap;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     font-size: clamp(2.3rem, 14vw, 3.9rem);
     line-height: 1;
   }
@@ -84,13 +84,20 @@ export const SectionTitle = styled.h1`
 export const Subtitle = styled.h2`
   margin-top: 2rem;
   margin-bottom: 2rem;
-  font-size: ${({ theme }) => theme.fontSizes.Title2}; 
+  font-size: ${({ theme }) => theme.fontSizes.Title2};
   font-weight: 400;
   font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
   color: ${colors.subtitle};
   text-transform: uppercase;
   letter-spacing: 5px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.75rem;
+    letter-spacing: 3px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 `;
 
 export const MotivationBox = styled.div`
@@ -102,6 +109,12 @@ export const MotivationBox = styled.div`
               inset 0 0 0 9px rgba(255, 255, 255, 0.4);
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-radius: 35px;
+    padding: 2rem 2rem 6rem 2rem;
+  }
 `;
 
 export const MotivationText = styled.p`
@@ -114,6 +127,12 @@ export const MotivationText = styled.p`
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.65rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
   }
 `;
 
@@ -141,6 +160,11 @@ export const ImageCard = styled.div`
     align-self: flex-end;
     transform: rotate(2deg) translateY(-40px);
   }
+
+
+  @media (max-width: 768px) {
+    width: 110%;
+  }
 `;
 
 export const ImageCaption = styled.div`
@@ -165,4 +189,9 @@ export const ImageCaption = styled.div`
   font-style: italic;
   text-align: center;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+
+  @media (max-width: 768px) {
+    font-size: 7vw;
+    bottom: 2vw;
+  }
 `;

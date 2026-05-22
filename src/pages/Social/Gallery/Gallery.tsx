@@ -49,7 +49,7 @@ export function Gallery() {
 
     return (
         <GalleryContainer>
-            <GalleryTitle> Acompanhe Nossas Visitas </GalleryTitle>
+            <GalleryTitle> Siga Nossas Visitas </GalleryTitle>
             <Scrollable>
 
                 {images.map((image) => (
