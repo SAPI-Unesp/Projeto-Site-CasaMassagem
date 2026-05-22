@@ -1,41 +1,43 @@
-import { SocialContainer } from "../Social/Social.styles";
+import { useLocation } from "react-router-dom";
+import { useState } from "react";
+
 import { Card } from "./Cards/card";
 import { Filter } from "./Filter/filter";
 import { Topbar } from "./Topbar/topbar";
-import { useState } from "react";
 import type { Service } from "./Filter/Services";
 import { getServiceId } from "./Filter/Services";
-import { CardGrid } from "./Servicos.style";
-import { useLocation } from "react-router-dom";
+import { CardGrid, ServicesContainer } from "./Servicos.style";
+import { Footer } from "../Home/Sections/Footer/Footer";
 
 export function Servicos() {
-    const location = useLocation();
-    const openServiceId = location.state?.openServiceId;
+  const location = useLocation();
+  const openServiceId = location.state?.openServiceId;
 
-    const [filteredServices, setFilteredServices] = useState<Service[]>([]);
+  const [filteredServices, setFilteredServices] = useState<Service[]>([]);
 
-    return (
-        <SocialContainer>
-            <Topbar />
+  return (
+    <>
+      <ServicesContainer>
+        <Topbar />
+        <Filter onFilterChange={setFilteredServices} />
+        <CardGrid>
+          {filteredServices.map((service) => {
+            const serviceId = getServiceId(service);
+            const shouldOpen = serviceId === openServiceId;
 
-            <Filter onFilterChange={setFilteredServices} />
-
-            <CardGrid>
-                {filteredServices.map((service) => {
-                    const shouldOpen =
-                        getServiceId(service) === openServiceId;
-
-                    return (
-                        <Card
-                            key={getServiceId(service)}
-                            title={service.title}
-                            image={service.image}
-                            text={service.text}
-                            defaultOpen={shouldOpen}
-                        />
-                    );
-                })}
-            </CardGrid>
-        </SocialContainer>
-    );
+            return (
+              <Card
+                key={serviceId}
+                title={service.title}
+                image={service.image}
+                text={service.text}
+                defaultOpen={shouldOpen}
+              />
+            );
+          })}
+        </CardGrid>
+      </ServicesContainer>
+      <Footer />
+    </>
+  );
 }
