@@ -53,10 +53,10 @@ function App() {
                     
                     background: 'linear-gradient(to right, ' +
                     'rgba(0, 0, 0, 0.2) 0%, ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% - 800px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% - 800px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% + 800px), ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% + 800px), ' +
+                    'rgba(0, 0, 0, 0.2) calc(50% - 808px), ' +
+                    'rgba(0, 0, 0, 0) calc(50% - 808px), ' +
+                    'rgba(0, 0, 0, 0) calc(50% + 790px), ' +
+                    'rgba(0, 0, 0, 0.2) calc(50% + 790px), ' +
                     'rgba(0, 0, 0, 0.2) 100%)',
                     pointerEvents: 'none'
                   
