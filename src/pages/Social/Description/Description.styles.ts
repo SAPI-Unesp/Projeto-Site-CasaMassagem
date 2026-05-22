@@ -83,7 +83,7 @@ export const MotivationBox = styled.div`
 `;
 
 export const MotivationText = styled.p`
-  font-size: ${({ theme }) => theme.spacing.xl}; 
+  font-size: calc(${({ theme }) => theme.fontSizes.Paragrafo} + 0.25rem); 
   color: ${colors.text};
   line-height: 1.8;
   text-align: justify;
@@ -137,7 +137,7 @@ export const ImageCaption = styled.div`
   /*border-radius: 16px;*/
 
   padding: 1rem;
-  font-size: 1.1rem; 
+  font-size: 1.3rem; 
   
   color: #fff;
   font-style: italic;

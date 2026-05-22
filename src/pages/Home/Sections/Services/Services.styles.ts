@@ -72,7 +72,7 @@ export const SectionContainer = styled(motion.section)`
 `;
 
 export const SectionTitle = styled(motion.h2)`
-    font-size: ${({ theme }) => theme.fontSizes.Title1};
+    font-size: ${({ theme }) => theme.fontSizes.Title2};
     font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
     color: ${({ theme }) => theme.colors.branco2};
     /* margin-bottom: ${({ theme }) => theme.spacing.s}; */
@@ -83,7 +83,7 @@ export const SectionTitle = styled(motion.h2)`
         font-size: clamp(
             3.35rem,
             14vw,
-            ${({ theme }) => theme.fontSizes.Title1}
+            ${({ theme }) => theme.fontSizes.Title2}
         );
         text-align: center;
     }
