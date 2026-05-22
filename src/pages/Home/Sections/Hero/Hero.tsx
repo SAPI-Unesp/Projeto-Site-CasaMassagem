@@ -23,7 +23,7 @@ export function HeroSection() {
                     { label: 'Contato', href: '#contact' },
                 ]}
             />
-            <HeroContainer>
+            <HeroContainer id="hero">
                 <TextContainer>
                     <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />
                 </TextContainer>

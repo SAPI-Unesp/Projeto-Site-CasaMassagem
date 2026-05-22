@@ -26,25 +26,28 @@ export function NavBar({ items }: NavBarProps) {
     }, []);
 
     useEffect(() => {
-        const sections = document.querySelectorAll('[id]');
+    const sections = document.querySelectorAll('[id]');
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'hero') {
+                        setActiveSection('');
+                    } else {
                         setActiveSection(entry.target.id);
                     }
-                });
-            },
-            {
-                rootMargin: '-80px 0px -40% 0px',
-                threshold: 0,
-            }
-        );
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
 
-        sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => observer.observe(section));
 
-        return () => observer.disconnect();
+    return () => observer.disconnect();
     }, []);
 
     return (
