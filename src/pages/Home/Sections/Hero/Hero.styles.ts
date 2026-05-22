@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const HeroContainer = styled.section`
+export const HeroContainer = styled.section<{ $backgroundImage: string }>`
   width: 100%;
   height: 100vh;
   position: relative;
@@ -8,49 +8,51 @@ export const HeroContainer = styled.section`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-image: url(${({ $backgroundImage }) => $backgroundImage});
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
-export const BackgroundImage = styled.img`
+export const LogoContainer = styled.div<{ $logoImage: string }>`
+  --hero-logo-offset: clamp(4.25rem, 13.5vh, 8.75rem);
+
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 1;
-`;
-
-export const LogoContainer = styled.div`
-  position: relative;
+  inset: 0;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateY(clamp(3.5rem, 12vh, 7.5rem));
+  pointer-events: none;
+
+  @media (min-width: 1200px) {
+    --hero-logo-offset: clamp(6rem, 17vh, 11rem);
+  }
 
   &::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 100%; 
-    height: 100%; 
-
-    background-color: rgba(0, 0, 0, 0.4); 
-    
-    border-radius: 50%;
-    filter: blur(40px); 
-    
-    z-index: -1; 
+    inset: 0;
+    background-image: radial-gradient(
+      ellipse,
+      rgba(0, 0, 0, 0.4) 0 70%,
+      rgba(0, 0, 0, 0) 71%
+    );
+    background-size: min(95vw, 720px) min(45vw, 400px);
+    background-position: center calc(50% + var(--hero-logo-offset));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(40px);
+    z-index: 0;
   }
-`;
 
-export const HeroLogo = styled.img`
-  width: 95%;
-  max-width: 720px;
-  height: auto;
-  /* Certifique-se de que não há "filter: drop-shadow" aqui */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(${({ $logoImage }) => $logoImage});
+    background-size: min(95vw, 720px) auto;
+    background-position: center calc(50% + var(--hero-logo-offset));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+  }
 `;

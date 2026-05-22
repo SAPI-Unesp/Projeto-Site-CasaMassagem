@@ -10,8 +10,9 @@ export const Container = styled.nav<{ $scrolled: boolean }>`
     top: 0;
     left: 0;
     z-index: 999;
+    overflow: hidden;
 
-    height: ${({ $scrolled }) => ($scrolled ? "95px" : "165px")};
+    height: ${({ $scrolled }) => ($scrolled ? "95px" : "150px")};
 
     transition: all 0.4s ease;
 `;
@@ -20,19 +21,20 @@ export const NavLogo = styled.div<{ $scrolled: boolean }>`
     position: relative;
 
     .logoNav {
-        width: ${({ $scrolled }) => ($scrolled ? "150px" : "236px")};
+        width: ${({ $scrolled }) => ($scrolled ? "150px" : "215px")};
         transition: all 0.4s ease;
         position: relative;
-        margin: 20px 0 20px 50px;
+        margin: ${({ $scrolled }) =>
+            $scrolled ? "20px 0 20px 50px" : "13px 0 13px 50px"};
         z-index: 1;
     }
 
     .backNav {
-        width: ${({ $scrolled }) => ($scrolled ? "290px" : "422px")};
-        height: ${({ $scrolled }) => ($scrolled ? "116px" : "177px")};
+        width: ${({ $scrolled }) => ($scrolled ? "290px" : "390px")};
+        height: ${({ $scrolled }) => ($scrolled ? "116px" : "165px")};
         transition: all 0.4s ease;
         position: absolute;
-        top: 0;
+        top: ${({ $scrolled }) => ($scrolled ? "0" : "-8px")};
         left: 0;
         z-index: 0;
     }
@@ -42,16 +44,20 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    height: 100%;
     margin: 0 auto;
 
     a {
+        display: flex;
+        align-items: center;
         position: relative;
         font-size: ${({ $scrolled }) => ($scrolled ? "24px" : "35px")};
+        line-height: 1;
         transition: all 0.4s ease;
         font-family: 'Cinzel', serif;
         color: #f2e4d4;
         text-decoration: none;
-        padding-bottom: 5px;
+        padding: 0;
 
         @media (max-width: 1240px) {
             font-size: 25px;
@@ -69,7 +75,7 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
             content: "";
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: -7px;
             width: 0;
             height: 2px;
             background-color: #fff;

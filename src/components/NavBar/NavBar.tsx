@@ -3,6 +3,7 @@ import logoNav from '../../assets/logoNav.png';
 import backNav from '../../assets/backNav.png';
 import { useEffect, useState } from 'react';
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 type NavItem = {
     label: string;
@@ -16,6 +17,7 @@ type NavBarProps = {
 export function NavBar({ items }: NavBarProps) {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -60,20 +62,32 @@ export function NavBar({ items }: NavBarProps) {
 
             <NavItems $scrolled={scrolled}>
                 {items.map((item, index) => {
-                    const sectionId = item.href.replace('#', '');
+                    const isSectionLink = item.href.startsWith('#');
+                    const sectionId = isSectionLink
+                        ? item.href.replace('#', '')
+                        : '';
+                    const isActive =
+                        isSectionLink
+                            ? activeSection === sectionId
+                            : location.pathname === item.href;
 
                     return (
                         <React.Fragment key={item.href}>
-                            <a
-                                href={item.href}
-                                className={
-                                    activeSection === sectionId
-                                        ? 'active'
-                                        : ''
-                                }
-                            >
-                                {item.label}
-                            </a>
+                            {isSectionLink ? (
+                                <a
+                                    href={item.href}
+                                    className={isActive ? 'active' : ''}
+                                >
+                                    {item.label}
+                                </a>
+                            ) : (
+                                <Link
+                                    to={item.href}
+                                    className={isActive ? 'active' : ''}
+                                >
+                                    {item.label}
+                                </Link>
+                            )}
 
                             {index < items.length - 1 && <Divider />}
                         </React.Fragment>

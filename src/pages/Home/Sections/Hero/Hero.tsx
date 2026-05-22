@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   HeroContainer,
-  BackgroundImage,
   LogoContainer,
-  HeroLogo,
 } from './Hero.styles';
 
 import { NavBar } from '../../../../components/NavBar/NavBar';
@@ -16,17 +14,17 @@ export function HeroSection() {
             <NavBar
                 items={[
                     { label: 'Sobre Nós', href: '#about' },
-                    { label: 'Projeto Social', href: '#social' },
-                    { label: 'Serviços', href: '#service' },
+                    { label: 'Projeto Social', href: '/projetosocial' },
+                    { label: 'Serviços', href: '/servicos' },
                     { label: 'Contato', href: '#contact' },
                 ]}
             />
-            <HeroContainer id="hero">
-                <BackgroundImage src={massagistImage} alt="Massoterapeuta Monique Ferraz" />
-                
-                <LogoContainer>
-                    <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />
-                </LogoContainer>
+            <HeroContainer id="hero" $backgroundImage={massagistImage}>
+                <LogoContainer
+                    $logoImage={logoImage}
+                    role="img"
+                    aria-label="Logo Monique Ferraz"
+                />
             </HeroContainer>
         </>
     );

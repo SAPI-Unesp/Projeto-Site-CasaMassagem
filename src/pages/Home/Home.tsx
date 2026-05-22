@@ -20,7 +20,7 @@ export function Home() {
             <ProjectSection/>
 
             <ServicesSection/>
-            
+
             <TestimonialsSection/>
 
             <ContactSection>

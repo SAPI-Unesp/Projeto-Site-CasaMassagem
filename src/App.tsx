@@ -3,6 +3,7 @@ import { theme } from './styles/theme';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import { Social } from './pages/Social/Social';
+import { Servicos } from './pages/Servicos/Servicos';
 import { GlobalStyles } from './styles/global';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -51,10 +52,10 @@ function App() {
                     
                     background: 'linear-gradient(to right, ' +
                     'rgba(0, 0, 0, 0.2) 0%, ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% - 805px), ' + 
-                    'rgba(0, 0, 0, 0) calc(50% - 805px), ' +   
-                    'rgba(0, 0, 0, 0) calc(50% + 795px), ' +   
-                    'rgba(0, 0, 0, 0.2) calc(50% + 795px), ' + 
+                    'rgba(0, 0, 0, 0.2) calc(50% - 800px), ' +
+                    'rgba(0, 0, 0, 0) calc(50% - 800px), ' +
+                    'rgba(0, 0, 0, 0) calc(50% + 800px), ' +
+                    'rgba(0, 0, 0, 0.2) calc(50% + 800px), ' +
                     'rgba(0, 0, 0, 0.2) 100%)',
                     pointerEvents: 'none'
                   
@@ -94,6 +95,7 @@ function App() {
                             <Routes>
                                 <Route path="/" element={<Home />}/>
                                 <Route path="/projetosocial" element={<Social />}/>
+                                <Route path="/servicos" element={<Servicos />}/>
                             </Routes>
                         </BrowserRouter>
                     </div>
