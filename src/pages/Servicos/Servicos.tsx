@@ -6,7 +6,7 @@ import { Card } from "./Cards/card";
 import { Filter } from "./Filter/filter";
 import type { Service } from "./Filter/Services";
 import { getServiceId } from "./Filter/Services";
-import { CardGrid, ServicesContainer } from "./Servicos.style";
+import { CardGrid, ServiceContainer } from "./Servicos.style";
 import { Footer } from "../Home/Sections/Footer/Footer";
 
 export function Servicos() {
@@ -29,7 +29,7 @@ export function Servicos() {
           { label: "Contato", href: "/#contact" },
         ]}
       />
-      <ServicesContainer>
+      <ServiceContainer>
         <Filter onFilterChange={setFilteredServices} />
         <CardGrid>
           {filteredServices.map((service) => {
@@ -47,7 +47,7 @@ export function Servicos() {
             );
           })}
         </CardGrid>
-      </ServicesContainer>
+      </ServiceContainer>
       <Footer />
     </>
   );
