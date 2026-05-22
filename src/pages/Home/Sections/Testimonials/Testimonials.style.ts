@@ -75,10 +75,16 @@ export const TestimonialText = styled.p`
   color: #5d4037;
   line-height: 1.5;
   margin: 0;
+  font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
+  font-size: calc(${({ theme }) => theme.fontSizes.Paragrafo} + 0.08rem);
+  color: ${({ theme }) => theme.colors.marrom1};
 `;
 
 export const TestimonialAuthor = styled.span`
   font-weight: bold;
+  font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
+  font-size: calc(${({ theme }) => theme.fontSizes.Paragrafo} + 0.08rem);
+  color: ${({ theme }) => theme.colors.marrom1};
   margin-top: 15px;
   color: #000;
 `;

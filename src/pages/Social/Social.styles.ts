@@ -6,7 +6,5 @@ export const SocialContainer = styled.main`
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background-color: rgba(225, 221, 212, 0.2);
-  padding-top: 150px;
-  box-sizing: border-box;
+  background-color: rgba(225, 221, 212, 0.5);
 `;
