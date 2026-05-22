@@ -8,14 +8,21 @@ import {
     MassagistImage,
 } from './Hero.styles';
 
-import { NavBar } from '../NavBar/NavBar';
+import { NavBar } from '../../../../components/NavBar/NavBar';
 import logoImage from '../../../../assets/logo.png';
 import massagistImage from '../../../../assets/template.jpg';
 
 export function HeroSection() {
     return (
         <>
-            <NavBar />
+            <NavBar
+                items={[
+                    { label: 'Sobre Nós', href: '#about' },
+                    { label: 'Projeto Social', href: '#social' },
+                    { label: 'Serviços', href: '#services' },
+                    { label: 'Contato', href: '#contact' },
+                ]}
+            />
             <HeroContainer>
                 <TextContainer>
                     <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />

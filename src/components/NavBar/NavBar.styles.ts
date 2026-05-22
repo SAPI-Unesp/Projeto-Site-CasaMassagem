@@ -23,13 +23,13 @@ export const NavLogo = styled.div<{ $scrolled: boolean }>`
         width: ${({ $scrolled }) => ($scrolled ? "150px" : "236px")};
         transition: all 0.4s ease;
         position: relative;
-        margin: 10px 0 10px 50px;
+        margin: 20px 0 20px 50px;
         z-index: 1;
     }
 
     .backNav {
-        width: ${({ $scrolled }) => ($scrolled ? "260px" : "422px")};
-        height: ${({ $scrolled }) => ($scrolled ? "105px" : "167px")};
+        width: ${({ $scrolled }) => ($scrolled ? "290px" : "422px")};
+        height: ${({ $scrolled }) => ($scrolled ? "116px" : "177px")};
         transition: all 0.4s ease;
         position: absolute;
         top: 0;
@@ -45,12 +45,13 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
     margin: 0 auto;
 
     a {
+        position: relative;
         font-size: ${({ $scrolled }) => ($scrolled ? "24px" : "32px")};
         transition: all 0.4s ease;
         font-family: 'Cinzel', serif;
         color: #f2e4d4;
         text-decoration: none;
-        font-size: 32px;
+        padding-bottom: 5px;
 
         @media (max-width: 1240px) {
             font-size: 25px;
@@ -63,14 +64,36 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
         @media (max-width: 1050px) {
             font-size: 15px;
         }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        &:hover {
+            color: #fff;
+        }
+        &.active {
+            color: #fff;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+        &.active::after {
+            width: 100%;
+        }
     }
 
     @media (max-width: 850px) {
         display: none;
-    }
-
-    a:hover {
-        color: #fff;
     }
 `;
 
