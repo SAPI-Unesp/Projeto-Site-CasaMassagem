@@ -60,10 +60,11 @@ export const CardTitle = styled.h1`
 
 export const CardImage = styled.img`
     border-radius: 40px;
-    width: 600px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     background-color: #8f9c67;
     padding: 8px;
+    object-fit: cover;
     display: flex;
     flex-direction: row;
     transition: 0.3s;
@@ -280,7 +281,7 @@ export const OverlayContentBoxMobile = styled.div`
     div {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
     }
 
     h1 {
@@ -318,6 +319,7 @@ export const TagMobile = styled.div`
 `;
 
 export const ContainerTagsMobile = styled.div`
+        width:25%;
         display: flex;
         overflow: hidden;
         flex-direction:column;
@@ -338,7 +340,6 @@ export const ContainerTagContatoMobile = styled.div`
 
 export const ContatoMobile = styled.div`
         position: relative;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -363,5 +364,5 @@ export const DividerMobile = styled.div`
     width: 65%;
     height: 2px;
     background-color: #805f46;
-    margin: 10px 0;
+    margin: 5px;
 `;
