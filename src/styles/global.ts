@@ -70,4 +70,10 @@ body {
   section {
     scroll-margin-top: 50px;
   }
+
+  @media (max-width: 768px) {
+  .no-mobile {
+    display: none !important;
+  }
+}
 `;

@@ -12,6 +12,7 @@ import backgroundImagePc from './assets/backgroundImagePc.png';
 import Parallax1 from './assets/Parallax1.png';
 import Parallax2 from './assets/Parallax2.png';
 import Parallax3 from './assets/Parallax3.png';
+import Parallax4 from './assets/Parallax4.png';
 
 function App() {
     return (
@@ -79,13 +80,31 @@ function App() {
                         overflow: 'hidden'
                     }}>
                         
-                        <Parallax speed={-130} style={{ position: 'absolute', width: '100%', zIndex: 1 }}>
-                            <img src={Parallax3} alt="Parallax 3" style={{ width: '100%', height: 'auto', opacity: 0.9 }} />
+                        <Parallax speed={-110} style={{ position: 'absolute', width: '100%', zIndex: 3 }}>
+                            <img src={Parallax3} alt="Parallax 3" style={{ width: '100%', height: 'auto', opacity: 0.9}} />
                         </Parallax>
                       
-                        <Parallax speed={-180} style={{ position: 'absolute', width: '100%', zIndex: 2 }}>
-                            <img src={Parallax2} alt="Parallax 2" style={{ width: '100%', height: 'auto' , opacity: 0.9}} />
-                        </Parallax>                
+                        <Parallax speed={-160} style={{ position: 'absolute', width: '100%', zIndex: 4 }}>
+                            <img src={Parallax2} alt="Parallax 2" style={{ width: '100%', height: 'auto' , opacity: 0.9, display: 'flex', justifyContent: 'center', alignItems: 'cemter'}} />
+                        </Parallax>   
+
+                        <div className="no-mobile">
+                            <Parallax speed={-220} style={{ position: 'absolute', width: '100%', zIndex: 2 }}>
+                                <img src={Parallax1} alt="Parallax 1" style={{ width: '100%', height: 'auto' , opacity: 0.5, display: 'flex', justifyContent: 'center', alignItems: 'cemter'}} />
+                            </Parallax>   
+                        </div> 
+                        
+                        <Parallax speed={-700} style={{ position: 'absolute', width: '100%', zIndex: 1 }}>
+                            <img 
+                            src={Parallax4} 
+                            alt="Parallax 4" 
+                            style={{ width: '100%', height: 'auto', opacity: 0.90, display: 'block' }} 
+                            />
+                        </Parallax>
+                    
+                          
+                    
+                                   
 
                     </div>
 
