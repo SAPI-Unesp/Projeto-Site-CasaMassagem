@@ -84,7 +84,7 @@ export const OverlayChildrenMobile = styled.div`
     display: flex;
     color: #805f46;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 `;
 
 export const OverlayControlsMobile = styled.div`
@@ -95,8 +95,6 @@ export const OverlayControlsMobile = styled.div`
 
 export const OverlayCloseMobile = styled.button`
     margin-right:30px;
-    margin-top:10px;
-    margin-bottom:10px;
     background-color: transparent;
     border: none;
     font-size: 40px;

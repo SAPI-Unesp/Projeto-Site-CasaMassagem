@@ -107,7 +107,6 @@ export function Card({ title, image, text }: CardProps) {
                                                 alt="WhatsApp"
                                                 />
                                         </a>
-                                        <h1>Contate-nos</h1>
                                     </ContatoMobile>
                             </ContainerTagsMobile>
                         </OverlayHeaderMobile>
