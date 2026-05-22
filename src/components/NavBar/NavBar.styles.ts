@@ -46,7 +46,7 @@ export const NavItems = styled.div<{ $scrolled: boolean }>`
 
     a {
         position: relative;
-        font-size: ${({ $scrolled }) => ($scrolled ? "24px" : "32px")};
+        font-size: ${({ $scrolled }) => ($scrolled ? "24px" : "35px")};
         transition: all 0.4s ease;
         font-family: 'Cinzel', serif;
         color: #f2e4d4;

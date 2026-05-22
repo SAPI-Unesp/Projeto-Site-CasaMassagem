@@ -2,6 +2,7 @@ import { Container, NavItems, NavLogo, Divider } from './NavBar.styles';
 import logoNav from '../../assets/logoNav.png';
 import backNav from '../../assets/backNav.png';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 type NavItem = {
     label: string;
@@ -26,28 +27,28 @@ export function NavBar({ items }: NavBarProps) {
     }, []);
 
     useEffect(() => {
-    const sections = document.querySelectorAll('[id]');
+        const sections = document.querySelectorAll('[id]');
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    if (entry.target.id === 'hero') {
-                        setActiveSection('');
-                    } else {
-                        setActiveSection(entry.target.id);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'hero') {
+                            setActiveSection('');
+                        } else {
+                            setActiveSection(entry.target.id);
+                        }
                     }
-                }
-            });
-        },
-        {
-            threshold: 0.5,
-        }
-    );
+                });
+            },
+            {
+                threshold: 0.5,
+            }
+        );
 
-    sections.forEach((section) => observer.observe(section));
+        sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
+        return () => observer.disconnect();
     }, []);
 
     return (
@@ -62,7 +63,7 @@ export function NavBar({ items }: NavBarProps) {
                     const sectionId = item.href.replace('#', '');
 
                     return (
-                        <>
+                        <React.Fragment key={item.href}>
                             <a
                                 href={item.href}
                                 className={
@@ -75,7 +76,7 @@ export function NavBar({ items }: NavBarProps) {
                             </a>
 
                             {index < items.length - 1 && <Divider />}
-                        </>
+                        </React.Fragment>
                     );
                 })}
             </NavItems>
