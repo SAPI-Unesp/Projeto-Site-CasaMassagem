@@ -1,6 +1,6 @@
 import { CheckboxAligner, CheckboxFilter, CheckboxLabel, DividerColumn, 
     FilterCheckboxesContainer, FilterSection, FilterSectionAligner, FilterTitle } from "./filter.style";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { services } from "./Services.ts";
 import type { Service } from "./Services.ts";
 
@@ -34,11 +34,17 @@ export function Filter({ onFilterChange }: FilterProps) {
 
     // Caso algum filtro seja selecionado ou desselecionado e filtra os cards de acordo
     useEffect(() => {
-        const nenhumSelecionado = Object.values(filters).every(v => !v);
+        const filtrosAtivos = Object.keys(filters).filter(
+            key => filters[key as keyof typeof filters]
+        );
+
+        if (filtrosAtivos.length === 0) {
+            onFilterChange(services);
+            return;
+        }
 
         const filtered = services.filter(service => {
-            if (nenhumSelecionado) return true;
-            return filters[service.categoria as keyof typeof filters];
+            return filtrosAtivos.every(filtro => service.categoria.includes(filtro));
         });
 
         onFilterChange(filtered);
@@ -53,10 +59,34 @@ export function Filter({ onFilterChange }: FilterProps) {
         { key: "rosto", label: "Rosto" },
         { key: "pes", label: "Pés" },
     ];
+    
+    // Atualiza o contador indicando quantos cards fazem parte dos filtros anteriomente selecionados
+    const dynamicCounts = useMemo(() => {
+        const filtrosAtivos = Object.keys(filters).filter(
+            key => filters[key as keyof typeof filters]
+        );
 
-    // Conta quantos cards tem de cada categoria ( pra colocar no label do lado o texto da checkbox )
-    const count = (categoria: string) => services.filter(s => s.categoria === categoria).length;
+        const simularContagem = (categoriaChave: FilterKeys) => {
+            const novosFiltrosSimulados = filtrosAtivos.includes(categoriaChave)
+                ? filtrosAtivos
+                : [...filtrosAtivos, categoriaChave];
 
+            return services.filter(service => 
+                novosFiltrosSimulados.every(filtro => service.categoria.includes(filtro))
+            ).length;
+        };
+
+        return {
+            massagem: simularContagem("massagem"),
+            drenagem: simularContagem("drenagem"),
+            estetica: simularContagem("estetica"),
+            corpo: simularContagem("corpo"),
+            rosto: simularContagem("rosto"),
+            pes: simularContagem("pes"),
+        };
+    }, [filters]);
+
+    
     return (
         <FilterSectionAligner>
             <FilterTitle>Filtros</FilterTitle>
@@ -69,7 +99,7 @@ export function Filter({ onFilterChange }: FilterProps) {
                                 checked={filters[key as keyof typeof filters]}
                                 onChange={() => handleChange(key)}
                             />
-                            <CheckboxLabel>{label} ({count(key)})</CheckboxLabel>
+                            <CheckboxLabel>{label} ({dynamicCounts[key]})</CheckboxLabel>
                         </CheckboxAligner>
                     ))}
                 </FilterCheckboxesContainer>
@@ -84,7 +114,7 @@ export function Filter({ onFilterChange }: FilterProps) {
                                 checked={filters[key as keyof typeof filters]}
                                 onChange={() => handleChange(key)}
                             />
-                            <CheckboxLabel>{label} ({count(key)})</CheckboxLabel>
+                            <CheckboxLabel>{label} ({dynamicCounts[key]})</CheckboxLabel>
                         </CheckboxAligner>
                     ))}
                 </FilterCheckboxesContainer>

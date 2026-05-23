@@ -10,8 +10,6 @@ export function Servicos() {
 
     const [filteredServices, setFilteredServices] = useState<Service[]>([]);
 
-    console.log(filteredServices)
-
     return (
         <>
             <ServicesContainer>
@@ -20,12 +18,12 @@ export function Servicos() {
                 <CardGrid>
                     {filteredServices.map(service => (
                         <Card
-                        key={service.title + service.categoria}
-                        title={service.title}
-                        image={service.image}
+                            key={service.title + service.categoria}
+                            title={service.title}
+                            image={service.image}
                             text={service.text}
-                            />
-                        ))}
+                        />
+                    ))}
                 </CardGrid>    
             </ServicesContainer>
             <Footer></Footer>
