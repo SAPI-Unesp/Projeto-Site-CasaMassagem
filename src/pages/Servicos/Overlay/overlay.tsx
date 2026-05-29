@@ -45,7 +45,11 @@ export function Overlay({ isOpen, onClose, children }: OverlayProps) {
 
                     <OverlayContentMobile>
                         <OverlayControlsMobile>
-                            <OverlayCloseMobile type="button" onClick={onClose} />
+                            <OverlayCloseMobile
+                                type="button"
+                                onClick={onClose}
+                                aria-label="Fechar servico"
+                            />
                         </OverlayControlsMobile>
 
                         <OverlayChildrenMobile>{children}</OverlayChildrenMobile>
@@ -56,7 +60,11 @@ export function Overlay({ isOpen, onClose, children }: OverlayProps) {
                     <OverlayBackground onClick={onClose} />
                     <OverlayContent>
                         <OverlayControls>
-                            <OverlayClose type="button" onClick={onClose} />
+                            <OverlayClose
+                                type="button"
+                                onClick={onClose}
+                                aria-label="Fechar servico"
+                            />
                         </OverlayControls>
 
                         <OverlayChildren>{children}</OverlayChildren>

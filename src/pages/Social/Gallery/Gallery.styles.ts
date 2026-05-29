@@ -131,7 +131,7 @@ export const HoverTitle = styled.p`
 export const OverlayContentBox = styled.div`
     h1 {
         font-size: 55px;
-        color: #fff;
+        color: #FAEBD4;
         text-align: center;
         letter-spacing: 1px;
         line-height: 1.1;

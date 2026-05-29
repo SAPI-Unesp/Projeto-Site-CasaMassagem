@@ -31,7 +31,11 @@ export function Overlay({
 
             <OverlayContent>
                 <OverlayControls>
-                    <OverlayClose type="button" onClick={onClose} />
+                    <OverlayClose
+                        type="button"
+                        onClick={onClose}
+                        aria-label="Fechar galeria"
+                    />
                 </OverlayControls>
                 {children}
                 <CarouselSingle

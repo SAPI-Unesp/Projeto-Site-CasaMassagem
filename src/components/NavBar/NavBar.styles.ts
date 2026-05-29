@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.nav<{ $scrolled: boolean; $animate: boolean }>`
     display: flex;
@@ -37,6 +38,20 @@ export const NavLogo = styled.div<{ $scrolled: boolean; $animate: boolean }>`
         top: ${({ $scrolled }) => ($scrolled ? "0" : "-8px")};
         left: 0;
         z-index: 0;
+    }
+`;
+
+export const LogoLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 0;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid #f2e4d4;
+        outline-offset: -6px;
     }
 `;
 

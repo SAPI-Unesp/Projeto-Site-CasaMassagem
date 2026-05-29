@@ -60,7 +60,7 @@ export const NavContainer = styled.div`
   .swiper-button-prev {
     pointer-events: all;
 
-    color: ${({ theme }) => theme.colors.branco1};
+    color: #FAEBD4;
     font-size: 30px;
     font-weight: bold;
 

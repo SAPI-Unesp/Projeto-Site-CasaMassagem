@@ -1,4 +1,4 @@
-import { Container, NavItems, NavLogo, Divider } from './NavBar.styles';
+import { Container, NavItems, NavLogo, Divider, LogoLink } from './NavBar.styles';
 import logoNav from '../../assets/logoNav.png';
 import backNav from '../../assets/backNav.png';
 import { useEffect, useState } from 'react';
@@ -70,12 +70,24 @@ export function NavBar({ items }: NavBarProps) {
         return () => observer.disconnect();
     }, []);
 
+    const handleLogoClick = () => {
+        window.setTimeout(() => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        }, 0);
+    };
+
     return (
         <Container $scrolled={scrolled} $animate={animate}>
-            <NavLogo $scrolled={scrolled} $animate={animate}>
-                <img className="logoNav" src={logoNav} alt="Logo" />
-                <img className="backNav" src={backNav} alt="Background" />
-            </NavLogo>
+            <LogoLink
+                to="/#hero"
+                onClick={handleLogoClick}
+                aria-label="Ir para o topo da pagina inicial"
+            >
+                <NavLogo $scrolled={scrolled} $animate={animate}>
+                    <img className="logoNav" src={logoNav} alt="Logo" />
+                    <img className="backNav" src={backNav} alt="Background" />
+                </NavLogo>
+            </LogoLink>
 
             <NavItems $scrolled={scrolled} $animate={animate}>
                 {items.map((item, index) => {

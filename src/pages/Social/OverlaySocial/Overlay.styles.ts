@@ -9,7 +9,7 @@ export const OverlayBackground = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     cursor: pointer;
-    z-index: 9;
+    z-index: 9000;
 `;
 
 export const OverlayContent = styled.div`
@@ -17,7 +17,7 @@ export const OverlayContent = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 9001;
     background-color: #8F9C67DD;
     width: 100%;
     height: fit-content;
@@ -25,20 +25,72 @@ export const OverlayContent = styled.div`
 `;
 
 export const OverlayControls = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-`;
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 9002;
 
-export const OverlayClose = styled.button`
-    background-color: transparent;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-
-    &::after {
-        display: inline-block;
-        content: '\\00d7';
+    @media (max-width: 768px) {
+        top: 16px;
+        right: 16px;
     }
 `;
 
+export const OverlayClose = styled.button`
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(250, 235, 212, 0.94);
+    border: 2px solid rgba(128, 95, 70, 0.35);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 3px;
+        border-radius: 999px;
+        background-color: #805f46;
+        transition: background-color 0.2s ease;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus-visible {
+        background-color: #805f46;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        outline: none;
+    }
+
+    &:hover::before,
+    &:hover::after,
+    &:focus-visible::before,
+    &:focus-visible::after {
+        background-color: #FAEBD4;
+    }
+
+    @media (max-width: 768px) {
+        width: 44px;
+        height: 44px;
+
+        &::before,
+        &::after {
+            width: 20px;
+        }
+    }
+`;

@@ -46,6 +46,7 @@ export const CardTitle = styled.h1`
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.38);
     align-self: center;
     position: relative;
     text-align: center;
@@ -217,8 +218,17 @@ export const Tag = styled.div`
         border-radius: 50px;
         padding: 10px 20px;
         align-items: center;
+        justify-content: center;
         font-size: 8px;
         gap: 15px;
+        min-width: 130px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+
+        h1 {
+            width: 48px;
+            text-align: left;
+            line-height: 1;
+        }
 `;
 
 export const ContainerTags = styled.div`
@@ -307,23 +317,33 @@ export const TagMobile = styled.div`
         position: relative;
         background-color: #8f9c67;
         border-radius: 50px;
-        padding: 5% 5%;
+        padding: 6px 10px;
         align-items: center;
+        justify-content: center;
         font-size: 6px;
-        gap: 10px;
+        gap: 8px;
+        width: 86px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
 
         img{
             width:20px;
             height:20px;
         }
+
+        h1 {
+            width: 36px;
+            text-align: left;
+            line-height: 1;
+        }
 `;
 
 export const ContainerTagsMobile = styled.div`
-        width:25%;
+        width: auto;
         display: flex;
-        overflow: hidden;
+        overflow: visible;
         flex-direction:column;
         justify-content:center;
+        align-items: flex-start;
         gap: 14px;
         font-family: Cormorant Garamond;
         color: #fff;

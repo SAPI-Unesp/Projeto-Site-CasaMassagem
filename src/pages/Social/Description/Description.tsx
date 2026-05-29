@@ -26,9 +26,9 @@ export function Description() {
 
       <GreenFrameWrapper>
         <iframe
-          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0"}
+          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&modestbranding=1&rel=0"}
           title="Projeto social"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
       </GreenFrameWrapper>
