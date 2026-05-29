@@ -89,7 +89,7 @@ export const CardBtn = styled.button`
     background-color: #8f9c67;
     color: white;
     padding: 5px 20px 5px 20px;
-    font-size: 14px;
+    font-size : ${({ theme }) => theme.fontSizes.Paragrafo};
     align-self: flex-end;
     margin-right: 25px;
     font-family: Cinzel;

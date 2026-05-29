@@ -18,7 +18,7 @@ export const FilterSectionAligner = styled.div`
 
 export const FilterTitle = styled.h2`
     color: ${colors.brownText};
-    font-size: 1.8rem;
+    font-size: ${({ theme }) => theme.fontSizes.Title1};
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 25px;
@@ -61,6 +61,7 @@ export const FilterCheckboxesContainer = styled.div`
 export const DividerColumn = styled.div`
     width: 1.5px;
     height: 110px;
+    margin-left: 6%;
     background-color: ${colors.brownBorder};
     flex-shrink: 0;
 
@@ -74,6 +75,7 @@ export const CheckboxAligner = styled.div`
     align-items: center;
     gap: 10px;
     width: 100%;
+
 `;
 
 export const CheckboxFilter = styled.input`
@@ -83,11 +85,11 @@ export const CheckboxFilter = styled.input`
     height: 18px;
     min-width: 18px;
     border: 2px solid ${colors.brownBorder};
+    
     border-radius: 4px;
     cursor: pointer;
     background-color: transparent;
     position: relative;
-
     &:checked {
         background-color: ${colors.brownBorder};
     }
@@ -110,6 +112,7 @@ export const CheckboxLabel = styled.label`
     font-size: 1.1rem;
     font-weight: 600;
     white-space: nowrap;
+    font-size: ${({ theme }) => theme.fontSizes.Paragrafo};
 
     @media(max-width: 768px){
         font-size: 0.9rem;
