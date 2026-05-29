@@ -61,7 +61,7 @@ export const FilterCheckboxesContainer = styled.div`
 export const DividerColumn = styled.div`
     width: 1.5px;
     height: 110px;
-    margin-left: 6%;
+    margin-left: 5%;
     background-color: ${colors.brownBorder};
     flex-shrink: 0;
 
