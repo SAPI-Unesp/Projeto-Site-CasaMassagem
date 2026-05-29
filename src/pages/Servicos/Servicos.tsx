@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { NavBar } from "../../components/NavBar/NavBar";
@@ -11,13 +11,34 @@ import { Footer } from "../Home/Sections/Footer/Footer";
 
 export function Servicos() {
   const location = useLocation();
-  const openServiceId = location.state?.openServiceId;
+  const navigate = useNavigate();
 
   const [filteredServices, setFilteredServices] = useState<Service[]>([]);
+  const [openServiceId, setOpenServiceId] = useState<string | null>(
+    () => location.state?.openServiceId ?? null
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (!openServiceId) return;
+
+    const serviceWasRendered = filteredServices.some(
+      (service) => getServiceId(service) === openServiceId
+    );
+
+    if (!serviceWasRendered) return;
+
+    navigate(location.pathname, { replace: true, state: null });
+
+    const timeout = window.setTimeout(() => {
+      setOpenServiceId(null);
+    }, 0);
+
+    return () => window.clearTimeout(timeout);
+  }, [filteredServices, location.pathname, navigate, openServiceId]);
 
   return (
     <>
