@@ -1,77 +1,90 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const DepoimentosSection = styled.div`
+export const TestimonialSection = styled.div`
   width: 100%;
-  padding: 80px 20px;
+  padding: 80px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
+  overflow: hidden; 
 `;
 
 export const SectionTitle = styled.h2`
-  padding-left: 40px;
   width: 100%; 
-  max-width: 1500;
-  text-align: left;
-  font-size: ${({ theme }) => theme.fontSizes.Title2};
-  color: ${({ theme }) => theme.colors.marrom1};
-  margin-bottom: ${({ theme }) => theme.spacing.xl};
-`;
-
-export const DepoimentosGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-  justify-content: start;
-  gap: 25px; 
-  justify-items: center;
   max-width: 1500px;
-  margin: 0 auto;
+  text-align: left;
+  font-size: clamp(2rem, 8vw, ${({ theme }) => theme.fontSizes?.Title2 || '4rem'}); 
+  color: ${({ theme }) => theme.colors?.marrom1 || '#333'};
+  margin-bottom: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
 `;
 
-export const DepoimentoCard = styled.div`
+export const CarroselContainer = styled.div`
+  display: flex;
+  width: 100%;
+  cursor: grab;
+  margin-bottom: 20px;
+  
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+    &:active {
+      cursor: grabbing;
+    }
+`;
+
+export const CarroselTrack = styled(motion.div)`
+  display: flex;
+  gap: 40px;
+  padding: 25px;
+  width: max-content;
+`;
+
+export const TestimonialCard = styled.div`
   background-color: #d1b897; 
   border-radius: 40px;
   padding: 25px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); 
   text-align: left;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  min-height: 110px; 
+  flex-shrink: 0; 
+  width: 350px; 
+  min-height: 150px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    background-color: #dbbd7a;
+    transform: translateY(-5px); 
+  } 
+
+  @media screen and (max-width: 468px) {
+    width: 250px; 
+    border-radius: 25px;
+  }
 `;
 
-export const DepoimentoCard2 = styled.div`
-  background-color: #d1b897; 
-  border-radius: 40px;
-  padding: 25px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
-  text-align: left;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  min-height: 110px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-export const DepoimentoText = styled.p`
-  font-size: 1.4em;
-  color: #835e4eff; 
+export const TestimonialText = styled.p`
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #5d4037;
+  line-height: 1.5;
   margin: 0;
-  font-family: 'Times New Roman', serif;
+  font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
+  font-size: calc(${({ theme }) => theme.fontSizes.Paragrafo} + 0.08rem);
+  color: ${({ theme }) => theme.colors.marrom1};
+`;
+
+export const TestimonialAuthor = styled.span`
   font-weight: bold;
-`;
-
-export const DepoimentoAuthor = styled.p`
-  font-size: 1.4em;
-  color: black; 
-  font-family: ${({theme}) => theme.fontsStyles.Cormorant};
-  margin: 0;
-  margin-top: 1rem;
-  text-align: right;
+  font-family: ${({ theme }) => theme.fontsStyles.Cormorant};
+  font-size: calc(${({ theme }) => theme.fontSizes.Paragrafo} + 0.08rem);
+  color: ${({ theme }) => theme.colors.marrom1};
+  margin-top: 15px;
+  color: #000;
 `;

@@ -1,0 +1,55 @@
+import styled from "styled-components";
+
+export const TopbarSection = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+`;
+
+export const TopbarBackground = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: #8F9C67;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.9;
+`;
+
+export const TopbarLogo = styled.img`
+    width: ${props => props.width + '%' || 'auto'};
+    height: auto;
+    margin: auto;
+`;
+
+export const TopbarTitleBackground = styled.img`
+    width: 100%;
+    height: 100%;
+    position: relative;
+`;
+
+export const TopbarTitleText = styled.h1`
+    color: #F1F1F1;
+    font-family: 'Cinzel', serif;
+    font-size: 2.25rem;
+    margin-top: 3px;
+    letter-spacing: 2px;
+    position: absolute;
+
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+`;
+
+export const TopbarTitle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+`;

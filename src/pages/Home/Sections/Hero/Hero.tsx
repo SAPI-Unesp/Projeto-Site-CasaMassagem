@@ -1,28 +1,29 @@
-import React from "react";
 import {
   HeroContainer,
-  TextContainer,
-  HeroLogo,
-  HeroSlogan,
-  ImageFrame,
-  MassagistImage,
+  LogoContainer,
 } from './Hero.styles';
 
+import { NavBar } from '../../../../components/NavBar/NavBar';
 import logoImage from '../../../../assets/logo.png';
-import massagistImage from '../../../../assets/template.jpg';
-
+import massagistImage from '../../../../assets/foto-teste-social.png';
 
 export function HeroSection() {
     return (
         <>
-            <HeroContainer>
-                    <TextContainer>
-                        <HeroLogo src={logoImage} alt="Logo Monique Ferraz" />
-                    </TextContainer>
-                    <ImageFrame>
-                        <MassagistImage src={massagistImage} alt="Massoterapeuta Monique Ferraz" />
-                    </ImageFrame>
-                    <HeroSlogan>ALIVIO, EQUILIBRIO E CUIDADO EM CADA SESSÃO</HeroSlogan>
+            <NavBar
+                items={[
+                    { label: 'Sobre Nós', href: '#about' },
+                    { label: 'Projeto Social', href: '/projetosocial' },
+                    { label: 'Serviços', href: '/servicos' },
+                    { label: 'Contato', href: '#contact' },
+                ]}
+            />
+            <HeroContainer id="hero" $backgroundImage={massagistImage}>
+                <LogoContainer
+                    $logoImage={logoImage}
+                    role="img"
+                    aria-label="Logo Monique Ferraz"
+                />
             </HeroContainer>
         </>
     );

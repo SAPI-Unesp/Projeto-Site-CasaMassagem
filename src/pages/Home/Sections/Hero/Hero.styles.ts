@@ -1,102 +1,78 @@
 import styled from 'styled-components';
 
-
-export const HeroContainer = styled.section`
+export const HeroContainer = styled.section<{ $backgroundImage: string }>`
   width: 100%;
   height: 100vh;
-  /*background-color: var(--global-color-green);
-  opacity: 0.77;*/
-  background-color: var(--global-color-green);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 6rem;
-  overflow: hidden;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    z-index: 1;
-
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 30' preserveAspectRatio='none'%3E%3Cpath d='M0,20 C300,5 700,25 1000,10' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3C/svg%3E");
-    
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  }
-`;
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #f1f1f1;
-  flex: 1;
-  z-index: 2;
-`;
-
-export const HeroLogo = styled.img`
-  width: 500px;
-  height: auto;
-  margin-bottom: 1rem;
-`;
-
-export const HeroSlogan = styled.p`
-  position: absolute;
-  bottom: 1rem;
-  left: 6rem;
-  font-family: 'Cormorant', serif;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  color: #f1f1f1;
-`;
-
-export const ImageFrame = styled.div`
-  width: 55%;
-  height: 70%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: var(--global-bg);
-  background-attachment: fixed;
+  overflow: hidden;
+  background-image: url(${({ $backgroundImage }) => $backgroundImage});
   background-size: cover;
-  background-position: center;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-  border-radius: 80px 0 0 80px;
-  z-index: 1;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    border: 2px solid white;
-    border-right: none;
-    box-sizing: border-box;
-    border-radius: 80px 0 0 80px;
-    z-index: 3;
-  }
-
-  &::before {
-    inset: 1.5px 0 1.5px 1.5px; 
-  }
-
-  &::after {
-    inset: 25px 0 25px 25px;
+  @media (max-width: 768px) {
+    height: 100svh;
+    min-height: 100svh;
+    background-attachment: scroll;
+    background-position: center center;
   }
 `;
 
-export const MassagistImage = styled.img`
-  width: calc(100% - 25px);
-  height: calc(100% - 50px);
-  object-fit: cover;
-  position: relative;
-  border-radius: 80px 0 0 80px;
-  margin-left: auto;
-  margin-right: 0;
+export const LogoContainer = styled.div<{ $logoImage: string }>`
+  --hero-logo-y: 80%;
+  --hero-logo-size: min(95vw, 720px);
+  --hero-glow-height: min(45vw, 400px);
 
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      ellipse,
+      rgba(0, 0, 0, 0.4) 0 70%,
+      rgba(0, 0, 0, 0) 71%
+    );
+    background-size: var(--hero-logo-size) var(--hero-glow-height);
+    background-position: center var(--hero-logo-y);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(40px);
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(${({ $logoImage }) => $logoImage});
+    background-size: var(--hero-logo-size) auto;
+    background-position: center var(--hero-logo-y);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    --hero-logo-y: 69.5%;
+    --hero-logo-size: min(92vw, 560px);
+    --hero-glow-height: min(48vw, 320px);
+
+    &::before,
+    &::after {
+      background-attachment: scroll;
+    }
+
+    &::before {
+      filter: blur(30px);
+    }
+  }
 `;

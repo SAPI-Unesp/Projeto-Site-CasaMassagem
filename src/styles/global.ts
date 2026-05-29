@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   
   :root {
-    --global-bg: url(${BackgroundImage});
+    background-color: red;
     --global-color-green: rgba(151, 167, 103, 0.77);
     --global-color-brown: #6b4d3a; 
     font-family: 'Cinzel', serif;
@@ -32,6 +32,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
 
 body {
     margin: 0;
@@ -55,10 +56,24 @@ body {
     width: 100%;
     max-width: 1600px; 
     min-height: 600px; 
-    background-color: rgba(225, 221, 212, 0.15);
+    background-color: rgba(167, 148, 120, 0.15);
     box-shadow: 0px 16px 10px 12px rgba(0, 0, 0, 0.25);
 
     display: flex;
     flex-direction: column;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section {
+    scroll-margin-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+  .no-mobile {
+    display: none !important;
+  }
+}
 `;
