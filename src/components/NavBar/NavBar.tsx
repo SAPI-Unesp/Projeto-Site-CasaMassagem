@@ -1,5 +1,5 @@
 import { Container, NavItems, NavLogo, Divider, LogoLink } from './NavBar.styles';
-import logoNav from '../../assets/logoNav.png';
+import logoNav from '../../assets/logoB.png';
 import backNav from '../../assets/backNav.png';
 import { useEffect, useState } from 'react';
 import React from 'react';

@@ -4,7 +4,7 @@ import {
 } from './Hero.styles';
 
 import { NavBar } from '../../../../components/NavBar/NavBar';
-import logoImage from '../../../../assets/logo.png';
+import logoImage from '../../../../assets/logoA.png';
 import massagistImage from '../../../../assets/foto-teste-social.png';
 
 export function HeroSection() {

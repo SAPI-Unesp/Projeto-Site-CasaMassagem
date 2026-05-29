@@ -24,7 +24,7 @@ import {
   DividerMobile,
 } from "./card.styles";
 
-import imgWhats from "../../../assets/imgWhats.png";
+import imgWhats from "../../../assets/whatsapp.png";
 import tagType from "../../../assets/tagType.png";
 import tagArea from "../../../assets/tagArea.png";
 import tagTime from "../../../assets/tagTime.png";
