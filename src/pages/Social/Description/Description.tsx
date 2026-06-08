@@ -13,7 +13,7 @@ import {
   ImageCaption,
 } from "./Description.styles";
 
-import Image1 from '../../../assets/foto-teste-social.png';
+import Image1 from '../../../assets/fotoTesteSocial.png';
 
 
 export function Description() {

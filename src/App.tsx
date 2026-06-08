@@ -8,12 +8,12 @@ import { Servicos } from './pages/Servicos/Servicos';
 import { GlobalStyles } from './styles/global';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
-import backgroundImage from './assets/backgroundImage.png';
-import backgroundImagePc from './assets/backgroundImagePc.png';
-import Parallax1 from './assets/Parallax1.png';
-import Parallax2 from './assets/Parallax2.png';
-import Parallax3 from './assets/Parallax3.png';
-import Parallax4 from './assets/Parallax4.png';
+import backgroundImage from './assets/background/mobile.png';
+import backgroundImagePc from './assets/background/desktop.png';
+import Parallax1 from './assets/background/parallaxA.png';
+import Parallax2 from './assets/background/parallaxB.png';
+import Parallax3 from './assets/background/parallaxC.png';
+import Parallax4 from './assets/background/parallaxD.png';
 
 function ScrollToHash() {
     const location = useLocation();

@@ -9,7 +9,7 @@ import {
 
 import { useNavigate } from 'react-router-dom';
 
-import BoxImage from '../../../../assets/foto-teste-social.png';
+import BoxImage from '../../../../assets/fotoTesteSocial.png';
 import { BorderedImage } from '../../../../components/BorderedImage/BorderedImage';
 import { Button } from '../../../../components/Button/Button';
 

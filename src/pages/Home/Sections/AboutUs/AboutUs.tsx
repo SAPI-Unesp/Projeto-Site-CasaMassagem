@@ -5,7 +5,7 @@ import {
     ImageWrapper,
     TextWrapper,
 } from './AboutUs.style';
-import MassageImage from '../../../../assets/imagem-sobrenos.png';
+import MassageImage from '../../../../assets/imagemSobreNos.png';
 import { BorderedImage } from '../../../../components/BorderedImage/BorderedImage';
 
 const sectionVariants = {

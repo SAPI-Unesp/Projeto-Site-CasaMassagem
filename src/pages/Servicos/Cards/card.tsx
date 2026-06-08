@@ -25,9 +25,9 @@ import {
 } from "./card.styles";
 
 import imgWhats from "../../../assets/whatsapp.png";
-import tagType from "../../../assets/tagType.png";
-import tagArea from "../../../assets/tagArea.png";
-import tagTime from "../../../assets/tagTime.png";
+import tagType from "../../../assets/services/tagType.png";
+import tagArea from "../../../assets/services/tagArea.png";
+import tagTime from "../../../assets/services/tagTime.png";
 
 type CardProps = {
   title: string;

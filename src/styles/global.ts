@@ -6,7 +6,7 @@ import '@fontsource/cinzel/700.css';
 import '@fontsource/cormorant/400.css';
 import '@fontsource/cormorant/700.css'; 
 
-import BackgroundImage from '../assets/backgroundImage.png';
+import BackgroundImage from '../assets/background/mobile.png';
 
 export const GlobalStyles = createGlobalStyle`
   *,
