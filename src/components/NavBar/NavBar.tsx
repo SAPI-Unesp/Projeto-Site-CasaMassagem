@@ -1,4 +1,4 @@
-import { Container, NavItems, NavLogo, Divider } from './NavBar.styles';
+import { Container, NavItems, NavLogo, BurgerMenu, Divider, MobileMenu } from './NavBar.styles';
 import logoNav from '../../assets/logoNav.png';
 import backNav from '../../assets/backNav.png';
 import { useEffect, useState } from 'react';
@@ -17,6 +17,7 @@ type NavBarProps = {
 export function NavBar({ items }: NavBarProps) {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -54,46 +55,88 @@ export function NavBar({ items }: NavBarProps) {
     }, []);
 
     return (
-        <Container $scrolled={scrolled}>
-            <NavLogo $scrolled={scrolled}>
-                <img className="logoNav" src={logoNav} alt="Logo" />
-                <img className="backNav" src={backNav} alt="Background" />
-            </NavLogo>
+        <>
+            <Container $scrolled={scrolled}>
+                <NavLogo $scrolled={scrolled}>
+                    <a href="/">
+                        <img className="logoNav" src={logoNav} alt="Logo"/>
+                    </a>
+                    <img className="backNav" src={backNav} alt="Background" />
+                </NavLogo>
 
-            <NavItems $scrolled={scrolled}>
-                {items.map((item, index) => {
+                <NavItems $scrolled={scrolled}>
+                    {items.map((item, index) => {
+                        const isSectionLink = item.href.startsWith('#');
+                        const sectionId = isSectionLink
+                            ? item.href.replace('#', '')
+                            : '';
+                        const isActive =
+                            isSectionLink
+                                ? activeSection === sectionId
+                                : location.pathname === item.href;
+
+                        return (
+                            <React.Fragment key={item.href}>
+                                {isSectionLink ? (
+                                    <a
+                                        href={item.href}
+                                        className={isActive ? 'active' : ''}
+                                    >
+                                        {item.label}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        to={item.href}
+                                        className={isActive ? 'active' : ''}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                )}
+
+                                {index < items.length - 1 && <Divider />}
+                            </React.Fragment>
+                        );
+                    })}
+                </NavItems>
+                
+                <BurgerMenu $open={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+                        <span />
+                        <span />
+                        <span />
+                </BurgerMenu>
+
+            </Container>
+
+            <MobileMenu $open={menuOpen}>
+                {items.map((item) => {
                     const isSectionLink = item.href.startsWith('#');
-                    const sectionId = isSectionLink
-                        ? item.href.replace('#', '')
-                        : '';
-                    const isActive =
-                        isSectionLink
-                            ? activeSection === sectionId
-                            : location.pathname === item.href;
+                    const sectionId = isSectionLink ? item.href.replace('#', '') : '';
+                    const isActive = isSectionLink
+                        ? activeSection === sectionId
+                        : location.pathname === item.href;
 
-                    return (
-                        <React.Fragment key={item.href}>
-                            {isSectionLink ? (
-                                <a
-                                    href={item.href}
-                                    className={isActive ? 'active' : ''}
-                                >
-                                    {item.label}
-                                </a>
-                            ) : (
-                                <Link
-                                    to={item.href}
-                                    className={isActive ? 'active' : ''}
-                                >
-                                    {item.label}
-                                </Link>
-                            )}
-
-                            {index < items.length - 1 && <Divider />}
-                        </React.Fragment>
+                    return isSectionLink ? (
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            className={isActive ? 'active' : ''}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {item.label}
+                        </a>
+                    ) : (
+                        <Link
+                            key={item.href}
+                            to={item.href}
+                            className={isActive ? 'active' : ''}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {item.label}
+                        </Link>
                     );
                 })}
-            </NavItems>
-        </Container>
+            </MobileMenu>
+        
+        </>
     );
 }
