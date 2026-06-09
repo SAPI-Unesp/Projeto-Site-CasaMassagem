@@ -71,7 +71,7 @@ export function ContactSection() {
         image: LocationImage,
         address: 'Rua Pedro Alcântara de Moraes, 991 - Itaporanga/SP',
         phone: '(15) 99680-0015',
-        instagram: '@monicaferraz',
+        instagram: '@moniqueferraz',
         email: 'moniqueferrarzi@gmail.com',
     };
 
