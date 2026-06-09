@@ -13,19 +13,39 @@ export const HeroContainer = styled.section<{ $backgroundImage: string }>`
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    height: 16px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    height: 100svh;
+    min-height: 100svh;
+    background-position: center center;
+  }
 `;
 
 export const LogoContainer = styled.div<{ $logoImage: string }>`
-  --hero-logo-offset: clamp(4.25rem, 13.5vh, 8.75rem);
+  --hero-logo-y: 80%;
+  --hero-logo-size: min(95vw, 720px);
+  --hero-glow-height: min(45vw, 400px);
 
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-
-  @media (min-width: 1200px) {
-    --hero-logo-offset: clamp(6rem, 17vh, 11rem);
-  }
 
   &::before {
     content: '';
@@ -36,8 +56,8 @@ export const LogoContainer = styled.div<{ $logoImage: string }>`
       rgba(0, 0, 0, 0.4) 0 70%,
       rgba(0, 0, 0, 0) 71%
     );
-    background-size: min(95vw, 720px) min(45vw, 400px);
-    background-position: center calc(50% + var(--hero-logo-offset));
+    background-size: var(--hero-logo-size) var(--hero-glow-height);
+    background-position: center var(--hero-logo-y);
     background-repeat: no-repeat;
     background-attachment: fixed;
     filter: blur(40px);
@@ -49,10 +69,20 @@ export const LogoContainer = styled.div<{ $logoImage: string }>`
     position: absolute;
     inset: 0;
     background-image: url(${({ $logoImage }) => $logoImage});
-    background-size: min(95vw, 720px) auto;
-    background-position: center calc(50% + var(--hero-logo-offset));
+    background-size: var(--hero-logo-size) auto;
+    background-position: center var(--hero-logo-y);
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    --hero-logo-y: 69.5%;
+    --hero-logo-size: min(92vw, 560px);
+    --hero-glow-height: min(48vw, 320px);
+
+    &::before {
+      filter: blur(30px);
+    }
   }
 `;

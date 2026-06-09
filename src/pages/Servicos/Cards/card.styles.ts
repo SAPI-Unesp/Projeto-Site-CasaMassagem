@@ -4,6 +4,12 @@ export const CardBackground = styled.div`
     width: 458px;
     height: 240px;
     border-radius: 20px;
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height:157px;
+    }
+
 `;
 
 export const CardInfoContainer = styled.div`
@@ -40,23 +46,35 @@ export const CardTitle = styled.h1`
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.38);
     align-self: center;
     position: relative;
     text-align: center;
     transition: margin 1s, font-size 1s;
     justify-self: flex-end;
+
+    @media (max-width:768px) {
+        font-size: 13px;
+        margin-bottom:0px;
+    }
 `;
 
 export const CardImage = styled.img`
     border-radius: 40px;
-    width: 600px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     background-color: #8f9c67;
     padding: 8px;
+    object-fit: cover;
     display: flex;
     flex-direction: row;
     transition: 0.3s;
     position: relative;
+
+    @media (max-width:768px) {
+        width: 300px;
+        height: 180px;
+    }
 `;
 
 export const CardBtn = styled.button`
@@ -68,10 +86,10 @@ export const CardBtn = styled.button`
     margin-top: 30px;
     height: auto;
     width: auto;
-    background-color: transparent;
-    color: #8f9c67;
+    background-color: #8f9c67;
+    color: white;
     padding: 5px 20px 5px 20px;
-    font-size: 14px;
+    font-size : ${({ theme }) => theme.fontSizes.Paragrafo};
     align-self: flex-end;
     margin-right: 25px;
     font-family: Cinzel;
@@ -89,7 +107,7 @@ export const CardBtn = styled.button`
         left: 50%;
         width: 0;
         height: 0;
-        background-color: #8f9c67;
+        background-color: #a8b879;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
@@ -111,21 +129,28 @@ export const CardBtn = styled.button`
         position: relative;
         z-index: 1;
     }
+
+    @media (max-width:768px) {
+        scale:0.8;
+    }
 `;
 
 export const OverlayContentBox = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    padding-bottom: 25px;
 
     img {
-        object-fit: cover;
-        border-radius: 50px;
         width: 420px;
         height: 270px;
+        object-fit: cover;
+        border-radius: 50px;
+        flex-shrink: 0;
     }
 
     div {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -157,13 +182,13 @@ export const Divider = styled.div`
 
 export const CardWrapper = styled.div`
     position: relative;
-    width: 600px;      
-    height: 320px;   
+    width: 600px;
+    height: 320px;
 
-    &:hover ${Temp} { 
+    &:hover ${Temp} {
         transform: scale(1.5);
         z-index: 1;
-    }   
+    }
 
     &:hover ${CardTitle} {
         z-index: 1;
@@ -173,12 +198,17 @@ export const CardWrapper = styled.div`
         transform : scale(1.3);
         z-index: 1;
     }
-    
+
     &:hover ${CardImage} {
         transform: scale(1.15);
         z-index: 1;
         box-shadow: 10px 10px 10px #00000057;
         background-color: #a8b879;
+    }
+
+    @media (max-width: 768px) {
+        width: 300px;
+        height: 157px;
     }
 `;
 
@@ -188,8 +218,17 @@ export const Tag = styled.div`
         border-radius: 50px;
         padding: 10px 20px;
         align-items: center;
+        justify-content: center;
         font-size: 8px;
         gap: 15px;
+        min-width: 130px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+
+        h1 {
+            width: 48px;
+            text-align: left;
+            line-height: 1;
+        }
 `;
 
 export const ContainerTags = styled.div`
@@ -201,22 +240,149 @@ export const ContainerTags = styled.div`
 `;
 
 export const ContainerTagContato = styled.div`
+        position: relative;
         display: flex;
-        justify-content: flex-end;
-        gap: 60px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 `;
 
 export const Contato = styled.div`
+        position: absolute;
+        right: 20px;
+        top: 40%;
+        transform: translateY(-50%);
+
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        align-self: flex-end;
-        padding-right: 20px;
 
         h1 {
             font-family: Inter;
             color: #000;
             font-size: 22px;
         }
+`;
+
+
+// OVERLAY MOBILE CONTENTS
+export const ImgOverlayMobile = styled.img`
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50px;
+    flex-shrink: 0;
+`;
+
+export const OverlayContentBoxMobile = styled.div`
+    display: flex;
+    align-items: center;
+    padding-bottom: 25px;
+
+    img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 50px;
+        flex-shrink: 0;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 22px;
+        color: #805f46;
+        text-align: center;
+        letter-spacing: 5%;
+        line-height: 1.1;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #805f46;
+        font-weight: normal;
+        text-align: center;
+        letter-spacing: 5%;
+        line-height: 1.1;
+    }
+`;
+
+export const TagMobile = styled.div`
+        display: flex;
+        position: relative;
+        background-color: #8f9c67;
+        border-radius: 50px;
+        padding: 6px 10px;
+        align-items: center;
+        justify-content: center;
+        font-size: 6px;
+        gap: 8px;
+        width: 86px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+
+        img{
+            width:20px;
+            height:20px;
+        }
+
+        h1 {
+            width: 36px;
+            text-align: left;
+            line-height: 1;
+        }
+`;
+
+export const ContainerTagsMobile = styled.div`
+        width: auto;
+        display: flex;
+        overflow: visible;
+        flex-direction:column;
+        justify-content:center;
+        align-items: flex-start;
+        gap: 14px;
+        font-family: Cormorant Garamond;
+        color: #fff;
+`;
+
+export const ContainerTagContatoMobile = styled.div`
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        width: 80%;
+`;
+
+export const ContatoMobile = styled.div`
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            font-family: Inter;
+            color: #000;
+            font-size: 15px;
+        }
+`;
+
+export const OverlayHeaderMobile = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+`;
+
+export const DividerMobile = styled.div`
+    align-self: center;
+    width: 65%;
+    height: 2px;
+    background-color: #805f46;
+    margin: 5px;
 `;

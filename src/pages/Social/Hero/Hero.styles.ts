@@ -13,16 +13,17 @@ export const HeroContainer = styled.section`
 `;
 
 export const StyledHeroBackground = styled(HeroBackgroundSVG).attrs(() => ({
-  preserveAspectRatio: "xMidYMid meet" 
+  preserveAspectRatio: "xMidYMid meet"
 }))`
   position: relative;
   width: 100%;
+  height: 100%;
   z-index: 0;
   /* opacity: 0.77; */
 `;
 
 export const LogoContainer = styled.div`
-  position:  absolute;
+  position: absolute;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -31,7 +32,7 @@ export const LogoContainer = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  width: 600px;
+  width: 80vw;
   max-width: 80%;
   height: auto;
   object-fit: contain;

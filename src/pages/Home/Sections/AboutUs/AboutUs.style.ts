@@ -67,7 +67,7 @@ export const TextWrapper = styled(motion.div)`
     line-height: 1.7;
     text-align: justify;
     position: relative;
-    z-index: 3;
+    z-index: 1;
 
     p + p {
         margin-top: 20px;
@@ -76,11 +76,11 @@ export const TextWrapper = styled(motion.div)`
     @media (max-width: 900px) {
         margin-left: 0;
         margin-top: -40px;
-        padding: 40px;
+        padding: 56px 40px 40px;
         font-size: 1.1rem;
         
         @media (max-width: 480px) {
-            padding: 30px 20px;
+            padding: 46px 20px 30px;
             border-radius: 40px;
             font-size: 1.2rem;
             line-height: 1.5;

@@ -9,7 +9,7 @@ export const GalleryContainer = styled.div`
 export const GalleryTitle = styled.h1`
     margin-top: 2rem;
     margin-bottom: 2rem;
-    font-size: ${({ theme }) => theme.fontSizes.Title2}; 
+    font-size: ${({ theme }) => theme.fontSizes.Title2};
     font-weight: 400;
     font-family: ${({ theme }) => theme.fontsStyles.Cinzel};
     color: #A48774;
@@ -17,18 +17,31 @@ export const GalleryTitle = styled.h1`
     text-transform: uppercase;
     letter-spacing: 5px;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 2.75rem;
+        letter-spacing: 3px;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
 `;
 
 export const Scrollable = styled.div`
     width: 100%;
     height: 105vh;
-    gap: 16px;
-    //padding: 32px;
-    padding: 48px;
-
+    padding-top: 64px;
+    padding-bottom: 64px;
     display: grid;
+
+    gap: 16px;
     grid-template-columns: repeat(50, 1fr);
     grid-auto-rows: calc((100vw - 64px - (99 * 16px)) / 100);
+
+    @media (max-width: 768px) {
+        gap: 6px;
+        grid-template-columns: repeat(50, 1fr);
+        grid-auto-rows: calc((100vw - 64px - (99 * 6px)) / 100);
+    }
 
     // Esconde a barra de rolagem, mas permite rolar
     overflow-y: scroll;
@@ -44,10 +57,8 @@ export const Scrollable = styled.div`
     // IE, Edge velho
     -ms-overflow-style: none;
 
-    //mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
     // Chrome e Safari
-    //-webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
 `;
 
@@ -72,7 +83,6 @@ export const Image = styled.img`
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.4s ease;
-
 `;
 
 export const HoverOverlay = styled.div`
@@ -80,7 +90,7 @@ export const HoverOverlay = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;  
+    bottom: 0;
     background-color: rgba(124, 140, 97, 0.75);
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -121,7 +131,7 @@ export const HoverTitle = styled.p`
 export const OverlayContentBox = styled.div`
     h1 {
         font-size: 55px;
-        color: #fff;
+        color: #FAEBD4;
         text-align: center;
         letter-spacing: 1px;
         line-height: 1.1;

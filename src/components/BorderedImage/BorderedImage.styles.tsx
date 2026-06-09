@@ -5,6 +5,7 @@ interface WrapProps {
   borderRadius?: string;
   objectFit: "cover" | "contain";
   mode?: "fill" | "intrinsic";
+  borderWidth?: string;
 }
 
 export const Wrap = styled.div<WrapProps>`
@@ -42,7 +43,6 @@ export const Wrap = styled.div<WrapProps>`
     border-radius: inherit;
     pointer-events: none;
     z-index: 2;
-
-    box-shadow: inset 0 0 0 9px rgba(235, 234, 234, 0.6);
+    box-shadow: inset 0 0 0 ${({ borderWidth }) => borderWidth || "9px"} rgba(235, 234, 234, 0.6);
   }
 `;

@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Home } from './pages/Home/Home';
 import { Social } from './pages/Social/Social';
 import { Servicos } from './pages/Servicos/Servicos';
@@ -13,6 +14,25 @@ import Parallax1 from './assets/Parallax1.png';
 import Parallax2 from './assets/Parallax2.png';
 import Parallax3 from './assets/Parallax3.png';
 import Parallax4 from './assets/Parallax4.png';
+
+function ScrollToHash() {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (!location.hash) return;
+
+        const targetId = location.hash.replace('#', '');
+        const target = document.getElementById(targetId);
+
+        if (!target) return;
+
+        requestAnimationFrame(() => {
+            target.scrollIntoView({ block: 'start' });
+        });
+    }, [location.pathname, location.hash]);
+
+    return null;
+}
 
 function App() {
     return (
@@ -52,12 +72,12 @@ function App() {
                     height: '100%',
                     
                     background: 'linear-gradient(to right, ' +
-                    'rgba(0, 0, 0, 0.2) 0%, ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% - 808px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% - 808px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% + 790px), ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% + 790px), ' +
-                    'rgba(0, 0, 0, 0.2) 100%)',
+                    'rgba(0, 0, 0, 0.14) 0%, ' +
+                    'rgba(0, 0, 0, 0.08) calc(50% - min(50vw, 880px)), ' +
+                    'rgba(0, 0, 0, 0) calc(50% - min(50vw, 760px)), ' +
+                    'rgba(0, 0, 0, 0) calc(50% + min(50vw, 760px)), ' +
+                    'rgba(0, 0, 0, 0.08) calc(50% + min(50vw, 880px)), ' +
+                    'rgba(0, 0, 0, 0.14) 100%)',
                     pointerEvents: 'none'
                   
                 }} />
@@ -111,6 +131,7 @@ function App() {
                   {/* ---------------------------------------- FIM PARALLAX ---------------------------------------------- */}
                     <div style={{ position: 'relative', zIndex: 10 }}>
                         <BrowserRouter>
+                            <ScrollToHash />
                             <Routes>
                                 <Route path="/" element={<Home />}/>
                                 <Route path="/projetosocial" element={<Social />}/>

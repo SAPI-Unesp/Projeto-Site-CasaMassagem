@@ -13,7 +13,7 @@ import {
     FaEnvelope,
     FaMapMarkerAlt,
 } from 'react-icons/fa';
-import LocationImage from '../../../../assets/testeLocation.jpg';
+import LocationImage from '../../../../assets/local.png';
 import { BorderedImage } from '../../../../components/BorderedImage/BorderedImage';
 
 const sectionVariants = {

@@ -13,7 +13,6 @@ import {
   ImageCaption,
 } from "./Description.styles";
 
-import video from '../../../assets/template.jpg';
 import Image1 from '../../../assets/foto-teste-social.png';
 
 
@@ -21,20 +20,18 @@ export function Description() {
   return (
     <SectionContainer>
       <SectionTitle>
-        “CUIDAR DE<br />QUEM CUIDA”
+        <span>“CUIDAR DE</span>
+        <span>QUEM CUIDA”</span>
       </SectionTitle>
 
-      <div style={{ width: "100%", marginBottom: "3rem" }}>
-        <GreenFrameWrapper>
-          <BeigeBorderFix>
-              <BorderedImage
-                src={video}
-                alt="Detalhe da terapia"
-                height="400px"
-              />
-            </BeigeBorderFix>
-        </GreenFrameWrapper>
-      </div>
+      <GreenFrameWrapper>
+        <iframe
+          src={"https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&controls=1&modestbranding=1&rel=0"}
+          title="Projeto social"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </GreenFrameWrapper>
 
       <Subtitle>MINHA MOTIVAÇÃO</Subtitle>
 
@@ -54,24 +51,25 @@ export function Description() {
 
       <ImagesRow>
         <ImageCard>
-            <BeigeBorderFix>
-              <BorderedImage
-                src={Image1}
-                alt="Massagem facial"
-                height="400px"
-              />
-            </BeigeBorderFix>
+          <BeigeBorderFix>
+            <BorderedImage
+              src={Image1}
+              alt="Massagem facial"
+              height="auto"
+              borderWidth="1vw"
+            />
+          </BeigeBorderFix>
           <ImageCaption>“Parte mais marcante do texto acima escrita aqui [...]”</ImageCaption>
-        
         </ImageCard>
         <ImageCard>
-            <BeigeBorderFix>
-              <BorderedImage
-                src={Image1}
-                alt="Detalhe da terapia"
-                height="400px" 
-              />
-            </BeigeBorderFix>
+          <BeigeBorderFix>
+            <BorderedImage
+              src={Image1}
+              alt="Detalhe da terapia"
+              height="auto"
+              borderWidth="1vw"
+            />
+          </BeigeBorderFix>
           <ImageCaption>“[...] Outra parte marcante!”</ImageCaption>
         </ImageCard>
       </ImagesRow>
