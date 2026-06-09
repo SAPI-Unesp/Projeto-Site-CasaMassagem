@@ -30,4 +30,8 @@ export const ServiceContainer = styled.main`
   background-color: rgba(225, 221, 212, 0.5);
   padding-top: calc(155px + 5rem - 30px);
   box-sizing: border-box;
+
+  @media (max-width: 990px) {
+    padding-top: 112px;
+  }
 `;

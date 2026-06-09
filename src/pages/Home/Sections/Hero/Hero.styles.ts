@@ -14,10 +14,25 @@ export const HeroContainer = styled.section<{ $backgroundImage: string }>`
   background-repeat: no-repeat;
   background-attachment: fixed;
 
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    height: 16px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
+  }
+
   @media (max-width: 768px) {
     height: 100svh;
     min-height: 100svh;
-    background-attachment: scroll;
     background-position: center center;
   }
 `;
@@ -65,11 +80,6 @@ export const LogoContainer = styled.div<{ $logoImage: string }>`
     --hero-logo-y: 69.5%;
     --hero-logo-size: min(92vw, 560px);
     --hero-glow-height: min(48vw, 320px);
-
-    &::before,
-    &::after {
-      background-attachment: scroll;
-    }
 
     &::before {
       filter: blur(30px);

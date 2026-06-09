@@ -72,12 +72,12 @@ function App() {
                     height: '100%',
                     
                     background: 'linear-gradient(to right, ' +
-                    'rgba(0, 0, 0, 0.2) 0%, ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% - 808px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% - 808px), ' +
-                    'rgba(0, 0, 0, 0) calc(50% + 790px), ' +
-                    'rgba(0, 0, 0, 0.2) calc(50% + 790px), ' +
-                    'rgba(0, 0, 0, 0.2) 100%)',
+                    'rgba(0, 0, 0, 0.14) 0%, ' +
+                    'rgba(0, 0, 0, 0.08) calc(50% - min(50vw, 880px)), ' +
+                    'rgba(0, 0, 0, 0) calc(50% - min(50vw, 760px)), ' +
+                    'rgba(0, 0, 0, 0) calc(50% + min(50vw, 760px)), ' +
+                    'rgba(0, 0, 0, 0.08) calc(50% + min(50vw, 880px)), ' +
+                    'rgba(0, 0, 0, 0.14) 100%)',
                     pointerEvents: 'none'
                   
                 }} />
